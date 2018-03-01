@@ -1,0 +1,25 @@
+{
+  "name": "web-ui",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts-ts": "2.13.0"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject",
+    "generate-client": "nswag run NSwagConfig.nswag /runtime:NetCore20"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.1.1",
+    "@types/node": "^9.4.2",
+    "@types/react": "^16.0.36",
+    "@types/react-dom": "^16.0.3",
+    "nswag": "^11.14.1",
+    "typescript": "^2.7.1"
+  }
+}
