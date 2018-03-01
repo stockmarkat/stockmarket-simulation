@@ -1,6 +1,7 @@
 {
   "name": "web-ui",
   "version": "0.1.0",
+  "homepage": "https://rohrerf.github.io/factorygame",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
@@ -10,7 +11,8 @@
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
+    "test-watch": "react-scripts-ts test --env=jsdom",
+    "test": "react-scripts-ts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill --coverage",
     "eject": "react-scripts-ts eject",
     "generate-client": "nswag run NSwagConfig.nswag /runtime:NetCore20"
   },
@@ -20,6 +22,7 @@
     "@types/react": "^16.0.36",
     "@types/react-dom": "^16.0.3",
     "nswag": "^11.14.1",
+    "cross-env": "^5.1.1",
     "typescript": "^2.7.1"
   }
 }
