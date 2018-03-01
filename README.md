@@ -1,5 +1,7 @@
 # stockmarket-simulation
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/stockmarkat/stockmarket-simulation.svg)](https://greenkeeper.io/)
+
 This is a Stockmarket Simulation.
 
 [![Build Status](https://travis-ci.org/stockmarkat/stockmarket-simulation.svg?branch=master)](https://travis-ci.org/stockmarkat/stockmarket-simulation)
