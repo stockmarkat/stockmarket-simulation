@@ -2,6 +2,12 @@
 
 This is a Stockmarket Simulation.
 
+[![Build Status](https://travis-ci.org/stockmarkat/stockmarket-simulation.svg?branch=master)](https://travis-ci.org/stockmarkat/stockmarket-simulation)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1b146f1983bf715406e3/maintainability)](https://codeclimate.com/github/stockmarkat/stockmarket-simulation/maintainability)
+[![codecov](https://codecov.io/gh/stockmarkat/stockmarket-simulation/branch/master/graph/badge.svg)](https://codecov.io/gh/stockmarkat/stockmarket-simulation)
+
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -12,18 +18,8 @@ To run this Project you need to have the following Things Installed on your loca
 
 - Npm
 - Yarn
-- dotnet core 2.0
-
 
 ### Installing
-
-#### Run the Service
-
-```
-cd .\service
-dotnet restore
-dotnet run --project .\Stockmarket.Simulation\Stockmarket.Simulation.csproj
-```
 
 #### Run the UI
 
