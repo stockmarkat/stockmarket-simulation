@@ -1,7 +1,7 @@
 {
   "name": "web-ui",
   "version": "0.1.0",
-  "homepage": "https://rohrerf.github.io/factorygame",
+  "homepage": "https://stockmarkat.github.io/stockmarket-simulation/",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
