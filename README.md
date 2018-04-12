@@ -6,7 +6,7 @@ This is a Stockmarket Simulation.
 [![Greenkeeper badge](https://badges.greenkeeper.io/stockmarkat/stockmarket-simulation.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/stockmarkat/stockmarket-simulation.svg?branch=master)](https://travis-ci.org/stockmarkat/stockmarket-simulation)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1b146f1983bf715406e3/maintainability)](https://codeclimate.com/github/stockmarkat/stockmarket-simulation/maintainability)
-[![codecov](https://codecov.io/gh/stockmarkat/stockmarket-simulation/branch/master/graph/badge.svg)](https://codecov.io/gh/stockmarkat/stockmarket-simulation)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1b146f1983bf715406e3/test_coverage)](https://codeclimate.com/github/stockmarkat/stockmarket-simulation/test_coverage)
 
 
 
