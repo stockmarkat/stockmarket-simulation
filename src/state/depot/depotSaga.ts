@@ -5,7 +5,7 @@ function* loadStateInitial() {
 }
 
 function* depotSaga() {
-    yield takeEvery('', loadStateInitial);
+    yield takeEvery('init', loadStateInitial);
 }
 
 export default depotSaga;

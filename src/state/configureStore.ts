@@ -9,6 +9,7 @@ import initialLoadSaga from './initialLoad/initialLoadSaga';
 import questReducer from './quests/questReducer';
 import questSaga from './quests/questSaga';
 import stockMarketReducer from './stockMarket/stockMarketReducer';
+import stockMarketSaga from './stockMarket/stockMarketSaga';
 
 function* rootSaga() {
     yield all(
@@ -16,6 +17,7 @@ function* rootSaga() {
             fork(initialLoadSaga),
             fork(questSaga),
             fork(depotSaga),
+            fork(stockMarketSaga),
         ]
     );
 }

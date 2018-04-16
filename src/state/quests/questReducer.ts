@@ -11,7 +11,7 @@ const questReducer = (state = initialState, action: GenericAction) => {
             const quests = (action as AddQuestAction).quests;
 
             return {
-                ...initialState,
+                ...state,
                 quests
             };
         }
