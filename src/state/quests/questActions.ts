@@ -12,7 +12,17 @@ export const addQuests = (quests: Quest[]): AddQuestAction => ({
     quests
 });
 
+export const unlockQuest = (questName: string): UnlockQuestAction => ({
+    type: ADD_QUESTS,
+    questName
+});
+
 export interface AddQuestAction {
     type: string;
     quests: Quest[];
+}
+
+export interface UnlockQuestAction {
+    type: string;
+    questName: string;
 }
