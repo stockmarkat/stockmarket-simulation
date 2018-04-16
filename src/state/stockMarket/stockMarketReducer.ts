@@ -1,7 +1,8 @@
 import { GenericAction, StockMarketState } from '../AppState';
 
 const initialState: StockMarketState = {
-    stocks: []
+    stocks: [],
+    news: [],
 };
 
 const stockMarketReducer = (state = initialState, action: GenericAction) => {
