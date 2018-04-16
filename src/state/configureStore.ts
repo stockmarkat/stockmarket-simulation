@@ -4,6 +4,7 @@ import createSagaMiddleware from 'redux-saga';
 import { all, fork } from 'redux-saga/effects';
 import { AppState } from './AppState';
 import depotReducer from './depot/depotReducer';
+import depotSaga from './depot/depotSaga';
 import initialLoadSaga from './initialLoad/initialLoadSaga';
 import questReducer from './quests/questReducer';
 import questSaga from './quests/questSaga';
@@ -14,6 +15,7 @@ function* rootSaga() {
         [
             fork(initialLoadSaga),
             fork(questSaga),
+            fork(depotSaga),
         ]
     );
 }
