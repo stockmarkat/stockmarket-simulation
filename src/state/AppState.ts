@@ -72,3 +72,9 @@ export interface AppState {
     stockMarket: StockMarketState;
     quests: QuestState;
 }
+
+export interface GenericAction {
+    type: string;
+// tslint:disable-next-line: no-any
+    payload?: any;
+}

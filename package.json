@@ -11,7 +11,8 @@
       "!src/**/index.{ts,tsx}",
       "!src/**/*Mocks.{ts,tsx}",
       "!src/**/*Selectors.{ts,tsx}",
-      "!src/**/testUtils.{ts,tsx}"
+      "!src/**/testUtils.{ts,tsx}",
+      "!src/registerServiceWorker.ts"
     ],
     "coverageThreshold": {
       "global": {
