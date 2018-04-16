@@ -1,20 +1,33 @@
 {
-  "name": "web-ui",
+  "name": "stockmarket-simulation",
   "version": "0.1.0",
   "homepage": ".",
   "private": true,
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/**/*.story.{js,jsx,ts,tsx}",
+      "!src/**/index.{ts,tsx}",
+      "!src/**/*Mocks.{ts,tsx}",
+      "!src/**/*Selectors.{ts,tsx}",
+      "!src/**/testUtils.{ts,tsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 10,
+        "functions": 15,
+        "lines": 20,
+        "statements": 20
+      }
+    }
+  },
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts-ts": "2.13.0"
-  },
-  "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test-watch": "react-scripts-ts test --env=jsdom",
-    "test": "react-scripts-ts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill --coverage",
-    "eject": "react-scripts-ts eject",
-    "generate-client": "nswag run NSwagConfig.nswag /runtime:NetCore20"
+    "react-scripts-ts": "2.15.1",
+    "enzyme": "^3.2.0",
+    "json-loader": "^0.5.7"
   },
   "devDependencies": {
     "@types/jest": "^22.1.1",
@@ -24,5 +37,15 @@
     "nswag": "^11.14.1",
     "cross-env": "^5.1.1",
     "typescript": "^2.7.1"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-ts": "react-scripts-ts start",
+    "start": "npm-run-all -p watch-css start-ts",
+    "build": "npm run build-css && react-scripts-ts build",
+    "test-watch": "react-scripts-ts test --env=jsdom",
+    "test": "react-scripts-ts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill --coverage",
+    "storybook": "start-storybook -p 6006"
   }
 }
