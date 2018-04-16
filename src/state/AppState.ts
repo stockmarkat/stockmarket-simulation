@@ -59,11 +59,11 @@ export interface DepotState {
     stockCategoryValues: StockCategoryValue[];
 }
 
-interface StockMarketState {
+export interface StockMarketState {
     stocks: Stock[];
 }
 
-interface QuestState {
+export interface QuestState {
     quests: Quest[];
 }
 
