@@ -1,15 +1,12 @@
 export interface Quest {
     name: string;
     iconName: string;
-
     goodies: Goodie[];
     tasks: QuestTask[];
-
     progress: number; // 0 - 100%
-
     isUnlocked: boolean;
     isCompleted: boolean;
-    completed: Date;
+    completed?: Date;
 }
 
 export interface QuestTask {

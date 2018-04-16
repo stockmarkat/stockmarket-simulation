@@ -6,12 +6,14 @@ import { AppState } from './AppState';
 import depotReducer from './depot/depotReducer';
 import initialLoadSaga from './initialLoad/initialLoadSaga';
 import questReducer from './quests/questReducer';
+import questSaga from './quests/questSaga';
 import stockMarketReducer from './stockMarket/stockMarketReducer';
 
 function* rootSaga() {
     yield all(
         [
             fork(initialLoadSaga),
+            fork(questSaga),
         ]
     );
 }

@@ -1,12 +1,13 @@
-import { takeEvery } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
+import { loadQuests } from '../quests/questActions';
 import { LOAD_STATE } from './initialLoadActions';
 
 function* loadStateInitial() {
-    yield null;
+    yield put(loadQuests());
 }
 
 function* initialLoadSaga() {
-    yield takeEvery( LOAD_STATE, loadStateInitial );
+    yield takeEvery(LOAD_STATE, loadStateInitial);
 }
 
 export default initialLoadSaga;
