@@ -14,7 +14,7 @@ export interface Quest {
 
 export interface QuestTask {
     name: string;
-    progress: number // 0 - 100%
+    progress: number; // 0 - 100%
     isCompleted: boolean;
     // TODO: find out how to determine if compleded
 }
