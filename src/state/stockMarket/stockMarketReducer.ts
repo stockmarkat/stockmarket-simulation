@@ -3,7 +3,6 @@ import { ADD_STOCKS, AddStocksAction } from './stockMarketActions';
 
 const initialState: StockMarketState = {
     stocks: [],
-    news: [],
 };
 
 const stockMarketReducer = (state = initialState, action: GenericAction) => {

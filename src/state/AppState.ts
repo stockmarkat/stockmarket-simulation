@@ -41,7 +41,7 @@ interface NewsEffect {
 
 export interface StockNews {
     text: string;
-    active: boolean;
+    isActive: boolean;
     effects: NewsEffect[];
 }
 
@@ -59,6 +59,9 @@ export interface DepotState {
 
 export interface StockMarketState {
     stocks: Stock[];
+}
+
+export interface NewsState {
     news: StockNews[];
 }
 
@@ -70,6 +73,7 @@ export interface AppState {
     depot: DepotState;
     stockMarket: StockMarketState;
     quests: QuestState;
+    news: NewsState;
 }
 
 export interface GenericAction {
