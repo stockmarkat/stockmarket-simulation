@@ -7,6 +7,7 @@ import depotReducer from './depot/depotReducer';
 import depotSaga from './depot/depotSaga';
 import initialLoadSaga from './initialLoad/initialLoadSaga';
 import newsReducer from './news/newsReducer';
+import newsSaga from './news/newsSaga';
 import questReducer from './quests/questReducer';
 import questSaga from './quests/questSaga';
 import stockMarketReducer from './stockMarket/stockMarketReducer';
@@ -19,6 +20,7 @@ function* rootSaga() {
             fork( questSaga ),
             fork( depotSaga ),
             fork( stockMarketSaga ),
+            fork( newsSaga )
         ]
     );
 }
