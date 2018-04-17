@@ -27,7 +27,7 @@ export interface Stock {
     valueChange: number; // for the last x Hours/days in %
     type: 'FireArms' | 'Energy' | 'Finance' | 'RawMaterials';
     valueHistory: FinancialSnapshot[];
-    quantity: number; // count of owend stocks
+    quantity: number; // count of owned stocks
 }
 
 export interface FinancialSnapshot {
