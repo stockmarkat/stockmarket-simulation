@@ -1,20 +1,17 @@
 export interface Quest {
     name: string;
     iconName: string;
-
     goodies: Goodie[];
     tasks: QuestTask[];
-
     progress: number; // 0 - 100%
-
     isUnlocked: boolean;
     isCompleted: boolean;
-    completed: Date;
+    completed?: Date;
 }
 
 export interface QuestTask {
     name: string;
-    progress: number // 0 - 100%
+    progress: number; // 0 - 100%
     isCompleted: boolean;
     // TODO: find out how to determine if compleded
 }
@@ -30,7 +27,7 @@ export interface Stock {
     valueChange: number; // for the last x Hours/days in %
     type: 'FireArms' | 'Energy' | 'Finance' | 'RawMaterials';
     valueHistory: FinancialSnapshot[];
-    quantity: number;
+    quantity: number; // count of owned stocks
 }
 
 export interface FinancialSnapshot {
@@ -44,6 +41,7 @@ interface NewsEffect {
 
 export interface StockNews {
     text: string;
+    isActive: boolean;
     effects: NewsEffect[];
 }
 
@@ -59,11 +57,15 @@ export interface DepotState {
     stockCategoryValues: StockCategoryValue[];
 }
 
-interface StockMarketState {
+export interface StockMarketState {
     stocks: Stock[];
 }
 
-interface QuestState {
+export interface NewsState {
+    news: StockNews[];
+}
+
+export interface QuestState {
     quests: Quest[];
 }
 
@@ -71,4 +73,11 @@ export interface AppState {
     depot: DepotState;
     stockMarket: StockMarketState;
     quests: QuestState;
+    news: NewsState;
+}
+
+export interface GenericAction {
+    type: string;
+// tslint:disable-next-line: no-any
+    payload?: any;
 }
