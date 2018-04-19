@@ -2,8 +2,7 @@ import { Stock } from '../AppState';
 
 export const LOAD_STOCKS = 'stockMarketReducer/load-stocks';
 export const ADD_STOCKS = 'stockMarketReducer/add-stocks';
-export const BUY_STOCK = 'stockMarketReducer/buy-stock';
-export const SELL_STOCK = 'stockMarketReducer/sell-stock';
+export const BUY_OR_SELL_STOCKS = 'stockMarketReducer/buy-or-sell-stocks';
 
 export const loadStocks = () => ({
     type: LOAD_STOCKS
@@ -14,16 +13,9 @@ export const addStocks = (stocks: Stock[]): AddStocksAction => ({
     stocks
 });
 
-export const buyStock = (stockName: string, amount: number): PurchaseStockAction => ({
-    type: BUY_STOCK,
-    amount,
-    stockName
-});
-
-export const sellStock = (stockName: string, amount: number): PurchaseStockAction => ({
-    type: SELL_STOCK,
-    amount,
-    stockName
+export const buyOrSellStocks = (operations: StockPurchaseOperation[]): BuyOrSellStocksAction => ({
+    type: BUY_OR_SELL_STOCKS,
+    operations
 });
 
 export interface AddStocksAction {
@@ -31,8 +23,12 @@ export interface AddStocksAction {
     stocks: Stock[];
 }
 
-export interface PurchaseStockAction {
-    type: string;
+export interface StockPurchaseOperation {
     stockName: string;
-    amount: number;
+    amount: number; // make this negative if you want to sell a Stock
+}
+
+export interface BuyOrSellStocksAction {
+    type: string;
+    operations: StockPurchaseOperation[];
 }
