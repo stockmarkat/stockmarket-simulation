@@ -33,6 +33,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-scripts-ts": "2.15.1",
+    "recharts": "^1.0.0-beta.10",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1"
@@ -48,6 +49,7 @@
     "@types/react-dom": "^16.0.3",
     "@types/react-redux": "^5.0.16",
     "@types/react-router-dom": "^4.2.6",
+    "@types/recharts": "^1.0.18",
     "@types/storybook__addon-actions": "^3.0.3",
     "@types/storybook__addon-knobs": "^3.3.1",
     "@types/storybook__react": "^3.0.7",
