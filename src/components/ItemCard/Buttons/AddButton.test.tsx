@@ -1,0 +1,21 @@
+import * as React from 'react';
+import * as ReactSixteenAdapter from 'enzyme-adapter-react-16';
+import { configure, shallow } from 'enzyme';
+import { AddButton } from './AddButton';
+
+configure( { adapter: new ReactSixteenAdapter() } );
+
+describe( 'AddButton', () => {
+    it( 'should not explode', () => {
+        const buttonClicked = jest.fn( () => { } );
+        const component = shallow( <AddButton onClick={buttonClicked}/> );
+        expect( component ).not.toBeNull();
+    } );
+    it( 'should call on clicked', () => {
+        const buttonClicked = jest.fn( () => { } );
+        const component = shallow( <AddButton onClick={buttonClicked}/> );
+        expect( component ).not.toBeNull();
+        component.simulate( 'click' );
+        expect( buttonClicked ).toHaveBeenCalledTimes( 1 );
+    } );
+} );
