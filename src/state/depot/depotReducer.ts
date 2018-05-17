@@ -1,5 +1,11 @@
 import { DepotState, GenericAction } from '../AppState';
-import { SET_ACCOUNT_VALUE, SET_STOCK_VALUE, SetValueAction } from './depotActions';
+import {
+    CHANGE_ACCOUNT_VALUE,
+    CHANGE_STOCK_VALUE,
+    SET_ACCOUNT_VALUE,
+    SET_STOCK_VALUE,
+    SetValueAction
+} from './depotActions';
 
 const initialState: DepotState = {
     accountValue: 0,
@@ -8,7 +14,6 @@ const initialState: DepotState = {
     stockCategoryValues: []
 };
 
-// TODO: implement increase and decrease of accountValue and stockValue
 // TODO: implement add stockValueDevelopment
 // TODO: implement set stockCategoryValues
 
@@ -23,11 +28,27 @@ const depotReducer = (state = initialState, action: GenericAction) => {
             };
         }
 
+        case CHANGE_ACCOUNT_VALUE: {
+            const value = (action as SetValueAction).value;
+            return {
+                ...state,
+                accountValue: state.accountValue + value
+            };
+        }
+
         case SET_STOCK_VALUE: {
             const value = (action as SetValueAction).value;
             return {
                 ...state,
                 stockValue: value
+            };
+        }
+
+        case CHANGE_STOCK_VALUE: {
+            const value = (action as SetValueAction).value;
+            return {
+                ...state,
+                stockValue: state.stockValue + value
             };
         }
 
