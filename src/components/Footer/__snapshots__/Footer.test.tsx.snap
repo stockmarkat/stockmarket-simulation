@@ -1,0 +1,413 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> shallow Snapshot matches 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Footer />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <Grid
+        bsClass=""
+        componentClass="div"
+        fluid={false}
+      >
+        <nav
+          className="pull-left"
+        >
+          <ul>
+            <FooterLink
+              to="https://github.com/RohrerF/factorygame"
+            >
+              Github
+            </FooterLink>
+            <FooterLink
+              to="https://github.com/RohrerF/factorygame/issues"
+            >
+              Issues
+            </FooterLink>
+          </ul>
+        </nav>
+        <p
+          className="copyright pull-right"
+        >
+          © 
+          2018
+           
+          <a
+            href="https://rohrerf.github.io"
+          >
+            RohrerF
+          </a>
+        </p>
+      </Grid>,
+      "className": "footer",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "bsClass": "",
+        "children": Array [
+          <nav
+            className="pull-left"
+          >
+            <ul>
+              <FooterLink
+                to="https://github.com/RohrerF/factorygame"
+              >
+                Github
+              </FooterLink>
+              <FooterLink
+                to="https://github.com/RohrerF/factorygame/issues"
+              >
+                Issues
+              </FooterLink>
+            </ul>
+          </nav>,
+          <p
+            className="copyright pull-right"
+          >
+            © 
+            2018
+             
+            <a
+              href="https://rohrerf.github.io"
+            >
+              RohrerF
+            </a>
+          </p>,
+        ],
+        "componentClass": "div",
+        "fluid": false,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <ul>
+              <FooterLink
+                to="https://github.com/RohrerF/factorygame"
+              >
+                Github
+              </FooterLink>
+              <FooterLink
+                to="https://github.com/RohrerF/factorygame/issues"
+              >
+                Issues
+              </FooterLink>
+            </ul>,
+            "className": "pull-left",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <FooterLink
+                  to="https://github.com/RohrerF/factorygame"
+                >
+                  Github
+                </FooterLink>,
+                <FooterLink
+                  to="https://github.com/RohrerF/factorygame/issues"
+                >
+                  Issues
+                </FooterLink>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Github",
+                  "to": "https://github.com/RohrerF/factorygame",
+                },
+                "ref": null,
+                "rendered": "Github",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Issues",
+                  "to": "https://github.com/RohrerF/factorygame/issues",
+                },
+                "ref": null,
+                "rendered": "Issues",
+                "type": [Function],
+              },
+            ],
+            "type": "ul",
+          },
+          "type": "nav",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "© ",
+              2018,
+              " ",
+              <a
+                href="https://rohrerf.github.io"
+              >
+                RohrerF
+              </a>,
+            ],
+            "className": "copyright pull-right",
+          },
+          "ref": null,
+          "rendered": Array [
+            "© ",
+            2018,
+            " ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "RohrerF",
+                "href": "https://rohrerf.github.io",
+              },
+              "ref": null,
+              "rendered": "RohrerF",
+              "type": "a",
+            },
+          ],
+          "type": "p",
+        },
+      ],
+      "type": [Function],
+    },
+    "type": "footer",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Grid
+          bsClass=""
+          componentClass="div"
+          fluid={false}
+        >
+          <nav
+            className="pull-left"
+          >
+            <ul>
+              <FooterLink
+                to="https://github.com/RohrerF/factorygame"
+              >
+                Github
+              </FooterLink>
+              <FooterLink
+                to="https://github.com/RohrerF/factorygame/issues"
+              >
+                Issues
+              </FooterLink>
+            </ul>
+          </nav>
+          <p
+            className="copyright pull-right"
+          >
+            © 
+            2018
+             
+            <a
+              href="https://rohrerf.github.io"
+            >
+              RohrerF
+            </a>
+          </p>
+        </Grid>,
+        "className": "footer",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "bsClass": "",
+          "children": Array [
+            <nav
+              className="pull-left"
+            >
+              <ul>
+                <FooterLink
+                  to="https://github.com/RohrerF/factorygame"
+                >
+                  Github
+                </FooterLink>
+                <FooterLink
+                  to="https://github.com/RohrerF/factorygame/issues"
+                >
+                  Issues
+                </FooterLink>
+              </ul>
+            </nav>,
+            <p
+              className="copyright pull-right"
+            >
+              © 
+              2018
+               
+              <a
+                href="https://rohrerf.github.io"
+              >
+                RohrerF
+              </a>
+            </p>,
+          ],
+          "componentClass": "div",
+          "fluid": false,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <ul>
+                <FooterLink
+                  to="https://github.com/RohrerF/factorygame"
+                >
+                  Github
+                </FooterLink>
+                <FooterLink
+                  to="https://github.com/RohrerF/factorygame/issues"
+                >
+                  Issues
+                </FooterLink>
+              </ul>,
+              "className": "pull-left",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <FooterLink
+                    to="https://github.com/RohrerF/factorygame"
+                  >
+                    Github
+                  </FooterLink>,
+                  <FooterLink
+                    to="https://github.com/RohrerF/factorygame/issues"
+                  >
+                    Issues
+                  </FooterLink>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Github",
+                    "to": "https://github.com/RohrerF/factorygame",
+                  },
+                  "ref": null,
+                  "rendered": "Github",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": "Issues",
+                    "to": "https://github.com/RohrerF/factorygame/issues",
+                  },
+                  "ref": null,
+                  "rendered": "Issues",
+                  "type": [Function],
+                },
+              ],
+              "type": "ul",
+            },
+            "type": "nav",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "© ",
+                2018,
+                " ",
+                <a
+                  href="https://rohrerf.github.io"
+                >
+                  RohrerF
+                </a>,
+              ],
+              "className": "copyright pull-right",
+            },
+            "ref": null,
+            "rendered": Array [
+              "© ",
+              2018,
+              " ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "RohrerF",
+                  "href": "https://rohrerf.github.io",
+                },
+                "ref": null,
+                "rendered": "RohrerF",
+                "type": "a",
+              },
+            ],
+            "type": "p",
+          },
+        ],
+        "type": [Function],
+      },
+      "type": "footer",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
