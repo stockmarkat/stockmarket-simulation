@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Navbar } from 'react-bootstrap';
 import { HeaderLinks } from './HeaderLinks';
-import appRoutes from '../../routes';
+import appRoutes from '../../routes/routes';
 
 interface HeaderProps {
 }

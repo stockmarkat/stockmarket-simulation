@@ -7,6 +7,7 @@ configure( { adapter: new ReactSixteenAdapter() } );
 
 describe( 'AddButton', () => {
     it( 'should not explode', () => {
+        // tslint:disable:no-empty
         const buttonClicked = jest.fn( () => { } );
         const component = shallow( <AddButton onClick={buttonClicked}/> );
         expect( component ).not.toBeNull();

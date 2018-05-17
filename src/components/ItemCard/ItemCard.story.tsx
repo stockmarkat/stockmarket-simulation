@@ -19,9 +19,11 @@ stories.add( 'ItemCard customise', () => (
                         sellPrice={number( 'sellPrice', 1 )}
                         itemQuantity={number( 'itemQuantity', 0 )}
                         onRemoveItem={() => {
+                            // tslint:disable:no-console
                             console.log( 'onRemoveItem' );
                         }}
                         onAddItem={() => {
+                            // tslint:disable:no-console
                             console.log( 'onAddItem' );
                         }}
                     />

@@ -7,11 +7,13 @@ configure( { adapter: new ReactSixteenAdapter() } );
 
 describe( 'RemoveButton', () => {
     it( 'should not explode', () => {
+        // tslint:disable:no-empty
         const buttonClicked = jest.fn( () => { } );
         const component = shallow( <RemoveButton onClick={buttonClicked}/> );
         expect( component ).not.toBeNull();
     } );
     it( 'should call on clicked', () => {
+        // tslint:disable:no-empty
         const buttonClicked = jest.fn( () => { } );
         const component = shallow( <RemoveButton onClick={buttonClicked}/> );
         expect( component ).not.toBeNull();

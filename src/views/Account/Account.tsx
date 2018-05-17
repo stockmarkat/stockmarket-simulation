@@ -50,10 +50,7 @@ class Account extends React.Component<AccountProps, AccountState> {
 }
 
 const mapStateToProps = ( state: AppState ) => ({
-        fortune: state.account.fortune,
-        totalIncome: state.account.totalIncome,
-        totalExpenses: state.account.totalExpenses,
-        inventoryValue: state.inventory.value
+
     })
 ;
 

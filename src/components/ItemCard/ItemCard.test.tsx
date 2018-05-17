@@ -14,7 +14,9 @@ describe( '<ItemCard />', () => {
                 itemQuantity={5}
                 buyPrice={5.2}
                 sellPrice={4.3}
+                // tslint:disable-next-line:no-empty
                 onAddItem={() => {}}
+                // tslint:disable-next-line:no-empty
                 onRemoveItem={() => {}}
             />
         );
@@ -27,7 +29,9 @@ describe( '<ItemCard />', () => {
                 itemName={'ItemName'}
                 itemIcon={'icon'}
                 itemQuantity={5}
+                // tslint:disable-next-line:no-empty
                 onAddItem={() => {}}
+                // tslint:disable-next-line:no-empty
                 onRemoveItem={() => {}}
             />
         );
@@ -40,7 +44,9 @@ describe( '<ItemCard />', () => {
                 itemName={'ItemName'}
                 itemIcon={'icon'}
                 itemQuantity={0}
+                // tslint:disable-next-line:no-empty
                 onAddItem={() => {}}
+                // tslint:disable-next-line:no-empty
                 onRemoveItem={() => {}}
             />
         );

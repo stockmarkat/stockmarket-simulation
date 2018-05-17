@@ -3,7 +3,7 @@ import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
 import { Sidebar } from '../../components/Sidebar/Sidebar';
 import { Route, Switch } from 'react-router-dom';
-import appRoutes from '../../routes';
+import appRoutes from '../../routes/routes';
 import { connect } from 'react-redux';
 import { NotificationSystemFrame } from '../../components/NotificationSystem';
 import { loadState } from '../../state/initialLoad/initialLoadActions';

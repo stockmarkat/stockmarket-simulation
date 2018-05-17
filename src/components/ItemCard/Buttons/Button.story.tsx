@@ -10,6 +10,7 @@ stories.addDecorator( withKnobs );
 stories.add( 'Add Button', () => (
     <AddButton
         onClick={() => {
+            // tslint:disable:no-console
             console.log( 'AddButton clicked' );
         }}
     />
@@ -17,6 +18,7 @@ stories.add( 'Add Button', () => (
 stories.add( 'Remove Button', () => (
     <RemoveButton
         onClick={() => {
+            //  tslint:disable:no-console
             console.log( 'RemoveButton clicked' );
         }}
     />

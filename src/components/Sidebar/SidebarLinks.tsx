@@ -1,5 +1,5 @@
 import * as React from 'react';
-import appRoutes from '../../routes';
+import appRoutes from '../../routes/routes';
 import { NavLink } from 'react-router-dom';
 
 interface SidebarLinksProps {
