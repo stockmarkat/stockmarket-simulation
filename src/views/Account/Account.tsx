@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { FortuneCard } from './Cards/FortuneCard';
 import { Col, Grid, Row } from 'react-bootstrap';
 import { TotalIncomeCard } from './Cards/TotalIncomeCard';
 import { TotalExpensesCard } from './Cards/TotalExpensesCard';
 import { AppState } from '../../state/AppState';
 import { connect } from 'react-redux';
 import { InventoryValueCard } from './Cards/InventoryValueCard';
+import { BalanceTile } from '../../components/BalanceTile/BalanceTile';
 
 interface AccountProps {
     fortune: number;
@@ -30,7 +30,11 @@ class Account extends React.Component<AccountProps, AccountState> {
                 <Grid fluid={true}>
                     <Row>
                         <Col lg={4} sm={6}>
-                            <FortuneCard value={fortune}/>
+                            <BalanceTile
+                                value={fortune}
+                                title={'Kontostand'}
+                                icon={<i className="pe-7s-piggy text-success"/>}
+                            />
                         </Col>
                         <Col lg={4} sm={6}>
                             <TotalIncomeCard value={totalIncome}/>
