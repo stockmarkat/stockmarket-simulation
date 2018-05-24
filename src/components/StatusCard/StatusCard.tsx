@@ -5,9 +5,9 @@ interface StatusCardProps {
     icon: JSX.Element;
     title: string;
     value: string | JSX.Element;
-    statusIcon: JSX.Element;
-    statusText: string;
-
+    statusIcon?: JSX.Element;
+    statusText?: string;
+    noFooter?: boolean;
 }
 
 interface StatusCardState {
@@ -36,12 +36,14 @@ export class StatusCard extends React.Component<StatusCardProps, StatusCardState
                             </div>
                         </Col>
                     </Row>
-                    <div className="footer">
-                        <hr/>
-                        <div className="stats">
-                            {this.props.statusIcon}{this.props.statusText}
+                    { !this.props.noFooter &&
+                        <div className="footer">
+                            <hr/>
+                            <div className="stats">
+                                {this.props.statusIcon}{this.props.statusText}
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         );
