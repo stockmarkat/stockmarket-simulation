@@ -17,7 +17,8 @@ describe('stockMarketReducer', () => {
                     valueHistory: [],
                     valueChange: 5,
                     value: 100,
-                    type: 'Energy'
+                    type: 'Energy',
+                    volatility: 5
                 }
             ]
         };
@@ -40,7 +41,8 @@ describe('stockMarketReducer', () => {
                     valueHistory: [],
                     valueChange: 5,
                     value: 100,
-                    type: 'Energy'
+                    type: 'Energy',
+                    volatility: 5
                 }
             ]
         };
