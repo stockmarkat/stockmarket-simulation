@@ -16,7 +16,7 @@ export class Dashboard extends React.Component<DashboardProps, DashboardState> {
     render() {
         return (
             <div className="content">
-                <Card  />
+                Dashboard
             </div>
         );
     }
