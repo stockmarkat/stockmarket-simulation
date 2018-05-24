@@ -24,8 +24,9 @@ export interface Goodie {
 export interface Stock {
     name: string;
     value: number;
+    volatility: number;
     valueChange: number; // for the last x Hours/days in %
-    type: 'FireArms' | 'Energy' | 'Finance' | 'RawMaterials';
+    type: 'FireArms' | 'Energy' | 'Finance' | 'RawMaterials' | 'Technology';
     valueHistory: FinancialSnapshot[];
     quantity: number; // count of owned stocks
 }
