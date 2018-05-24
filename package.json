@@ -51,7 +51,7 @@
     "@types/react-bootstrap": "^0.32.6",
     "@types/react-dom": "^16.0.3",
     "@types/react-notification-system": "^0.2.37",
-    "@types/react-redux": "^5.0.16",
+    "@types/react-redux": "^6.0.0",
     "@types/react-router-dom": "^4.2.6",
     "@types/storybook__addon-actions": "^3.0.3",
     "@types/storybook__addon-knobs": "^3.3.1",
