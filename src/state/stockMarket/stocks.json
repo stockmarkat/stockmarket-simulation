@@ -1,7 +1,102 @@
 [
   {
     "name": "UBS AG",
-    "value": 12.50,
+    "value": 327.44,
+    "type": "Finance"
+  },
+  {
+    "name": "CREDIT SUISSE AG",
+    "value": 178.32,
+    "type": "Finance"
+  },
+  {
+    "name": "Alphabet",
+    "value": 751.07,
+    "type": "Technology"
+  },
+  {
+    "name": "VISA Card Services AG",
+    "value": 2736.23,
+    "type": "Finance"
+  },
+  {
+    "name": "Apple",
+    "value": 430.20,
+    "type": "Technology"
+  },
+  {
+    "name": "SAMSUNG",
+    "value": 497.06,
+    "type": "Technology"
+  },
+  {
+    "name": "Holcim AG",
+    "value": 898.98,
+    "type": "RawMaterials"
+  },
+  {
+    "name": "TESLA",
+    "value": 555.69,
+    "type": "Technology"
+  },
+  {
+    "name": "MurphyOIL",
+    "value": 1806.07,
+    "type": "RawMaterials"
+  },
+  {
+    "name": "EWZ",
+    "value": 88.76,
+    "type": "Energy"
+  },
+  {
+    "name": "SHELL",
+    "value": 46.32,
+    "type": "RawMaterials"
+  },
+  {
+    "name": "TroubleShooter HOLDING",
+    "value": 4.50,
+    "type": "FireArms"
+  },
+  {
+    "name": "AT&T",
+    "value": 658.01,
+    "type": "Technology"
+  },
+  {
+    "name": "Spotify",
+    "value": 2490.93,
+    "type": "Technology"
+  },
+  {
+    "name": "KKKiosk",
+    "value": 413.25,
+    "type": "FireArms"
+  },
+  {
+    "name": "Axpo",
+    "value": 115.2,
+    "type": "Energy"
+  },
+  {
+    "name": "Mike Shiva",
+    "value": 333.333,
+    "type": "Energy"
+  },
+  {
+    "name": "DRE-K",
+    "value": 124.32,
+    "type": "RawMaterials"
+  },
+  {
+    "name": "FuchsGroup AG",
+    "value": 0.93,
+    "type": "Technology"
+  },
+  {
+    "name": "MasterCard",
+    "value": 2001.00,
     "type": "Finance"
   }
 ]
