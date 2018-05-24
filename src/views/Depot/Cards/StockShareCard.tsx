@@ -10,7 +10,7 @@ interface StockShareCardProps {
 interface StockShareCardState {
 }
 
-export class StockShareCard extends React.Component<StockShareCardProps, StockShareCardState> {
+export default class StockShareCard extends React.Component<StockShareCardProps, StockShareCardState> {
 
     constructor( props: StockShareCardProps ) {
         super( props );
@@ -32,7 +32,7 @@ export class StockShareCard extends React.Component<StockShareCardProps, StockSh
         return (
             <div className="content">
                 <Card title={'Share of Stocks'} noFooter={true}>
-                    <PieChart width={200} height={150}>
+                    <PieChart width={300} height={130}>
                         <Legend
                             iconSize={10}
                             align={'right'}
