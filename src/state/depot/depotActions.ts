@@ -24,7 +24,7 @@ export const setAccountValue = (value: number): SetValueAction => ({
     value
 });
 
-export const increaseStockValue = (changeAmount: number): SetValueAction => ({
+export const changeStockValue = (changeAmount: number): SetValueAction => ({
     type: CHANGE_STOCK_VALUE,
     value: changeAmount
 });
@@ -36,7 +36,7 @@ export const setStockValue = (value: number): SetValueAction => ({
 
 export interface SetCategoryValueAction {
     type: string;
-    values: StockCategoryValue[]
+    values: StockCategoryValue[];
 }
 
 export const setCategoryValues = (values: StockCategoryValue[]): SetCategoryValueAction => ({
@@ -46,7 +46,7 @@ export const setCategoryValues = (values: StockCategoryValue[]): SetCategoryValu
 
 export interface SetFinancialSnapshotValuesAction {
     type: string;
-    values: FinancialSnapshot[]
+    values: FinancialSnapshot[];
 }
 
 export const setStockValueDevelopment = (values: FinancialSnapshot[]): SetFinancialSnapshotValuesAction => ({
