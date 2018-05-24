@@ -12,6 +12,7 @@ export interface AppRoute {
 }
 
 const appRoutes: AppRoute[] = [
+    { path: '/', name: 'Dashboard', redirect: true, to: '/dashboard'},
     { path: '/dashboard', name: 'Dashboard', icon: 'pe-7s-graph', component: Dashboard },
 ];
 
