@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Card } from '../../components/Card/Card';
 
 interface DashboardProps {
 }
@@ -15,7 +16,7 @@ export class Dashboard extends React.Component<DashboardProps, DashboardState> {
     render() {
         return (
             <div className="content">
-                Dashboard
+                <Card  />
             </div>
         );
     }
