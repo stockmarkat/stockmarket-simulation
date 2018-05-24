@@ -1,5 +1,5 @@
 import { StockMarketState } from '../AppState';
-import { buyOrSellStocks, StockPurchaseOperation } from './stockMarketActions';
+import { changeStockQuantity } from './stockMarketActions';
 import stockMarketReducer from './stockMarketReducer';
 
 describe('stockMarketReducer', () => {
@@ -23,12 +23,7 @@ describe('stockMarketReducer', () => {
             ]
         };
 
-        const operation: StockPurchaseOperation = {
-            amount: 5,
-            stockName: 'teststock'
-
-        };
-        let state = stockMarketReducer(initState, buyOrSellStocks([operation]));
+        let state = stockMarketReducer(initState, changeStockQuantity('teststock', 5));
         expect(state.stocks[0].quantity).toEqual(5);
     });
 
@@ -47,12 +42,7 @@ describe('stockMarketReducer', () => {
             ]
         };
 
-        const operation: StockPurchaseOperation = {
-            amount: -2,
-            stockName: 'teststock'
-
-        };
-        let state = stockMarketReducer(initState, buyOrSellStocks([operation]));
+        let state = stockMarketReducer(initState, changeStockQuantity('teststock', -2));
         expect(state.stocks[0].quantity).toEqual(3);
     });
 });

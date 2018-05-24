@@ -1,5 +1,5 @@
 import { cloneState, GenericAction, StockMarketState } from '../AppState';
-import { ADD_STOCKS, AddStocksAction, BUY_OR_SELL_STOCKS, BuyOrSellStocksAction } from './stockMarketActions';
+import { ADD_STOCKS, AddStocksAction, CHANGE_STOCK_QUANTITY, ChangeStockQuantityAction } from './stockMarketActions';
 
 const initialState: StockMarketState = {
     stocks: [],
@@ -16,14 +16,15 @@ const stockMarketReducer = (state = initialState, action: GenericAction) => {
             };
         }
 
-        case BUY_OR_SELL_STOCKS: {
+        case CHANGE_STOCK_QUANTITY: {
             const clone = cloneState(state);
-            const operations = (action as BuyOrSellStocksAction).operations;
+            
+            const name = (action as ChangeStockQuantityAction).name;
+            const amount = (action as ChangeStockQuantityAction).amount;
 
-            operations.forEach(o => {
-                const index = clone.stocks.findIndex(s => s.name === o.stockName);
-                clone.stocks[index].quantity += o.amount;
-            });
+            const index = clone.stocks.findIndex(s => s.name === name);
+            clone.stocks[index].quantity += amount;
+
             return clone;
         }
 
