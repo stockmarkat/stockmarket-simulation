@@ -21,31 +21,7 @@ export class Depot extends React.Component<DepotProps, DepotState> {
     }
 
     render() {
-        // const {stockCategoryValues} = this.props;
-
-        // TODO use value from props. This is test data.
-        const data = [
-            {
-                ratio: 1,
-                categoryName: 'Weapons'
-            },
-            {
-                ratio: 3,
-                categoryName: 'Finance'
-            },
-            {
-                ratio: 3,
-                categoryName: 'Hello'
-            },
-            {
-                ratio: 3,
-                categoryName: 'Juu'
-            },
-            {
-                ratio: 3,
-                categoryName: 'Ju2u'
-            },
-        ];
+        const {stockCategoryValues} = this.props;
 
         return (
             <div className="content">
@@ -58,7 +34,7 @@ export class Depot extends React.Component<DepotProps, DepotState> {
                             <StockBalanceCard value={50900}/>
                         </Col>
                         <Col lg={4} sm={6}>
-                            <StockShareCard stockCategoryValues={data}/>
+                            <StockShareCard stockCategoryValues={stockCategoryValues}/>
                         </Col>
                     </Row>
                 </Grid>
