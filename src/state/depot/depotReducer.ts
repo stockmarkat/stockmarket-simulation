@@ -18,7 +18,7 @@ const initialState: DepotState = {
     stockCategoryValues: []
 };
 
-const depotReducer = ( state = initialState, action: GenericAction ) => {
+const depotReducer = (state = initialState, action: GenericAction) => {
     switch (action.type) {
 
         case SET_ACCOUNT_VALUE: {
