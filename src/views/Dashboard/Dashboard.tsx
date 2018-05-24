@@ -8,7 +8,7 @@ interface DashboardProps {
 interface DashboardState {
 }
 
-export class Dashboard extends React.Component<DashboardProps, DashboardState> {
+class Dashboard extends React.Component<DashboardProps, DashboardState> {
 
     constructor(props: DashboardProps) {
         super(props);
@@ -33,3 +33,5 @@ export class Dashboard extends React.Component<DashboardProps, DashboardState> {
         );
     }
 }
+
+export default Dashboard;
