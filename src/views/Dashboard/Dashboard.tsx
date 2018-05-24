@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Cell, Legend, Pie, PieChart } from 'recharts';
 import { AppState, FinancialSnapshot, StockCategoryValue } from '../../state/AppState';
 import { connect } from 'react-redux';
+import { StockShareCard } from './Cards/StockShareCard';
 
 interface DashboardProps {
     accountValue: number;
@@ -22,6 +22,7 @@ export class Dashboard extends React.Component<DashboardProps, DashboardState> {
     render() {
         // const {stockCategoryValues} = this.props;
 
+        // TODO use value from props. This is test data.
         const data = [
             {
                 ratio: 1,
@@ -45,32 +46,9 @@ export class Dashboard extends React.Component<DashboardProps, DashboardState> {
             },
         ];
 
-        const pieData = data.map( ( value ) => {
-            return {
-                name: value.categoryName,
-                value: value.ratio
-            };
-        } ); // TODO make own component
-        const colors = ['#2632c1',
-            '#87CB16', '#943bea', '#FF9500', '#EE2D20'];
-
         return (
             <div className="content">
-                <PieChart width={400} height={400}>
-                    <Legend height={30} verticalAlign={'top'}/>
-                    <Pie
-                        data={pieData}
-                        label={false}
-                        dataKey="value"
-                        legendType="square"
-                    >
-                        {
-                            data.map( ( entry, index ) => (
-                                <Cell key={`cell-${index}`} fill={colors[index]}/>
-                            ) )
-                        }
-                    </Pie>
-                </PieChart>
+                <StockShareCard stockCategoryValues={data}/>
             </div>
         );
     }
