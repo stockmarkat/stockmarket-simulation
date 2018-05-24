@@ -14,7 +14,7 @@ export class PriceTag extends React.PureComponent<PriceTagProps, PriceTagState> 
 
     render() {
         const value = this.props.value;
-        if ( !value ) {
+        if ( value === null || value === undefined ) {
             return '$ -';
         }
         const valueAsString = value.toFixed( 2 ).toString();

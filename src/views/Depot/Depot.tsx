@@ -14,7 +14,7 @@ interface DepotProps {
 interface DepotState {
 }
 
-export class Depot extends React.Component<DepotProps, DepotState> {
+class Depot extends React.Component<DepotProps, DepotState> {
 
     constructor( props: DepotProps ) {
         super( props );
@@ -28,14 +28,16 @@ export class Depot extends React.Component<DepotProps, DepotState> {
                 <Grid fluid={true}>
                     <Row>
                         <Col lg={4} sm={6}>
-                            <BalanceCard value={123348}/>
+                            <BalanceCard value={this.props.accountValue}/>
                         </Col>
                         <Col lg={4} sm={6}>
                             <StockBalanceCard value={50900}/>
                         </Col>
-                        <Col lg={4} sm={6}>
-                            <StockShareCard stockCategoryValues={stockCategoryValues}/>
-                        </Col>
+                        {stockCategoryValues.length > 0 &&
+                            <Col lg={4} sm={6}>
+                                <StockShareCard stockCategoryValues={stockCategoryValues}/>
+                            </Col>
+                        }
                     </Row>
                 </Grid>
             </div>

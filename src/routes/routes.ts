@@ -1,4 +1,4 @@
-import { Depot } from '../views/Depot/Depot';
+import Depot from '../views/Depot';
 
 export interface AppRoute {
     path: string;
