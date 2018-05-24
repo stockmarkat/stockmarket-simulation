@@ -17,21 +17,10 @@ export class Footer extends React.Component<FooterProps, FooterState> {
     getFooterLinks() {
         return (
             <ul>
-                <FooterLink to="https://github.com/RohrerF/factorygame">
+                <FooterLink to="https://github.com/stockmarkat/stockmarket-simulation">
                     Github
                 </FooterLink>
-                <FooterLink to="https://github.com/RohrerF/factorygame/issues">
-                    Issues
-                </FooterLink>
             </ul>
-        );
-    }
-
-    getCopyRight() {
-        return (
-            <p className="copyright pull-right">
-                &copy; {(new Date()).getFullYear()} <a href="https://rohrerf.github.io">RohrerF</a>
-            </p>
         );
     }
 
@@ -42,7 +31,6 @@ export class Footer extends React.Component<FooterProps, FooterState> {
                     <nav className="pull-left">
                         {this.getFooterLinks()}
                     </nav>
-                    {this.getCopyRight()}
                 </Grid>
             </footer>
         );

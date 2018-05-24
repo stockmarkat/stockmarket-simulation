@@ -1,5 +1,5 @@
-import Dashboard from '../views/Dashboard/index';
 import Account from '../views/Account/Account';
+import { Depot } from '../views/Depot/Depot';
 
 export interface AppRoute {
     path: string;
@@ -13,7 +13,7 @@ export interface AppRoute {
 }
 
 const appRoutes: AppRoute[] = [
-    {path: '/dashboard', name: 'Dashboard', icon: 'pe-7s-graph', component: Dashboard},
+    {path: '/depot', name: 'Depot', icon: 'pe-7s-graph', component: Depot},
     {path: '/account', name: 'Account', icon: 'pe-7s-info', component: Account},
 ];
 
