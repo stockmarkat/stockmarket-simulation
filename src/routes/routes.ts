@@ -13,6 +13,7 @@ export interface AppRoute {
 
 const appRoutes: AppRoute[] = [
     { path: '/depot', name: 'Depot', icon: 'pe-7s-graph', component: Depot },
+    { path: '/', name: 'Depot', redirect: true, to: '/depot'},
 ];
 
 export default appRoutes;
