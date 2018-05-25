@@ -186,6 +186,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
+
                   "children": "Stockmarket Simulation",
                   "href": "#",
                 },
