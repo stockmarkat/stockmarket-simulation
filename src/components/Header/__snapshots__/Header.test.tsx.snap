@@ -24,7 +24,7 @@ ShallowWrapper {
             <a
               href="#"
             >
-              Dashboard
+              Depot
             </a>
           </NavbarBrand>
           <NavbarToggle
@@ -49,7 +49,7 @@ ShallowWrapper {
               <a
                 href="#"
               >
-                Dashboard
+                Depot
               </a>
             </NavbarBrand>,
             <NavbarToggle
@@ -67,7 +67,7 @@ ShallowWrapper {
               "children": <a
                 href="#"
               >
-                Dashboard
+                Depot
               </a>,
             },
             "ref": null,
@@ -76,11 +76,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Dashboard",
+                "children": "Depot",
                 "href": "#",
               },
               "ref": null,
-              "rendered": "Dashboard",
+              "rendered": "Depot",
               "type": "a",
             },
             "type": [Function],
@@ -134,7 +134,7 @@ ShallowWrapper {
               <a
                 href="#"
               >
-                Dashboard
+                Depot
               </a>
             </NavbarBrand>
             <NavbarToggle
@@ -159,7 +159,7 @@ ShallowWrapper {
                 <a
                   href="#"
                 >
-                  Dashboard
+                  Depot
                 </a>
               </NavbarBrand>,
               <NavbarToggle
@@ -177,7 +177,7 @@ ShallowWrapper {
                 "children": <a
                   href="#"
                 >
-                  Dashboard
+                  Depot
                 </a>,
               },
               "ref": null,
@@ -186,11 +186,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "Dashboard",
+                  "children": "Depot",
                   "href": "#",
                 },
                 "ref": null,
-                "rendered": "Dashboard",
+                "rendered": "Depot",
                 "type": "a",
               },
               "type": [Function],
