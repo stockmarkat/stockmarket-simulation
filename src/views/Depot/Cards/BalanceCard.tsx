@@ -9,7 +9,7 @@ interface BalanceTileProps {
 interface BalanceTileState {
 }
 
-class BalanceTile extends React.Component<BalanceTileProps, BalanceTileState> {
+class BalanceCard extends React.Component<BalanceTileProps, BalanceTileState> {
 
     constructor( props: BalanceTileProps ) {
         super( props );
@@ -26,4 +26,4 @@ class BalanceTile extends React.Component<BalanceTileProps, BalanceTileState> {
         );
     }
 }
-export default BalanceTile;
+export default BalanceCard;

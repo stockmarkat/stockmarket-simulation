@@ -9,7 +9,7 @@ interface StockBalanceTileProps {
 interface StockBalanceTileState {
 }
 
-class StockBalanceTile extends React.Component<StockBalanceTileProps, StockBalanceTileState> {
+class StockBalanceCard extends React.Component<StockBalanceTileProps, StockBalanceTileState> {
 
     constructor( props: StockBalanceTileProps ) {
         super( props );
@@ -26,4 +26,4 @@ class StockBalanceTile extends React.Component<StockBalanceTileProps, StockBalan
         );
     }
 }
-export default StockBalanceTile;
+export default StockBalanceCard;
