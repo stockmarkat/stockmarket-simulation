@@ -24,7 +24,7 @@ ShallowWrapper {
             <a
               href="#"
             >
-              FactoryGame
+              Depot
             </a>
           </NavbarBrand>
           <NavbarToggle
@@ -49,7 +49,7 @@ ShallowWrapper {
               <a
                 href="#"
               >
-                FactoryGame
+                Depot
               </a>
             </NavbarBrand>,
             <NavbarToggle
@@ -67,7 +67,7 @@ ShallowWrapper {
               "children": <a
                 href="#"
               >
-                FactoryGame
+                Depot
               </a>,
             },
             "ref": null,
@@ -76,11 +76,11 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "FactoryGame",
+                "children": "Depot",
                 "href": "#",
               },
               "ref": null,
-              "rendered": "FactoryGame",
+              "rendered": "Depot",
               "type": "a",
             },
             "type": [Function],
@@ -134,7 +134,7 @@ ShallowWrapper {
               <a
                 href="#"
               >
-                FactoryGame
+                Depot
               </a>
             </NavbarBrand>
             <NavbarToggle
@@ -159,7 +159,7 @@ ShallowWrapper {
                 <a
                   href="#"
                 >
-                  FactoryGame
+                  Depot
                 </a>
               </NavbarBrand>,
               <NavbarToggle
@@ -177,7 +177,7 @@ ShallowWrapper {
                 "children": <a
                   href="#"
                 >
-                  FactoryGame
+                  Depot
                 </a>,
               },
               "ref": null,
@@ -186,11 +186,11 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "FactoryGame",
+                  "children": "Depot",
                   "href": "#",
                 },
                 "ref": null,
-                "rendered": "FactoryGame",
+                "rendered": "Depot",
                 "type": "a",
               },
               "type": [Function],
