@@ -3,29 +3,40 @@ import { AppState, Stock } from '../../state/AppState';
 import { connect } from 'react-redux';
 import { Col, Grid, Row } from 'react-bootstrap';
 import StockCard from './Cards/StockCard';
+import { buyOrSellStock } from '../../state/stockMarket/stockMarketActions';
 
 interface MarketProps {
     stocks: Stock[];
+    buy: (stock: string, amount: number) => void;
+    sell: (stock: string, amount: number) => void;
 }
 
 interface MarketState {
 }
 
-class Depot extends React.Component<MarketProps, MarketState> {
+class Market extends React.Component<MarketProps, MarketState> {
 
     constructor( props: MarketProps ) {
         super( props );
     }
 
     render() {
-        const {stocks} = this.props;
+        const {stocks, buy, sell} = this.props;
 
         return (
             <div className="content">
                 <Grid fluid={true}>
                     <Row>
                         <Col sm={6}>
-                            <StockCard stock={stocks[0]} />
+                            <StockCard
+                                stock={stocks[0]}
+                                onBuy={() => {
+                                buy(stocks[0].name, 1);
+                                }}
+                                onSell={() => {
+                                    sell(stocks[0].name, 1);
+                                }}
+                            />
                         </Col>
                     </Row>
                 </Grid>
@@ -39,6 +50,11 @@ const mapStateToProps = ( state: AppState ) => ({
 });
 
 // tslint:disable-next-line: no-any
-const mapDispatchToProps = ( dispatch: any ) => ({});
+const mapDispatchToProps = ( dispatch: any ) => ({
+    buy: ( stock: string, amount: number ) =>
+        dispatch( buyOrSellStock( stock, amount ) ),
+    sell: ( stock: string, amount: number ) =>
+        dispatch( buyOrSellStock( stock, -amount ) ),
+});
 
-export default connect( mapStateToProps, mapDispatchToProps )( Depot );
+export default connect( mapStateToProps, mapDispatchToProps )( Market );
