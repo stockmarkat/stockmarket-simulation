@@ -81,6 +81,17 @@ function* buyOrSellStocks(action: BuyOrSellStockAction) {
         return;
     }
 
+    // check if you can sell/buy amount of stocks
+    if (actionStock.quantity + action.amount <= 0) {
+        addNotification({
+            level: 'error',
+            message: 'Cant sell stock you dont own'
+        });
+        return;
+    }
+
+    // if it's get to here everything is valid
+
     // Buy Stocks
     // update stocks in Store
     yield put(changeStockQuantity(action.stockName, action.amount));
