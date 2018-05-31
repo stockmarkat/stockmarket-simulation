@@ -1,8 +1,8 @@
 import * as moment from 'moment';
-import { put, select, takeEvery } from 'redux-saga/effects';
+import { put, select, takeEvery, } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
-import { Stock } from '../AppState';
-import { changeAccountValue, changeStockValue } from '../depot/depotActions';
+import { Stock, StockCategoryValue } from '../AppState';
+import { changeAccountValue, changeTotalStockValue, setCategoryValues } from '../depot/depotActions';
 import { getAccountValue } from '../depot/depotSelector';
 import {
     addStocks,
@@ -96,7 +96,23 @@ function* buyOrSellStocks(action: BuyOrSellStockAction) {
     // update stocks in Store
     yield put(changeStockQuantity(action.stockName, action.amount));
     yield put(changeAccountValue(-totalStockBuyValue));
-    yield put(changeStockValue(totalStockBuyValue));
+    yield put(changeTotalStockValue(totalStockBuyValue));
+    yield recalculateStockCategoryValues(stocks);
+}
+
+function* recalculateStockCategoryValues(stocks: Stock[]) {
+    let categoryValues: StockCategoryValue[] = [];
+
+    stocks.forEach(s => {
+        let catIndex = categoryValues.findIndex(v => v.categoryName === s.type);
+        if (catIndex === -1) {
+            categoryValues.push({ categoryName: s.type, ratio: s.quantity });
+        } else {
+            categoryValues[catIndex].ratio += s.quantity;
+        }
+    });
+
+    yield put(setCategoryValues(categoryValues));
 }
 
 function* stockMarketSaga() {

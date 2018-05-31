@@ -1,7 +1,7 @@
 import { FinancialSnapshot, StockCategoryValue } from '../AppState';
 import {
     changeAccountValue,
-    changeStockValue,
+    changeTotalStockValue,
     setAccountValue,
     setCategoryValues,
     setStockValue,
@@ -101,7 +101,7 @@ describe('depotReducer', () => {
             expect(state).not.toBeNull();
             expect(state.stockValue).toBe(5);
 
-            state = depotReducer(state, changeStockValue(5));
+            state = depotReducer(state, changeTotalStockValue(5));
             expect(state).not.toBeNull();
             expect(state.stockValue).toBe(10);
         });
@@ -111,7 +111,7 @@ describe('depotReducer', () => {
             expect(state).not.toBeNull();
             expect(state.stockValue).toBe(5);
 
-            state = depotReducer(state, changeStockValue(-2));
+            state = depotReducer(state, changeTotalStockValue(-2));
             expect(state).not.toBeNull();
             expect(state.stockValue).toBe(3);
         });
