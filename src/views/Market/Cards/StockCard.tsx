@@ -32,7 +32,6 @@ export default class StockCard extends React.Component<StockCardProps, StockCard
             };
         } );
 
-        // TODO: COLOR
         // TODO: left side
 
         return (
@@ -50,14 +49,14 @@ export default class StockCard extends React.Component<StockCardProps, StockCard
                                 <AreaChart data={data}>
                                     <defs>
                                         <linearGradient id="colorStock" x1="0" y1="0" x2="0" y2="1">
-                                            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.9}/>
-                                            <stop offset="95%" stopColor="#8884d8" stopOpacity={0.2}/>
+                                            <stop offset="5%" stopColor="#3472F7" stopOpacity={0.9}/>
+                                            <stop offset="95%" stopColor="#3472F7" stopOpacity={0.2}/>
                                         </linearGradient>
                                     </defs>
                                     <CartesianGrid strokeDasharray="3 3"/>
                                     <XAxis dataKey="date" interval={120} />
                                     <YAxis domain={['auto', 'auto']}/>
-                                    <Area dataKey="value" stroke="#8884d8" fill="url(#colorStock)"/>
+                                    <Area dataKey="value" stroke="#3472F7" fill="url(#colorStock)"/>
                                 </AreaChart>
                             </ResponsiveContainer>
 

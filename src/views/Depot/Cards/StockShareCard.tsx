@@ -27,7 +27,7 @@ export default class StockShareCard extends React.Component<StockShareCardProps,
             };
         } );
         // colors are taken from the variables.
-        const colors = ['#2632c1', '#87CB16', '#943bea', '#FF9500', '#EE2D20'];
+        const colors = ['#3472F7', '#87CB16', '#943bea', '#FF9500', '#EE2D20'];
 
         // TODO: check for responsive container!
         return (
