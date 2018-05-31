@@ -14,9 +14,10 @@ export const addStocks = (stocks: Stock[]): AddStocksAction => ({
     stocks
 });
 
-export const buyOrSellStocks = (operations: StockPurchaseOperation[]): BuyOrSellStocksAction => ({
+export const buyOrSellStock = (stockName: string, amount: number): BuyOrSellStockAction => ({
     type: BUY_OR_SELL_STOCKS,
-    operations
+    stockName,
+    amount
 });
 
 export const changeStockQuantity = (name: string, amount: number): ChangeStockQuantityAction => ({
@@ -41,7 +42,8 @@ export interface StockPurchaseOperation {
     amount: number; // make this negative if you want to sell a Stock
 }
 
-export interface BuyOrSellStocksAction {
+export interface BuyOrSellStockAction {
     type: string;
-    operations: StockPurchaseOperation[];
+    stockName: string;
+    amount: number;
 }
