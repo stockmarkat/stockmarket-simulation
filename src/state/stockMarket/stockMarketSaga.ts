@@ -26,7 +26,12 @@ function getNextValue(currentValue: number, volatility: number): number {
         changePercent -= (2 * volatility);
     }
     const changeAmount = currentValue * changePercent;
-    return currentValue + changeAmount;
+    const nextAmount = currentValue + changeAmount;
+
+    if (nextAmount <= 0) {
+        return getNextValue(currentValue, volatility);
+    }
+    return nextAmount;
 }
 
 function* loadinitialStocks() {
