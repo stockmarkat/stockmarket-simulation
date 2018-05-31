@@ -2,7 +2,7 @@
   {
     "name": "UBS AG",
     "value": 327.44,
-    "volatility": 2,
+    "volatility": 10,
     "type": "Finance"
   },
   {

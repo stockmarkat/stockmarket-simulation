@@ -19,6 +19,16 @@ function getRandomArbitrary(min: number, max: number) {
 
 const stockJson = require('./stocks.json');
 
+function getNextValue(currentValue: number, volatility: number): number {
+    const random = getRandomArbitrary(0, 1);
+    let changePercent = 2 * volatility * random;
+    if (changePercent > volatility) {
+        changePercent -= (2 * volatility);
+    }
+    const changeAmount = currentValue * changePercent;
+    return currentValue + changeAmount;
+}
+
 function* loadinitialStocks() {
     let stocks: Stock[] = stockJson;
 
@@ -26,20 +36,16 @@ function* loadinitialStocks() {
     stocks.forEach(stock => {
         stock.quantity = 0;
         stock.valueChange = getRandomArbitrary(-10, 10);
-        stock.valueHistory = [
-            {
-                date: moment().subtract(5, 'minutes').toDate(),
-                value: getRandomArbitrary(100, 300)
-            },
-            {
-                date: moment().subtract(3, 'minutes').toDate(),
-                value: getRandomArbitrary(100, 300)
-            },
-            {
-                date: moment().subtract(1, 'minutes').toDate(),
-                value: getRandomArbitrary(100, 300)
-            }
-        ];
+        stock.valueHistory = [];
+
+        for (let i = 720; i >= 0; i--) { // 720 = amount of 5 second blocks in the past
+            const nextValue = getNextValue(stock.value, stock.volatility / 100);
+            stock.valueHistory.push({
+                value: nextValue,
+                date: moment().subtract(i * 5, 'seconds').toDate(),
+            });
+            stock.value = nextValue;
+        }
     });
 
     yield put(addStocks(stocks));
