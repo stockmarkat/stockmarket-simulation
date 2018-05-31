@@ -15,12 +15,12 @@ export class SellButton extends React.Component<SellButtonProps, SellButtonState
 
     render() {
         return (
-            <i
+            <button
                 className="material-icons icon-button icon-button-remove"
                 onClick={() => this.props.onClick()}
             >
                 remove_circle_outline
-            </i>
+            </button>
         );
     }
 }

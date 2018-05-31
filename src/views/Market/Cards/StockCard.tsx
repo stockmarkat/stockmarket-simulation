@@ -32,7 +32,7 @@ export default class StockCard extends React.Component<StockCardProps, StockCard
             };
         } );
 
-        // TODO: left side
+        // TODO: left side (labels and all that + text field)
 
         return (
 

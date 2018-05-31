@@ -1872,7 +1872,8 @@ body > .navbar-collapse[data-color="purple"]:after {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  user-select: none; }
+  user-select: none;
+  border: none; }
 
 .icon-button-add {
   color: #049F0C; }
