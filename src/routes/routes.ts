@@ -1,5 +1,5 @@
 import Depot from '../views/Depot';
-import Market from '../views/Market/Market';
+import Market from '../views/Market';
 
 export interface AppRoute {
     path: string;
