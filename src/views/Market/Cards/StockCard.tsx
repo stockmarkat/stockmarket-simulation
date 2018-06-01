@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Area, AreaChart, XAxis, YAxis } from 'recharts';
 import { Card } from '../../../components/Card/Card';
 import { Stock } from '../../../state/AppState';
-import * as moment from 'moment';
 import { BuyButton } from './BuyButton';
 import { SellButton } from './SellButton';
+import { Grid, Row, Col } from 'react-bootstrap';
+import StockAreaChart from './StockAreaChart';
 
 interface StockCardProps {
     stock: Stock;
@@ -23,30 +23,25 @@ export default class StockCard extends React.Component<StockCardProps, StockCard
 
     render() {
         const {stock, onBuy, onSell} = this.props;
-        const data = stock.valueHistory.map(s => {
-           return {
-               name: stock.name,
-               value: s.value,
-               date: moment(s.date).format('hh:mm')
-           };
-        });
+
+        // TODO: left side (labels and all that + text field)
+        // TODO: improve performance
 
         return (
-            <div className="content">
-                <Card title={stock.name} noFooter={true}>
-                    <AreaChart width={300} height={130} data={data}>
-                        <linearGradient id="colorStock" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
-                            <stop offset="95%" stopColor="#8884d8" stopOpacity={0}/>
-                        </linearGradient>
-                        <XAxis dataKey="date" />
-                        <YAxis />
-                        <Area dataKey="value" stroke="#8884d8" fill="url(#colorStock)" />
-                    </AreaChart>
-                    <BuyButton onClick={onBuy} />
-                    <SellButton onClick={onSell} />
-                </Card>
-            </div>
+            <Card noHeader={true} noFooter={true} noBottomPadding={true}>
+                <Grid fluid={true}>
+                    <Row>
+                        <Col xs={4}>
+                            <h4 className="title">{stock.name}</h4>
+                            <BuyButton onClick={onBuy}/>
+                            <SellButton onClick={onSell}/>
+                        </Col>
+                        <Col xs={8}>
+                            <StockAreaChart valueHistory={stock.valueHistory}/>
+                        </Col>
+                    </Row>
+                </Grid>
+            </Card>
         );
     }
 }

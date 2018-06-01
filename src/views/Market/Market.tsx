@@ -27,17 +27,24 @@ class Market extends React.Component<MarketProps, MarketState> {
             <div className="content">
                 <Grid fluid={true}>
                     <Row>
-                        <Col sm={6}>
-                            <StockCard
-                                stock={stocks[0]}
-                                onBuy={() => {
-                                buy(stocks[0].name, 1);
-                                }}
-                                onSell={() => {
-                                    sell(stocks[0].name, 1);
-                                }}
-                            />
-                        </Col>
+                        {
+                            stocks.map(stock => {
+                            return (
+                                <Col key={stock.name} xs={12}>
+                                    <StockCard
+                                        stock={stock}
+                                        onBuy={() => {
+                                            buy(stock.name, 1);
+                                        }}
+                                        onSell={() => {
+                                            sell(stock.name, 1);
+                                        }}
+                                    />
+                                </Col>
+                            );
+                        })
+
+                        }
                     </Row>
                 </Grid>
             </div>

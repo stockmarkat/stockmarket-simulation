@@ -48,6 +48,9 @@
   &:hover .btn-hover {
     @include opacity(1);
   }
+  .content-no-footer {
+    padding: 15px 15px 0px 15px;
+  }
   .content {
     padding: 15px 15px 10px 15px;
   }
@@ -195,6 +198,7 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
+  border: none;
 }
 
 .icon-button-add {

@@ -15,13 +15,12 @@ export class SellButton extends React.Component<SellButtonProps, SellButtonState
 
     render() {
         return (
-            <i
-                className="material-icons icon-button icon-button-add"
+            <button
+                className="material-icons icon-button icon-button-remove"
                 onClick={() => this.props.onClick()}
             >
-                SELL
-            </i>
-
-        ); // add_circle_outline
+                remove_circle_outline
+            </button>
+        );
     }
 }
