@@ -58,7 +58,7 @@ function* loadinitialStocks() {
 
 function* buyOrSellStocks(action: BuyOrSellStockAction) {
     // search the stock to buy
-    const stocks: Stock[] = yield select(getStocks);
+    let stocks: Stock[] = yield select(getStocks);
     const actionStock: Stock | undefined = stocks.find(s => s.name === action.stockName);
 
     if (!actionStock) {
@@ -82,7 +82,7 @@ function* buyOrSellStocks(action: BuyOrSellStockAction) {
     }
 
     // check if you can sell/buy amount of stocks
-    if (actionStock.quantity + action.amount <= 0) {
+    if (actionStock.quantity + action.amount < 0) {
         addNotification({
             level: 'error',
             message: 'Cant sell stock you dont own'
@@ -97,6 +97,7 @@ function* buyOrSellStocks(action: BuyOrSellStockAction) {
     yield put(changeStockQuantity(action.stockName, action.amount));
     yield put(changeAccountValue(-totalStockBuyValue));
     yield put(changeTotalStockValue(totalStockBuyValue));
+    stocks = yield select(getStocks);
     yield recalculateStockCategoryValues(stocks);
 }
 
@@ -106,9 +107,9 @@ function* recalculateStockCategoryValues(stocks: Stock[]) {
     stocks.forEach(s => {
         let catIndex = categoryValues.findIndex(v => v.categoryName === s.type);
         if (catIndex === -1) {
-            categoryValues.push({ categoryName: s.type, ratio: s.quantity });
+            categoryValues.push({categoryName: s.type, ratio: s.quantity});
         } else {
-            categoryValues[catIndex].ratio += s.quantity;
+            categoryValues[ catIndex ].ratio += s.quantity;
         }
     });
 
