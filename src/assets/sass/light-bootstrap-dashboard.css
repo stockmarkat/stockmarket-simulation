@@ -1878,10 +1878,12 @@ body > .navbar-collapse[data-color="purple"]:after {
   border: none; }
 
 .icon-button-add {
-  color: #049F0C; }
+  color: #049F0C;
+  background-color: white; }
 
 .icon-button-remove {
-  color: #EE2D20; }
+  color: #EE2D20;
+  background-color: white; }
 
 .card-user .footer,
 .card-price .footer {
