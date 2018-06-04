@@ -8,6 +8,8 @@ import {
     addStocks,
     BUY_OR_SELL_STOCKS,
     BuyOrSellStockAction,
+    CALCULATE_NEXT_STOCK_VALUES,
+    calculateNextStockValues,
     changeStockQuantity,
     LOAD_STOCKS
 } from './stockMarketActions';
@@ -54,6 +56,7 @@ function* loadinitialStocks() {
     });
 
     yield put(addStocks(stocks));
+    yield put(calculateNextStockValues());
 }
 
 function* buyOrSellStocks(action: BuyOrSellStockAction) {
@@ -115,9 +118,18 @@ function* recalculateStockCategoryValues(stocks: Stock[]) {
     yield put(setCategoryValues(categoryValues));
 }
 
+function* calculateAllNextStockValues() {
+    const stocks: Stock[] = yield select(getStocks);
+
+    stocks.forEach(s => {
+        // TODO:
+    });
+}
+
 function* stockMarketSaga() {
     yield takeEvery(LOAD_STOCKS, loadinitialStocks);
     yield takeEvery(BUY_OR_SELL_STOCKS, buyOrSellStocks);
+    yield takeEvery(CALCULATE_NEXT_STOCK_VALUES, calculateAllNextStockValues);
 }
 
 export default stockMarketSaga;

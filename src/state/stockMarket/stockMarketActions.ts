@@ -1,12 +1,17 @@
-import { Stock } from '../AppState';
+import { GenericAction, Stock } from '../AppState';
 
 export const LOAD_STOCKS = 'stockMarketReducer/load-stocks';
 export const ADD_STOCKS = 'stockMarketReducer/add-stocks';
+export const CALCULATE_NEXT_STOCK_VALUES = 'stockMarketReducer/calculate-next-stock-values';
 export const BUY_OR_SELL_STOCKS = 'stockMarketReducer/buy-or-sell-stocks';
 export const CHANGE_STOCK_QUANTITY = 'stockMarketReducer/change-stock-quantity';
 
 export const loadStocks = () => ({
     type: LOAD_STOCKS
+});
+
+export const calculateNextStockValues = (): GenericAction => ({
+    type: CALCULATE_NEXT_STOCK_VALUES
 });
 
 export const addStocks = (stocks: Stock[]): AddStocksAction => ({
