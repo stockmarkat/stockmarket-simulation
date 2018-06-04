@@ -1,8 +1,8 @@
 import * as moment from 'moment';
-import { put, select, takeEvery } from 'redux-saga/effects';
+import { put, select, takeEvery, } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
-import { Stock } from '../AppState';
-import { changeAccountValue, changeStockValue } from '../depot/depotActions';
+import { Stock, StockCategoryValue } from '../AppState';
+import { changeAccountValue, changeTotalStockValue, setCategoryValues } from '../depot/depotActions';
 import { getAccountValue } from '../depot/depotSelector';
 import {
     addStocks,
@@ -26,7 +26,12 @@ function getNextValue(currentValue: number, volatility: number): number {
         changePercent -= (2 * volatility);
     }
     const changeAmount = currentValue * changePercent;
-    return currentValue + changeAmount;
+    const nextAmount = currentValue + changeAmount;
+
+    if (nextAmount <= 0) {
+        return getNextValue(currentValue, volatility);
+    }
+    return nextAmount;
 }
 
 function* loadinitialStocks() {
@@ -53,7 +58,7 @@ function* loadinitialStocks() {
 
 function* buyOrSellStocks(action: BuyOrSellStockAction) {
     // search the stock to buy
-    const stocks: Stock[] = yield select(getStocks);
+    let stocks: Stock[] = yield select(getStocks);
     const actionStock: Stock | undefined = stocks.find(s => s.name === action.stockName);
 
     if (!actionStock) {
@@ -76,11 +81,39 @@ function* buyOrSellStocks(action: BuyOrSellStockAction) {
         return;
     }
 
+    // check if you can sell/buy amount of stocks
+    if (actionStock.quantity + action.amount < 0) {
+        addNotification({
+            level: 'error',
+            message: 'Cant sell stock you dont own'
+        });
+        return;
+    }
+
+    // if it's get to here everything is valid
+
     // Buy Stocks
     // update stocks in Store
     yield put(changeStockQuantity(action.stockName, action.amount));
     yield put(changeAccountValue(-totalStockBuyValue));
-    yield put(changeStockValue(totalStockBuyValue));
+    yield put(changeTotalStockValue(totalStockBuyValue));
+    stocks = yield select(getStocks);
+    yield recalculateStockCategoryValues(stocks);
+}
+
+function* recalculateStockCategoryValues(stocks: Stock[]) {
+    let categoryValues: StockCategoryValue[] = [];
+
+    stocks.forEach(s => {
+        let catIndex = categoryValues.findIndex(v => v.categoryName === s.type);
+        if (catIndex === -1) {
+            categoryValues.push({categoryName: s.type, ratio: s.quantity});
+        } else {
+            categoryValues[ catIndex ].ratio += s.quantity;
+        }
+    });
+
+    yield put(setCategoryValues(categoryValues));
 }
 
 function* stockMarketSaga() {

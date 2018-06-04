@@ -24,7 +24,7 @@ export const setAccountValue = (value: number): SetValueAction => ({
     value
 });
 
-export const changeStockValue = (changeAmount: number): SetValueAction => ({
+export const changeTotalStockValue = (changeAmount: number): SetValueAction => ({
     type: CHANGE_STOCK_VALUE,
     value: changeAmount
 });
