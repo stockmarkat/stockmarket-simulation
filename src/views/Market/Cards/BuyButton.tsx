@@ -15,13 +15,12 @@ export class BuyButton extends React.Component<BuyButtonProps, BuyButtonState> {
 
     render() {
         return (
-            <i
+            <button
                 className="material-icons icon-button icon-button-add"
                 onClick={() => this.props.onClick()}
             >
-                BUY
-            </i>
-
-        ); // add_circle_outline
+                add_circle_outline
+            </button>
+        );
     }
 }
