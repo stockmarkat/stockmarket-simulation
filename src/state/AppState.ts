@@ -53,9 +53,7 @@ export interface StockCategoryValue {
 
 export interface DepotState {
     accountValue: number;
-    stockValue: number;
     stockValueDevelopment: FinancialSnapshot[];
-    stockCategoryValues: StockCategoryValue[];
 }
 
 export interface StockMarketState {

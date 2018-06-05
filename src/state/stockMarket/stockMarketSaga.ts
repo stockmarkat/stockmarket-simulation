@@ -1,8 +1,9 @@
 import * as moment from 'moment';
-import { put, select, takeEvery, } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
+import { put, select, takeEvery } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
-import { Stock, StockCategoryValue } from '../AppState';
-import { changeAccountValue, changeTotalStockValue, setCategoryValues } from '../depot/depotActions';
+import { cloneState, Stock } from '../AppState';
+import { changeAccountValue } from '../depot/depotActions';
 import { getAccountValue } from '../depot/depotSelector';
 import {
     addStocks,
@@ -11,7 +12,7 @@ import {
     CALCULATE_NEXT_STOCK_VALUES,
     calculateNextStockValues,
     changeStockQuantity,
-    LOAD_STOCKS
+    LOAD_STOCKS, updateStock
 } from './stockMarketActions';
 import { getStocks } from './stockSelector';
 
@@ -22,6 +23,7 @@ function getRandomArbitrary( min: number, max: number ) {
 const stockJson = require( './stocks.json' );
 
 function getNextValue( currentValue: number, volatility: number ): number {
+    volatility = volatility / 100;
     const random = getRandomArbitrary( 0, 1 );
     let changePercent = 2 * volatility * random;
     if ( changePercent > volatility ) {
@@ -46,7 +48,7 @@ function* loadinitialStocks() {
         stock.valueHistory = [];
 
         for ( let i = 720; i >= 0; i-- ) { // 720 = amount of 5 second blocks in the past
-            const nextValue = getNextValue( stock.value, stock.volatility / 100 );
+            const nextValue = getNextValue( stock.value, stock.volatility );
             stock.valueHistory.push( {
                 value: nextValue,
                 date: moment().subtract( i * 5, 'seconds' ).toDate(),
@@ -99,35 +101,37 @@ function* buyOrSellStocks( action: BuyOrSellStockAction ) {
     // update stocks in Store
     yield put( changeStockQuantity( action.stockName, action.amount ) );
     yield put( changeAccountValue( -totalStockBuyValue ) );
-    yield put( changeTotalStockValue( totalStockBuyValue ) );
     stocks = yield select( getStocks );
-    yield recalculateStockCategoryValues( stocks );
-}
-
-function* recalculateStockCategoryValues( stocks: Stock[] ) {
-    let categoryValues: StockCategoryValue[] = [];
-
-    stocks.forEach( s => {
-        let catIndex = categoryValues.findIndex( v => v.categoryName === s.type );
-        if ( catIndex === -1 ) {
-            categoryValues.push( { categoryName: s.type, ratio: s.quantity } );
-        } else {
-            categoryValues[ catIndex ].ratio += s.quantity;
-        }
-    } );
-
-    // remove all categoryValues without any Value
-    categoryValues = categoryValues.filter( c => c.ratio > 0 );
-
-    yield put( setCategoryValues( categoryValues ) );
 }
 
 function* calculateAllNextStockValues() {
     const stocks: Stock[] = yield select( getStocks );
 
-    stocks.forEach( s => {
-        // TODO:
-    } );
+    for ( let s of stocks ) {
+        let newValue = getNextValue( s.value, s.volatility );
+        var valueHistory = cloneState( s.valueHistory );
+        valueHistory.splice( 0, 1 ); // delete first entry
+        valueHistory.push( {
+            value: newValue,
+            date: moment().toDate()
+        } );
+
+        const oldestValue = valueHistory[ 0 ].value;
+        const valueChange = (newValue - oldestValue) / oldestValue * 100;
+        yield put( updateStock(
+            s.name,
+            {
+                ...s,
+                valueHistory: valueHistory,
+                value: newValue,
+                valueChange: valueChange
+            }
+            )
+        );
+    }
+
+    yield delay( 10000 );
+    yield put( calculateNextStockValues() );
 }
 
 function* stockMarketSaga() {
