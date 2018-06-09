@@ -82,3 +82,7 @@ export interface GenericAction {
 // tslint:disable-next-line: no-any
     payload?: any;
 }
+
+export function cloneState<T>( state: T ): T {
+    return JSON.parse( JSON.stringify( state ) );
+}

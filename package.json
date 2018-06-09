@@ -24,6 +24,7 @@
     }
   },
   "dependencies": {
+    "material-design-icons": "^3.0.1",
     "moment": "^2.22.1",
     "node-sass-chokidar": "^1.2.2",
     "npm-run-all": "^4.1.2",

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { AppState, FinancialSnapshot, StockCategoryValue } from '../../state/AppState';
-import { connect } from 'react-redux';
 import { Col, Grid, Row } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { AppState, FinancialSnapshot, StockCategoryValue } from '../../state/AppState';
 import { BalanceCard, StockBalanceCard, StockShareCard } from './Cards';
 
 interface DepotProps {
@@ -16,12 +16,12 @@ interface DepotState {
 
 class Depot extends React.Component<DepotProps, DepotState> {
 
-    constructor( props: DepotProps ) {
-        super( props );
+    constructor(props: DepotProps) {
+        super(props);
     }
 
     render() {
-        const {stockCategoryValues} = this.props;
+        const { stockCategoryValues } = this.props;
 
         return (
             <div className="content">
@@ -31,12 +31,12 @@ class Depot extends React.Component<DepotProps, DepotState> {
                             <BalanceCard value={this.props.accountValue}/>
                         </Col>
                         <Col lg={4} sm={6}>
-                            <StockBalanceCard value={50900}/>
+                            <StockBalanceCard value={this.props.stockValue}/>
                         </Col>
                         {stockCategoryValues.length > 0 &&
-                            <Col lg={4} sm={6}>
-                                <StockShareCard stockCategoryValues={stockCategoryValues}/>
-                            </Col>
+                        <Col lg={4} sm={6}>
+                            <StockShareCard stockCategoryValues={stockCategoryValues}/>
+                        </Col>
                         }
                     </Row>
                 </Grid>
@@ -45,7 +45,7 @@ class Depot extends React.Component<DepotProps, DepotState> {
     }
 }
 
-const mapStateToProps = ( state: AppState ) => ({
+const mapStateToProps = (state: AppState) => ({
     accountValue: state.depot.accountValue,
     stockValue: state.depot.stockValue,
     stockValueDevelopment: state.depot.stockValueDevelopment,
@@ -53,6 +53,6 @@ const mapStateToProps = ( state: AppState ) => ({
 });
 
 // tslint:disable-next-line: no-any
-const mapDispatchToProps = ( dispatch: any ) => ({});
+const mapDispatchToProps = (dispatch: any) => ({});
 
-export default connect( mapStateToProps, mapDispatchToProps )( Depot );
+export default connect(mapStateToProps, mapDispatchToProps)(Depot);
