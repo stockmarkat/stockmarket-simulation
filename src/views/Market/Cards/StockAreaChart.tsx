@@ -35,7 +35,7 @@ export default class StockAreaChart extends React.PureComponent<StockAreaChartPr
                         tickFormatter={(tick) => moment(tick).format('HH:mm')}
                     />
                     <YAxis domain={[ 'auto', 'auto' ]}/>
-                    <Area dataKey="value" stroke="#3472F7" fill="url(#colorStock)"/>
+                    <Area dataKey="value" stroke="#3472F7" fill="url(#colorStock)" isAnimationActive={false}/>
                 </AreaChart>
             </ResponsiveContainer>
         );
