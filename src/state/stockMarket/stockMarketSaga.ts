@@ -37,7 +37,7 @@ function getNextValue( currentValue: number, volatility: number ): number {
     if ( nextAmount <= 0 ) {
         return getNextValue( currentValue, volatility );
     }
-    return nextAmount;
+    return Number(nextAmount.toFixed(2));
 }
 
 function* loadinitialStocks() {
