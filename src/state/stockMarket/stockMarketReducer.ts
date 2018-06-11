@@ -4,7 +4,7 @@ import {
     AddStocksAction,
     CHANGE_STOCK_QUANTITY,
     ChangeStockQuantityAction,
-    UPDATE_STOCK, UpdateStockAction
+    UPDATE_STOCK, UPDATE_STOCKS, UpdateStockAction, UpdateStocksAction
 } from './stockMarketActions';
 
 const initialState: StockMarketState = {
@@ -32,6 +32,17 @@ const stockMarketReducer = ( state = initialState, action: GenericAction ) => {
                 return clone;
             }
 
+            case UPDATE_STOCKS: {
+                const updateStockAction = (action as UpdateStocksAction);
+                const clone = cloneState( state );
+                updateStockAction.updates.forEach( u => {
+                    const index = clone.stocks.findIndex( s => s.name === u.stockName );
+                    clone.stocks[ index ] = { ...clone.stocks[ index ], ...u.stock };
+
+                } );
+
+                return clone;
+            }
             case
             CHANGE_STOCK_QUANTITY: {
                 const clone = cloneState( state );

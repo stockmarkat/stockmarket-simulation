@@ -12,7 +12,9 @@ import {
     CALCULATE_NEXT_STOCK_VALUES,
     calculateNextStockValues,
     changeStockQuantity,
-    LOAD_STOCKS, updateStock
+    LOAD_STOCKS,
+    UpdateStockData,
+    updateStocks
 } from './stockMarketActions';
 import { getStocks } from './stockSelector';
 
@@ -106,6 +108,7 @@ function* buyOrSellStocks( action: BuyOrSellStockAction ) {
 
 function* calculateAllNextStockValues() {
     const stocks: Stock[] = yield select( getStocks );
+    const updates: UpdateStockData[] = [];
 
     for ( let s of stocks ) {
         let newValue = getNextValue( s.value, s.volatility );
@@ -118,19 +121,20 @@ function* calculateAllNextStockValues() {
 
         const oldestValue = valueHistory[ 0 ].value;
         const valueChange = (newValue - oldestValue) / oldestValue * 100;
-        yield put( updateStock(
-            s.name,
-            {
+
+        updates.push( {
+            stockName: s.name,
+            stock: {
                 ...s,
                 valueHistory: valueHistory,
                 value: newValue,
                 valueChange: valueChange
             }
-            )
-        );
+        } );
     }
 
-    yield delay( 10000 );
+    yield put( updateStocks( updates ) );
+    yield delay( 5000 );
     yield put( calculateNextStockValues() );
 }
 
