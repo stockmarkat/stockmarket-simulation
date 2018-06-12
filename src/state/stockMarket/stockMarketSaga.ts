@@ -2,7 +2,7 @@ import * as moment from 'moment';
 import { delay } from 'redux-saga';
 import { put, select, takeEvery } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
-import { cloneState, Stock } from '../AppState';
+import { cloneState, FinancialSnapshot, Stock } from '../AppState';
 import { changeAccountValue } from '../depot/depotActions';
 import { getAccountValue } from '../depot/depotSelector';
 import {
@@ -18,8 +18,24 @@ import {
 } from './stockMarketActions';
 import { getStocks } from './stockSelector';
 
+interface StockConfiguration {
+    lastMinutes: number; // the last n minutes that should in the stock history
+    interval: number; // the interval in second of when to generate a new point
+}
+
+const config: StockConfiguration = {
+    interval: 5,
+    lastMinutes: 60
+};
+
 function getRandomArbitrary( min: number, max: number ) {
     return Math.random() * (max - min) + min;
+}
+
+function getValueChange( valueHistory: FinancialSnapshot[] ) {
+    const oldestValue = valueHistory[ 0 ].value;
+    const newestValue = valueHistory[ valueHistory.length - 1 ].value;
+    return (newestValue - oldestValue) / oldestValue * 100;
 }
 
 const stockJson = require( './stocks.json' );
@@ -37,26 +53,29 @@ function getNextValue( currentValue: number, volatility: number ): number {
     if ( nextAmount <= 0 ) {
         return getNextValue( currentValue, volatility );
     }
-    return Number(nextAmount.toFixed(2));
+    return Number( nextAmount.toFixed( 2 ) );
 }
 
 function* loadinitialStocks() {
     let stocks: Stock[] = stockJson;
 
+    const points = config.lastMinutes * 60 / config.interval; // the amount of point that will be in the chart
+
     // set Default values
     stocks.forEach( stock => {
         stock.quantity = 0;
-        stock.valueChange = getRandomArbitrary( -10, 10 );
         stock.valueHistory = [];
 
-        for ( let i = 720; i >= 0; i-- ) { // 720 = amount of 5 second blocks in the past
+        for ( let i = points; i >= 0; i-- ) {
             const nextValue = getNextValue( stock.value, stock.volatility );
             stock.valueHistory.push( {
                 value: nextValue,
-                date: moment().subtract( i * 5, 'seconds' ).toDate(),
+                date: moment().subtract( i * config.interval, 'seconds' ).toDate(),
             } );
             stock.value = nextValue;
         }
+
+        stock.valueChange = getValueChange( stock.valueHistory );
     } );
 
     yield put( addStocks( stocks ) );
@@ -119,8 +138,7 @@ function* calculateAllNextStockValues() {
             date: moment().toDate()
         } );
 
-        const oldestValue = valueHistory[ 0 ].value;
-        const valueChange = (newValue - oldestValue) / oldestValue * 100;
+        const valueChange = getValueChange( valueHistory );
 
         updates.push( {
             stockName: s.name,
@@ -134,7 +152,7 @@ function* calculateAllNextStockValues() {
     }
 
     yield put( updateStocks( updates ) );
-    yield delay( 5000 );
+    yield delay( config.interval * 1000 );
     yield put( calculateNextStockValues() );
 }
 
