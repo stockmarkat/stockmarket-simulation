@@ -16,6 +16,8 @@ interface CardProps {
     statsIcon?: string;
 
     noFooter?: boolean;
+    noHeader?: boolean;
+    noBottomPadding?: boolean;
 }
 
 interface CardState {
@@ -30,18 +32,21 @@ export class Card extends React.Component<CardProps, CardState> {
     render() {
         return (
             <div className={'card' + (this.props.plain ? ' card-plain' : '')}>
+                {
+                    !this.props.noHeader &&
+                    <div
+                        className={
+                            'header'
+                            + (this.props.hCenter ? ' text-center' : '')
+                        }
+                    >
+                        <h4 className="title">{this.props.title}</h4>
+                        <p className="category">{this.props.category}</p>
+                    </div>
+                }
                 <div
                     className={
-                        'header'
-                        + (this.props.hCenter ? ' text-center' : '')
-                    }
-                >
-                    <h4 className="title">{this.props.title}</h4>
-                    <p className="category">{this.props.category}</p>
-                </div>
-                <div
-                    className={
-                        'content'
+                        (this.props.noBottomPadding ? ' content-no-footer' : 'content')
                         + (this.props.ctAllIcons ? ' all-icons' : '')
                         + (this.props.ctTableFullWidth ? ' table-full-width' : '')
                         + (this.props.ctTableResponsive ? ' table-responsive' : '')

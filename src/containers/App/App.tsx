@@ -21,7 +21,7 @@ class App extends React.Component<AppProps, AppRootState> {
         super(props);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.loadState();
     }
 
