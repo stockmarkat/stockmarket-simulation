@@ -2,7 +2,7 @@ import * as React from 'react';
 import { PriceTag } from '../PriceTag';
 
 interface ItemCardPriceTagProps {
-    type: 'buy' | 'sell';
+    type: 'buy' | 'sell' | 'price' ;
     name?: string;
     price?: number;
 }
@@ -22,7 +22,7 @@ export class ItemCardPriceTag extends React.Component<ItemCardPriceTagProps, Ite
         if ( name ) {
             return name;
         }
-        return type === 'buy' ? 'Buy' : 'Sell';
+        return type === 'buy' ? 'Buy' : (type === 'sell' ? 'Sell' : (type === 'price' ? 'Wert' : 'Anzahl'));
     }
 
     render() {

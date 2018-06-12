@@ -3024,3 +3024,14 @@ body > .navbar-collapse[data-color="purple"]:after {
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch; } }
+
+.stockTilePriceTag {
+  font-size: 1.2em !important;
+  margin-top: 1em; }
+
+.stockTileDetailBox {
+  font-size: 1.2em !important;
+  margin-top: .25em; }
+
+.text-left {
+  text-align: left !important; }

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { FortuneCard } from './Cards/FortuneCard';
 import { Col, Grid, Row } from 'react-bootstrap';
-import { TotalIncomeCard } from './Cards/TotalIncomeCard';
 import { TotalExpensesCard } from './Cards/TotalExpensesCard';
 import { AppState } from '../../state/AppState';
 import { connect } from 'react-redux';
 import { InventoryValueCard } from './Cards/InventoryValueCard';
+import { StockTile } from '../../components/StockTile/StockTile';
 
 interface AccountProps {
     fortune: number;
@@ -24,7 +24,7 @@ class Account extends React.Component<AccountProps, AccountState> {
     }
 
     render() {
-        const {fortune, totalIncome, totalExpenses, inventoryValue} = this.props;
+        const {fortune, totalExpenses, inventoryValue} = this.props;
         return (
             <div className="content">
                 <Grid fluid={true}>
@@ -33,7 +33,7 @@ class Account extends React.Component<AccountProps, AccountState> {
                             <FortuneCard value={fortune}/>
                         </Col>
                         <Col lg={4} sm={6}>
-                            <TotalIncomeCard value={totalIncome}/>
+                           <StockTile title={'ZKB'} total={4134} value={22.4} count={4} type={'Finance'}/>
                         </Col>
                         <Col lg={4} sm={6}>
                             <TotalExpensesCard value={totalExpenses}/>
