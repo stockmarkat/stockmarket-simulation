@@ -3,7 +3,7 @@ import { delay } from 'redux-saga';
 import { put, select, takeEvery } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
 import { cloneState, FinancialSnapshot, Stock } from '../AppState';
-import { Config } from '../Config';
+import { StockConfig as Config } from '../Config';
 import { changeAccountValue } from '../depot/depotActions';
 import { getAccountValue } from '../depot/depotSelector';
 import {
@@ -50,14 +50,12 @@ function getNextValue( currentValue: number, volatility: number ): number {
 function* loadinitialStocks() {
     let stocks: Stock[] = stockJson;
 
-    const points = Config.lastMinutes * 60 / Config.interval; // the amount of point that will be in the chart
-
     // set Default values
     stocks.forEach( stock => {
         stock.quantity = 0;
         stock.valueHistory = [];
 
-        for ( let i = points; i >= 0; i-- ) {
+        for ( let i = Config.points(); i >= 0; i-- ) {
             const nextValue = getNextValue( stock.value, stock.volatility );
             stock.valueHistory.push( {
                 value: nextValue,
