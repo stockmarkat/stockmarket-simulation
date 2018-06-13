@@ -1,7 +1,8 @@
-import { FinancialSnapshot } from '../AppState';
+import { FinancialSnapshot, GenericAction } from '../AppState';
 
 export const CHANGE_ACCOUNT_VALUE = 'depotReducer/change-account-value';
 export const SET_ACCOUNT_VALUE = 'depotReducer/set-account-value';
+export const SNAPSHOT_CAPITAL = 'depotReducer/snapshot-capital';
 
 export const SET_STOCK_VALUE_DEVELOPMENT = 'depotReducer/set-stock-value-development';
 
@@ -9,6 +10,10 @@ export interface SetValueAction {
     type: string;
     value: number;
 }
+
+export const snapshotCapital = (  ): GenericAction => ({
+    type: SNAPSHOT_CAPITAL,
+});
 
 export const changeAccountValue = ( changeAmount: number ): SetValueAction => ({
     type: CHANGE_ACCOUNT_VALUE,

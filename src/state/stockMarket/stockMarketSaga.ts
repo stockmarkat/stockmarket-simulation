@@ -3,6 +3,7 @@ import { delay } from 'redux-saga';
 import { put, select, takeEvery } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
 import { cloneState, FinancialSnapshot, Stock } from '../AppState';
+import { Config } from '../Config';
 import { changeAccountValue } from '../depot/depotActions';
 import { getAccountValue } from '../depot/depotSelector';
 import {
@@ -17,16 +18,6 @@ import {
     updateStocks
 } from './stockMarketActions';
 import { getStocks } from './stockSelector';
-
-interface StockConfiguration {
-    lastMinutes: number; // the last n minutes that should in the stock history
-    interval: number; // the interval in second of when to generate a new point
-}
-
-const config: StockConfiguration = {
-    interval: 5,
-    lastMinutes: 60
-};
 
 function getRandomArbitrary( min: number, max: number ) {
     return Math.random() * (max - min) + min;
@@ -59,7 +50,7 @@ function getNextValue( currentValue: number, volatility: number ): number {
 function* loadinitialStocks() {
     let stocks: Stock[] = stockJson;
 
-    const points = config.lastMinutes * 60 / config.interval; // the amount of point that will be in the chart
+    const points = Config.lastMinutes * 60 / Config.interval; // the amount of point that will be in the chart
 
     // set Default values
     stocks.forEach( stock => {
@@ -70,7 +61,7 @@ function* loadinitialStocks() {
             const nextValue = getNextValue( stock.value, stock.volatility );
             stock.valueHistory.push( {
                 value: nextValue,
-                date: moment().subtract( i * config.interval, 'seconds' ).toDate(),
+                date: moment().subtract( i * Config.interval, 'seconds' ).toDate(),
             } );
             stock.value = nextValue;
         }
@@ -152,7 +143,7 @@ function* calculateAllNextStockValues() {
     }
 
     yield put( updateStocks( updates ) );
-    yield delay( config.interval * 1000 );
+    yield delay( Config.interval * 1000 );
     yield put( calculateNextStockValues() );
 }
 
