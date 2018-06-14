@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Card } from '../../../components/Card/Card';
 import { Stock } from '../../../state/AppState';
+import { StockConfig } from '../../../state/Config';
 import { BuyButton } from './BuyButton';
 import { SellButton } from './SellButton';
 import { Grid, Row, Col } from 'react-bootstrap';
@@ -22,7 +23,7 @@ export default class StockCard extends React.Component<StockCardProps, StockCard
     }
 
     render() {
-        const {stock, onBuy, onSell} = this.props;
+        const { stock, onBuy, onSell } = this.props;
 
         // TODO: left side (labels and all that + text field)
         // TODO: improve performance
@@ -37,7 +38,7 @@ export default class StockCard extends React.Component<StockCardProps, StockCard
                             <SellButton onClick={onSell}/>
                         </Col>
                         <Col xs={8}>
-                            <StockAreaChart valueHistory={stock.valueHistory}/>
+                            <StockAreaChart valueHistory={stock.valueHistory} interval={StockConfig.points() / 6}/>
                         </Col>
                     </Row>
                 </Grid>

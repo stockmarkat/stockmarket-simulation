@@ -11,15 +11,15 @@ describe( 'depotReducer', () => {
     it( 'should set CategoryValues', () => {
         const values: FinancialSnapshot[] = [
             {
-                date: new Date(),
+                date: '15:30',
                 value: 5
             },
             {
-                date: new Date(),
+                date: '15:30',
                 value: 5
             },
             {
-                date: new Date(),
+                date: '15:30',
                 value: 5
             }
         ];

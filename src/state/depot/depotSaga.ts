@@ -13,7 +13,7 @@ function* initSnapShots() {
     for ( let i = Config.points(); i >= 0; i-- ) {
         values.push( {
             value: capital,
-            date: moment().subtract( i * Config.interval, 'seconds' ).toDate(),
+            date: moment().subtract( i * Config.interval, 'seconds' ).format('HH:mm'),
         } );
     }
 
@@ -31,7 +31,7 @@ function* makeSnapShot() {
 
     values.push( {
         value: currentCapital,
-        date: moment().toDate()
+        date: moment().format('HH:mm')
     } );
 
     yield put( setStockValueDevelopment( values ) );

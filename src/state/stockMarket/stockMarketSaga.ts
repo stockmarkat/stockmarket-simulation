@@ -59,7 +59,7 @@ function* loadinitialStocks() {
             const nextValue = getNextValue( stock.value, stock.volatility );
             stock.valueHistory.push( {
                 value: nextValue,
-                date: moment().subtract( i * Config.interval, 'seconds' ).toDate(),
+                date: moment().subtract( i * Config.interval, 'seconds' ).format('HH:mm'),
             } );
             stock.value = nextValue;
         }
@@ -124,7 +124,7 @@ function* calculateAllNextStockValues() {
         valueHistory.splice( 0, 1 ); // delete first entry
         valueHistory.push( {
             value: newValue,
-            date: moment().toDate()
+            date: moment().format('HH:mm')
         } );
 
         const valueChange = getValueChange( valueHistory );
