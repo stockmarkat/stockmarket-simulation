@@ -10,13 +10,13 @@ interface StockMarketConfiguration {
 }
 
 export const StockConfig: StockMarketConfiguration = {
-    interval: 5,
-    lastMinutes: 60,
+    interval: 2,
+    lastMinutes: 10,
     points: () => StockConfig.lastMinutes * 60 / StockConfig.interval
 };
 
 export const CapitalConfig: StockMarketConfiguration = {
-    interval: 5,
-    lastMinutes: 60,
+    interval: 2,
+    lastMinutes: 30,
     points: () => CapitalConfig.lastMinutes * 60 / CapitalConfig.interval
 };
