@@ -1,108 +1,320 @@
 [
-    "House Made Entirely Of Broccoli Built In City; Furniture Made Of Wheat Germ",
-    "Ancient Meteorite Revealed To Be Burnt Burger",
-    "Famed Prognosticator Warns \"Disaster Awaits Us All\"",
-    "Today's Forecast: Cold, Cloudy, With Occasional Showers",
-    "Staring At Football-Shaped Bladders Good For Concentration, Researchers Proclaim",
-    "Experts Advise Using Sunblock As Sunny Weather Continues",
-    "Boy Saves Cat From Tree, Thousands Cheer",
-    "Pigeon Alert! Extreme Pigeon Danger!",
-    "Weather Likely To Become Different Before Changing",
-    "Todays Forecast: Sunny, High 70's, Winds From The East",
-    "Rumors Persist In Kitty Kibble Shortage; Unfounded Say Many",
-    "Stockmarket News Ticker: No Advertisements Since Before The Beginning",
-    "Unlicensed Kitty Kibble Factory Fuels Rumors Of Shortage",
-    "From The Desk Of Wise Guy Sammy: Lightning Often Strikes The Same Place More Than Once",
-    "From The Desk Of Wise Guy Sammy: Reading Improves The Mind And Lifts The Spirit",
-    "Stockmarket News Ticker: Left To Right Through Aesthetic Design",
-    "Man Discovers Neighbor Completely Enclosed In Mailbox; Returns Him For Postage",
-    "Kitties Concerned By Rumors Of Kitty Kibble Shortage; Owners In Panic",
-    "Middle Age A Hoax; Declasres Study; Turns Out To Be Bad Posture After All",
-    "From The Desk Of Wise Guy Sammy: Help Is The Sunny Side Of Control",
-    "From The Desk Of Wise Guy Sammy: A Person Who Likes Cats Can't Be All Bad",
-    "Scientist Discovers New Dry Dry Cleaning Method Using Sparkles",
-    "Study Shows That 70% Agree To The Statement: Brush Before, After, And Between Meals",
-    "Rumor Of Kitty Kibble Shortage Causes Futures To Drop; Consumers Stockpile",
-    "French Kissing Leads To Higher Croissant Use, Authorities Warn",
-    "Swamp Gas Verified To Be Exhaalations Of Stars--Movie Stars--Long Passed",
-    "From The Desk Of Wise Guy Sammy: Check Your Facts Before Making A Fool Of Yourself",
-    "Molasses Truck Springs Leak; Sweetest Accident In Long Time",
-    "Stockmarket News Ticker: No Advertisements Since Before The Beginning",
-    "Kitty Kibble Association Flooded With Letters: Where Is Kitty Kibble?",
-    "Mediums Agree Blue-Striped Socks No More Lucky Than Clovers Or Pennies",
-    "Stockmarket News Ticker: A Quiet Voice Of Reason In A Noisy World",
-    "From The Desk Of Wise Guy Sammy: It's Better To Yield Right Of Way Than To Demand It",
-    "Study Shows: Frequent Saving Prevents File Loss",
-    "Humming Show Tunes Sure Sign Of Poor Motor Skills, Researchers Declare",
-    "Mustard Magnate Marries Daughter Of Dill Pickle Mogul",
-    "Chefs Find Broccoli Effective Toojl For Cutting Cheese",
-    "Rap Music Causes Hangnails, Study Shows",
-    "Lying Found To Be Effective Calorie Reducer",
-    "UFO Seen And Disavowed",
-    "SimScientist Discovers Abacus Can Be Used To Dry Towels",
-    "Cat Burglar Spotted, Mistaken For Dalmatian",
-    "Heads Roll When Rollerblader Hits Tourist Group",
-    "Typist Involved In Winter Traffic Accident, White-Out Conditions Blamed",
-    "Scientists Conclude: Kitties Like Fish, Dogs Less Picky",
-    "Skirmish At Writer's Workshop, Speaker Used Fighting Words",
-    "Most People Ignore Tickers, Study Reveals",
-    "Broccoli Tops For Moms, Last For Kids; Dads Indifferent",
-    "Information Shown Here Frequently Absurd, Poll Indicates",
-    "Eyes Move While Reading Tickers, Scientists Speculate",
-    "Linguistics Experts Discuss \"Left To Right Or Right To Left; Is One Better?\"",
-    "Studies Show Most People Mispronounce \"Zsdersw\"",
-    "Eckelberry Marmalade May Cure Hiccups, Doctors Say",
-    "After 36 Years Of Marriage, Man Discovers Wife Is Actually A Rare Yucca Plant",
-    "Nutritionists Aver That Eating Broccoli Encourages Higher Bowling Scores",
-    "Mysterious Loud Rumbling Noises In City Found To Be Mysterious Loud Rumblings",
-    "Man Caught Shoplifting Spatulas; Thousands Of Flippers Found In Bedroom",
-    "Tainted Broccoli Weapon Of Choice For Global Assassins",
-    "Ditzy Debutante Mistakes Broccoli Floret For Nosegay",
-    "Cauliflower-Lovers Won't Let Broccoli-Eaters March In Their Neighborhood",
-    "Never Feed Broccoli To Your Dog, No Matter How Much He Begs",
-    "Broccoli Found To Cause Grumpiness In Children",
-    "Broccoli Discovered To Be Colonies Of Tiny Aliens With Murder On Their Minds",
-    "Scientists Assert That Swearing Is Source Of Bad Breath",
-    "Study Demonstrates That Singing In The Shower Makes Teeth Crooked",
-    "Semicolon Declared Sexier Than Comma At Grammarian's Fete",
-    "Survey Shows Less Is More, More Or Less",
-    "Black And White Ball Preparations Underway",
-    "Black And White Ball Disrupted By Bank Robbery",
-    "Black And White Ball Raises Money For Charity",
-    "From The Desk Of Wise Guy Sammy: One Word In This Ticker Is Sdrawkcab (Backwards)",
-    "From The Desk Of Wise Guy Sammy: Better To Aim High And Miss Then To Aim Low And Hit",
-    "From The Desk Of Wise Guy Sammy: Reading Improves The Mind And Lifts The Spirit",
-    "From The Desk Of Wise Guy Sammy: Two Points Determine A Straight Line",
-    "From The Desk Of Wise Guy Sammy: Help Is The Sunny Side Of Control",
-    "From The Desk Of Wise Guy Sammy: You Can't Outwait A Bureaucracy",
-    "From The Desk Of Wise Guy Sammy: If You Made The Mess, You Clean It Up",
-    "From The Desk Of Wise Guy Sammy: You Don't Have To Fool All The People, Just The Right Ones",
-    "Stockmarket News Ticker: Journalistic Integrity Without All The Advertising",
-    "Stockmarket News Ticker: Pretty Darn Accurate Most Of The Time",
-    "Stockmarket News Ticker: Information That's A Luxury, Not A Necessity",
-    "Stockmarket News Ticker: For When You Have To Know But Would Rather Not",
-    "Stockmarket News Ticker: Easier To Find Because It Moves",
-    "Stockmarket News Ticker: Information With As Few Words As Possible",
-    "Stockmarket News Ticker: Sometimes We're Just Here To Make You Smile",
-    "Stockmarket News Ticker: Don't Blame Us If You're Not Paying Attention",
-    "Stockmarket News Ticker: Don't Blame Us, We Just Report It",
-    "Stockmarket News Ticker: If It's Important To You, It Probably Is To Us Too",
-    "Stockmarket News Ticker: Properly Spelled Words From Beginning To End",
-    "Stockmarket News Ticker: Not For The Faint Of Heart",
-    "Stockmarket News Ticker: Information At A Readable Speed",
-    "Stockmarket News Ticker: Not Too Fast, Not Too Slow, Just Right",
-    "Stockmarket News Ticker: If You Read It Here, That Means It Happened",
-    "Stockmarket News Ticker: Just One Piece Of Information After Another",
-    "Stockmarket News Ticker: Accept No Substitutes",
-    "Stockmarket News Ticker: Your Total Information Source",
-    "Stockmarket New Ticker: Important Things You Need To Know, More Or Less",
-    "Enough Kitty Kibble For Twenty Years, Experts Agree",
-    "If Tin Whistles Are Made Of Tin, What Do They Make Foghorns Out Of?",
-    "Kitties Want Answers In Possible Kitty Kibble Shortage",
-    "Kitties Say Not Enough Being Done In Kitty Kibble Shortage",
-    "No Kitty Kibble Shortage, Officials Insist; Kitties Skeptical",
-    "Floor Sweepings Found To Be Tangier Than Salt And Pepper",
-    "Man Survives Wintry Night Adhered To Bus Bench By Chewing Gum",
-    "Ham-Handedness Doesn't Lead To Higher Cholesterol, Researchers Declare",
-    "Ball Lightning Destroys Toupee But Polishes Victim's Car"
+  {
+    "text": "House Made Entirely Of Broccoli Built In City; Furniture Made Of Wheat Germ"
+  },
+  {
+    "text": "Ancient Meteorite Revealed To Be Burnt Burger"
+  },
+  {
+    "text": "Famed Prognosticator Warns \"Disaster Awaits Us All\""
+  },
+  {
+    "text": "Today's Forecast: Cold, Cloudy, With Occasional Showers"
+  },
+  {
+    "text": "Staring At Football-Shaped Bladders Good For Concentration, Researchers Proclaim"
+  },
+  {
+    "text": "Experts Advise Using Sunblock As Sunny Weather Continues"
+  },
+  {
+    "text": "Boy Saves Cat From Tree, Thousands Cheer"
+  },
+  {
+    "text": "Pigeon Alert! Extreme Pigeon Danger!"
+  },
+  {
+    "text": "Weather Likely To Become Different Before Changing"
+  },
+  {
+    "text": "Todays Forecast: Sunny, High 70's, Winds From The East"
+  },
+  {
+    "text": "Rumors Persist In Kitty Kibble Shortage; Unfounded Say Many"
+  },
+  {
+    "text": "Stockmarket News Ticker: No Advertisements Since Before The Beginning"
+  },
+  {
+    "text": "Unlicensed Kitty Kibble Factory Fuels Rumors Of Shortage"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: Lightning Often Strikes The Same Place More Than Once"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: Reading Improves The Mind And Lifts The Spirit"
+  },
+  {
+    "text": "Stockmarket News Ticker: Left To Right Through Aesthetic Design"
+  },
+  {
+    "text": "Man Discovers Neighbor Completely Enclosed In Mailbox; Returns Him For Postage"
+  },
+  {
+    "text": "Kitties Concerned By Rumors Of Kitty Kibble Shortage; Owners In Panic"
+  },
+  {
+    "text": "Middle Age A Hoax; Declasres Study; Turns Out To Be Bad Posture After All"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: Help Is The Sunny Side Of Control"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: A Person Who Likes Cats Can't Be All Bad"
+  },
+  {
+    "text": "Scientist Discovers New Dry Dry Cleaning Method Using Sparkles"
+  },
+  {
+    "text": "Study Shows That 70% Agree To The Statement: Brush Before, After, And Between Meals"
+  },
+  {
+    "text": "Rumor Of Kitty Kibble Shortage Causes Futures To Drop; Consumers Stockpile"
+  },
+  {
+    "text": "French Kissing Leads To Higher Croissant Use, Authorities Warn"
+  },
+  {
+    "text": "Swamp Gas Verified To Be Exhaalations Of Stars--Movie Stars--Long Passed"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: Check Your Facts Before Making A Fool Of Yourself"
+  },
+  {
+    "text": "Molasses Truck Springs Leak; Sweetest Accident In Long Time"
+  },
+  {
+    "text": "Stockmarket News Ticker: No Advertisements Since Before The Beginning"
+  },
+  {
+    "text": "Kitty Kibble Association Flooded With Letters: Where Is Kitty Kibble?"
+  },
+  {
+    "text": "Mediums Agree Blue-Striped Socks No More Lucky Than Clovers Or Pennies"
+  },
+  {
+    "text": "Stockmarket News Ticker: A Quiet Voice Of Reason In A Noisy World"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: It's Better To Yield Right Of Way Than To Demand It"
+  },
+  {
+    "text": "Study Shows: Frequent Saving Prevents File Loss"
+  },
+  {
+    "text": "Humming Show Tunes Sure Sign Of Poor Motor Skills, Researchers Declare"
+  },
+  {
+    "text": "Chefs Find Broccoli Effective Toojl For Cutting Cheese"
+  },
+  {
+    "text": "Rap Music Causes Hangnails, Study Shows"
+  },
+  {
+    "text": "Lying Found To Be Effective Calorie Reducer"
+  },
+  {
+    "text": "UFO Seen And Disavowed"
+  },
+  {
+    "text": "SimScientist Discovers Abacus Can Be Used To Dry Towels"
+  },
+  {
+    "text": "Mustard Magnate Marries Daughter Of Dill Pickle Mogul"
+  },
+  {
+    "text": "Cat Burglar Spotted, Mistaken For Dalmatian"
+  },
+  {
+    "text": "Heads Roll When Rollerblader Hits Tourist Group"
+  },
+  {
+    "text": "Typist Involved In Winter Traffic Accident, White-Out Conditions Blamed"
+  },
+  {
+    "text": "Scientists Conclude: Kitties Like Fish, Dogs Less Picky"
+  },
+  {
+    "text": "Skirmish At Writer's Workshop, Speaker Used Fighting Words"
+  },
+  {
+    "text": "Most People Ignore Tickers, Study Reveals"
+  },
+  {
+    "text": "Broccoli Tops For Moms, Last For Kids; Dads Indifferent"
+  },
+  {
+    "text": "Information Shown Here Frequently Absurd, Poll Indicates"
+  },
+  {
+    "text": "Eyes Move While Reading Tickers, Scientists Speculate"
+  },
+  {
+    "text": "Linguistics Experts Discuss \"Left To Right Or Right To Left; Is One Better?\""
+  },
+  {
+    "text": "Studies Show Most People Mispronounce \"Zsdersw\""
+  },
+  {
+    "text": "Eckelberry Marmalade May Cure Hiccups, Doctors Say"
+  },
+  {
+    "text": "After 36 Years Of Marriage, Man Discovers Wife Is Actually A Rare Yucca Plant"
+  },
+  {
+    "text": "Nutritionists Aver That Eating Broccoli Encourages Higher Bowling Scores"
+  },
+  {
+    "text": "Mysterious Loud Rumbling Noises In City Found To Be Mysterious Loud Rumblings"
+  },
+  {
+    "text": "Man Caught Shoplifting Spatulas; Thousands Of Flippers Found In Bedroom"
+  },
+  {
+    "text": "Tainted Broccoli Weapon Of Choice For Global Assassins"
+  },
+  {
+    "text": "Ditzy Debutante Mistakes Broccoli Floret For Nosegay"
+  },
+  {
+    "text": "Cauliflower-Lovers Won't Let Broccoli-Eaters March In Their Neighborhood"
+  },
+  {
+    "text": "Never Feed Broccoli To Your Dog, No Matter How Much He Begs"
+  },
+  {
+    "text": "Broccoli Found To Cause Grumpiness In Children"
+  },
+  {
+    "text": "Broccoli Discovered To Be Colonies Of Tiny Aliens With Murder On Their Minds"
+  },
+  {
+    "text": "Scientists Assert That Swearing Is Source Of Bad Breath"
+  },
+  {
+    "text": "Study Demonstrates That Singing In The Shower Makes Teeth Crooked"
+  },
+  {
+    "text": "Semicolon Declared Sexier Than Comma At Grammarian's Fete"
+  },
+  {
+    "text": "Survey Shows Less Is More, More Or Less"
+  },
+  {
+    "text": "Black And White Ball Preparations Underway"
+  },
+  {
+    "text": "Black And White Ball Disrupted By Bank Robbery"
+  },
+  {
+    "text": "Black And White Ball Raises Money For Charity"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: One Word In This Ticker Is Sdrawkcab (Backwards)"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: Better To Aim High And Miss Then To Aim Low And Hit"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: Reading Improves The Mind And Lifts The Spirit"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: Two Points Determine A Straight Line"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: Help Is The Sunny Side Of Control"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: You Can't Outwait A Bureaucracy"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: If You Made The Mess, You Clean It Up"
+  },
+  {
+    "text": "From The Desk Of Wise Guy Sammy: You Don't Have To Fool All The People, Just The Right Ones"
+  },
+  {
+    "text": "Stockmarket News Ticker: Journalistic Integrity Without All The Advertising"
+  },
+  {
+    "text": "Stockmarket News Ticker: Pretty Darn Accurate Most Of The Time"
+  },
+  {
+    "text": "Stockmarket News Ticker: Information That's A Luxury, Not A Necessity"
+  },
+  {
+    "text": "Stockmarket News Ticker: For When You Have To Know But Would Rather Not"
+  },
+  {
+    "text": "Stockmarket News Ticker: Easier To Find Because It Moves"
+  },
+  {
+    "text": "Stockmarket News Ticker: Information With As Few Words As Possible"
+  },
+  {
+    "text": "Stockmarket News Ticker: Sometimes We're Just Here To Make You Smile"
+  },
+  {
+    "text": "Stockmarket News Ticker: Don't Blame Us If You're Not Paying Attention"
+  },
+  {
+    "text": "Stockmarket News Ticker: Don't Blame Us, We Just Report It"
+  },
+  {
+    "text": "Stockmarket News Ticker: If It's Important To You, It Probably Is To Us Too"
+  },
+  {
+    "text": "Stockmarket News Ticker: Properly Spelled Words From Beginning To End"
+  },
+  {
+    "text": "Stockmarket News Ticker: Not For The Faint Of Heart"
+  },
+  {
+    "text": "Stockmarket News Ticker: Information At A Readable Speed"
+  },
+  {
+    "text": "Stockmarket News Ticker: Not Too Fast, Not Too Slow, Just Right"
+  },
+  {
+    "text": "Stockmarket News Ticker: If You Read It Here, That Means It Happened"
+  },
+  {
+    "text": "Stockmarket News Ticker: Just One Piece Of Information After Another"
+  },
+  {
+    "text": "Stockmarket News Ticker: Accept No Substitutes"
+  },
+  {
+    "text": "Stockmarket News Ticker: Your Total Information Source"
+  },
+  {
+    "text": "Stockmarket New Ticker: Important Things You Need To Know, More Or Less"
+  },
+  {
+    "text": "Enough Kitty Kibble For Twenty Years, Experts Agree"
+  },
+  {
+    "text": "If Tin Whistles Are Made Of Tin, What Do They Make Foghorns Out Of?"
+  },
+  {
+    "text": "Kitties Want Answers In Possible Kitty Kibble Shortage"
+  },
+  {
+    "text": "Kitties Say Not Enough Being Done In Kitty Kibble Shortage"
+  },
+  {
+    "text": "No Kitty Kibble Shortage, Officials Insist; Kitties Skeptical"
+  },
+  {
+    "text": "Floor Sweepings Found To Be Tangier Than Salt And Pepper"
+  },
+  {
+    "text": "Man Survives Wintry Night Adhered To Bus Bench By Chewing Gum"
+  },
+  {
+    "text": "Ham-Handedness Doesn't Lead To Higher Cholesterol, Researchers Declare"
+  },
+  {
+    "text": "Ball Lightning Destroys Toupee But Polishes Victim's Car"
+  }
 ]
