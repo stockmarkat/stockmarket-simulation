@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { AppState, FinancialSnapshot, StockCategoryValue } from '../../state/AppState';
-import { connect } from 'react-redux';
 import { Col, Grid, Row } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { AppState, FinancialSnapshot, StockCategoryValue } from '../../state/AppState';
+import { getStockCategoryValues, getStockValue } from '../../state/depot/depotSelector';
 import { BalanceCard, StockBalanceCard, StockShareCard } from './Cards';
+import { CapitalDevelopement } from './Cards/CapitalDevelopement';
 
 interface DepotProps {
     accountValue: number;
@@ -21,7 +23,7 @@ class Depot extends React.Component<DepotProps, DepotState> {
     }
 
     render() {
-        const {stockCategoryValues} = this.props;
+        const { stockCategoryValues } = this.props;
 
         return (
             <div className="content">
@@ -31,13 +33,16 @@ class Depot extends React.Component<DepotProps, DepotState> {
                             <BalanceCard value={this.props.accountValue}/>
                         </Col>
                         <Col lg={4} sm={6}>
-                            <StockBalanceCard value={50900}/>
+                            <StockBalanceCard value={this.props.stockValue}/>
                         </Col>
                         {stockCategoryValues.length > 0 &&
-                            <Col lg={4} sm={6}>
-                                <StockShareCard stockCategoryValues={stockCategoryValues}/>
-                            </Col>
+                        <Col lg={4} sm={6}>
+                            <StockShareCard stockCategoryValues={stockCategoryValues}/>
+                        </Col>
                         }
+                        <Col xs={8}>
+                            <CapitalDevelopement values={this.props.stockValueDevelopment}/>
+                        </Col>
                     </Row>
                 </Grid>
             </div>
@@ -47,9 +52,9 @@ class Depot extends React.Component<DepotProps, DepotState> {
 
 const mapStateToProps = ( state: AppState ) => ({
     accountValue: state.depot.accountValue,
-    stockValue: state.depot.stockValue,
+    stockValue: getStockValue( state ),
     stockValueDevelopment: state.depot.stockValueDevelopment,
-    stockCategoryValues: state.depot.stockCategoryValues
+    stockCategoryValues: getStockCategoryValues( state )
 });
 
 // tslint:disable-next-line: no-any
