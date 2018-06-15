@@ -25,7 +25,6 @@ export default class StockAreaChart extends React.PureComponent<StockAreaChartPr
                     <defs>
                         <linearGradient id="colorStock" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="5%" stopColor="#3472F7" stopOpacity={0.9}/>
-                            <stop offset="95%" stopColor="#3472F7" stopOpacity={0.2}/>
                         </linearGradient>
                     </defs>
                     <CartesianGrid strokeDasharray="3 3"/>
