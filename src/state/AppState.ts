@@ -32,8 +32,8 @@ export interface Stock {
 }
 
 export interface FinancialSnapshot {
-    value: number;
-    date: Date;
+    value?: number;
+    date: string;
 }
 
 interface NewsEffect {

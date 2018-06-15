@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import { FinancialSnapshot } from '../../../state/AppState';
-import * as moment from 'moment';
 
 interface StockAreaChartProps {
     valueHistory: FinancialSnapshot[];
+    interval: number;
 }
 
 interface StockAreChardState {
@@ -12,12 +12,12 @@ interface StockAreChardState {
 
 export default class StockAreaChart extends React.PureComponent<StockAreaChartProps, StockAreChardState> {
 
-    constructor(props: StockAreaChartProps) {
-        super(props);
+    constructor( props: StockAreaChartProps ) {
+        super( props );
     }
 
     render() {
-        const {valueHistory} = this.props;
+        const { valueHistory } = this.props;
 
         return (
             <ResponsiveContainer height={150} width="100%">
@@ -31,11 +31,10 @@ export default class StockAreaChart extends React.PureComponent<StockAreaChartPr
                     <CartesianGrid strokeDasharray="3 3"/>
                     <XAxis
                         dataKey={'date'}
-                        interval={120}
-                        tickFormatter={(tick) => moment(tick).format('HH:mm')}
+                        interval={this.props.interval}
                     />
                     <YAxis domain={[ 'auto', 'auto' ]}/>
-                    <Area dataKey="value" stroke="#3472F7" fill="url(#colorStock)"/>
+                    <Area connectNulls={false} dataKey="value" stroke="#3472F7" fill="url(#colorStock)"/>
                 </AreaChart>
             </ResponsiveContainer>
         );

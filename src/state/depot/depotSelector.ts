@@ -9,6 +9,10 @@ export const getStockValue = ( state: AppState ) => {
     return value;
 };
 
+export const getCapital = ( state: AppState ) => getAccountValue( state ) + getStockValue( state );
+
+export const getStockValueDevelopment = (state: AppState) => state.depot.stockValueDevelopment;
+
 export const getStockCategoryValues = ( state: AppState ) => {
     let categoryValues: StockCategoryValue[] = [];
 
