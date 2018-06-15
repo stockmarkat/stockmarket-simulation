@@ -32,7 +32,7 @@ export interface Stock {
 }
 
 export interface FinancialSnapshot {
-    value: number;
+    value?: number;
     date: string;
 }
 

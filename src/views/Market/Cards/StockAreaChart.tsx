@@ -34,7 +34,7 @@ export default class StockAreaChart extends React.PureComponent<StockAreaChartPr
                         interval={this.props.interval}
                     />
                     <YAxis domain={[ 'auto', 'auto' ]}/>
-                    <Area dataKey="value" stroke="#3472F7" fill="url(#colorStock)"/>
+                    <Area connectNulls={false} dataKey="value" stroke="#3472F7" fill="url(#colorStock)"/>
                 </AreaChart>
             </ResponsiveContainer>
         );
