@@ -8,8 +8,8 @@ import { getCapital, getStockValueDevelopment } from './depotSelector';
 
 function* initSnapShots() {
 
+    // fills the store with empty values to make the diagram look correct
     const values: FinancialSnapshot[] = [];
-    // const capital = yield select( getAccountValue );
     for ( let i = Config.points(); i >= 0; i-- ) {
         values.push( {
             value: undefined,
