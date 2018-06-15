@@ -2,7 +2,9 @@ import * as React from 'react';
 import { Col, Grid, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { AppState, FinancialSnapshot, StockCategoryValue } from '../../state/AppState';
+import { getStockCategoryValues, getStockValue } from '../../state/depot/depotSelector';
 import { BalanceCard, StockBalanceCard, StockShareCard } from './Cards';
+import { CapitalDevelopement } from './Cards/CapitalDevelopement';
 
 interface DepotProps {
     accountValue: number;
@@ -16,8 +18,8 @@ interface DepotState {
 
 class Depot extends React.Component<DepotProps, DepotState> {
 
-    constructor(props: DepotProps) {
-        super(props);
+    constructor( props: DepotProps ) {
+        super( props );
     }
 
     render() {
@@ -38,6 +40,9 @@ class Depot extends React.Component<DepotProps, DepotState> {
                             <StockShareCard stockCategoryValues={stockCategoryValues}/>
                         </Col>
                         }
+                        <Col xs={8}>
+                            <CapitalDevelopement values={this.props.stockValueDevelopment}/>
+                        </Col>
                     </Row>
                 </Grid>
             </div>
@@ -45,14 +50,14 @@ class Depot extends React.Component<DepotProps, DepotState> {
     }
 }
 
-const mapStateToProps = (state: AppState) => ({
+const mapStateToProps = ( state: AppState ) => ({
     accountValue: state.depot.accountValue,
-    stockValue: state.depot.stockValue,
+    stockValue: getStockValue( state ),
     stockValueDevelopment: state.depot.stockValueDevelopment,
-    stockCategoryValues: state.depot.stockCategoryValues
+    stockCategoryValues: getStockCategoryValues( state )
 });
 
 // tslint:disable-next-line: no-any
-const mapDispatchToProps = (dispatch: any) => ({});
+const mapDispatchToProps = ( dispatch: any ) => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Depot);
+export default connect( mapStateToProps, mapDispatchToProps )( Depot );

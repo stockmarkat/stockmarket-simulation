@@ -32,8 +32,8 @@ export interface Stock {
 }
 
 export interface FinancialSnapshot {
-    value: number;
-    date: Date;
+    value?: number;
+    date: string;
 }
 
 interface NewsEffect {
@@ -53,9 +53,7 @@ export interface StockCategoryValue {
 
 export interface DepotState {
     accountValue: number;
-    stockValue: number;
     stockValueDevelopment: FinancialSnapshot[];
-    stockCategoryValues: StockCategoryValue[];
 }
 
 export interface StockMarketState {
