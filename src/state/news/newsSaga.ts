@@ -4,11 +4,10 @@ import { addNews, LOAD_NEWS } from './newsActions';
 
 const newsJson = require( './news.json' );
 
-function* loadInitialQuests() {
+function* loadInitialNews() {
     let news: StockNews[] = newsJson;
 
     // set Default values
-
     news.forEach( n => {
         n.isActive = false;
     } );
@@ -17,7 +16,7 @@ function* loadInitialQuests() {
 }
 
 function* newsSaga() {
-    yield takeEvery( LOAD_NEWS, loadInitialQuests );
+    yield takeEvery( LOAD_NEWS, loadInitialNews );
 }
 
 export default newsSaga;
