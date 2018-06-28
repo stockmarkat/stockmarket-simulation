@@ -1,5 +1,19 @@
 [
   {
-    "name": "TestTask"
+    "name": "MySuperFancyQuest1",
+    "iconName": "myIcon",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 10500
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Have 10500 of money in total",
+        "questType": "moneyPossession",
+        "amount": 10500
+      }
+    ]
   }
 ]
