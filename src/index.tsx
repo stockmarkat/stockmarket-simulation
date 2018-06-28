@@ -5,13 +5,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './containers/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import { configureStore } from './state/configureStore';
+import './assets/css/arrows.css';
 import './assets/css/bootstrap.min.css';
 import './assets/css/animate.min.css';
 import './assets/sass/light-bootstrap-dashboard.css';
 import './assets/css/demo.css';
 import './assets/css/pe-icon-7-stroke.css';
 import 'material-design-icons/iconfont/material-icons.css';
-
 const store = configureStore();
 
 ReactDOM.render(

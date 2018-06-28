@@ -30,6 +30,16 @@ export default class StockCard extends React.Component<StockCardProps, StockCard
         this.setState( {buyOrSellAmount: amount} );
     }
 
+    getArrowIcon( valueChange: number ) {
+        if (valueChange > 0) {
+            return 'icon-arrow-up';
+        } else if (valueChange < 0) {
+            return 'icon-arrow-down';
+        } else {
+            return 'icon-arrow-straight';
+        }
+    }
+
     render() {
         const {stock, onBuy, onSell} = this.props;
         const {buyOrSellAmount} = this.state;
@@ -45,7 +55,9 @@ export default class StockCard extends React.Component<StockCardProps, StockCard
                             <h4 className="title text-underline">{stock.name}</h4>
                             <p>
                                 Value: {stock.value}<br/>
-                                Value Change: {stock.valueChange}%<br/> {/* TODO: Add arrow */}
+                                Value Change: {stock.valueChange}%
+                                <i className={this.getArrowIcon(stock.valueChange)} />
+                                <br/>
                                 Category: {stock.type}
                             </p>
                             <BuyButton
