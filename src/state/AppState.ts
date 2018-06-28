@@ -31,13 +31,7 @@ export interface Stock {
     quantity: number; // count of owned stocks
 }
 
-export enum StockType {
-    'FireArms',
-    'Energy',
-    'Finance',
-    'RawMaterials',
-    'Technology'
-}
+export type StockType = 'FireArms' | 'Energy' | 'Finance' | 'RawMaterials' | 'Technology';
 
 export interface FinancialSnapshot {
     value?: number;
@@ -55,7 +49,7 @@ export interface StockNews {
 }
 
 export interface StockCategoryValue {
-    categoryName: string;
+    categoryName: StockType;
     ratio: number;
 }
 

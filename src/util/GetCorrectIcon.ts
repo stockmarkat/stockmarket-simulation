@@ -4,17 +4,17 @@ export const getCorrectIconForType = (type: StockType) => {
     const iconPrefix = 'pe-7s-';
 
     switch (type) {
-        case StockType.FireArms:
+        case 'FireArms':
             return iconPrefix + 'arc';
-        case StockType.Energy:
+        case 'Energy':
             return iconPrefix + 'plug';
-        case StockType.Finance:
+        case 'Finance':
             return iconPrefix + 'cash';
-        case StockType.RawMaterials:
+        case 'RawMaterials':
             return iconPrefix + 'tools';
-        case StockType.Technology:
+        case 'Technology':
             return iconPrefix + 'rocket';
+        default:
+            return 'Not a valid icon!';
     }
-
-    return 'Not a valid icon!';
 };

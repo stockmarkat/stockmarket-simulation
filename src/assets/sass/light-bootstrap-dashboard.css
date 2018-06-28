@@ -1018,11 +1018,14 @@ body > .navbar-collapse[data-color="purple"]:after {
     opacity: 1;
     filter: alpha(opacity=100); }
 
-.small-padding-left {
+.stockDetails {
   padding-left: 3em; }
 
 .small-padding-top {
   padding-top: 0.5em; }
+
+.small-padding-left {
+  padding-left: 1em; }
 
 /*      Checkbox and radio         */
 .checkbox,

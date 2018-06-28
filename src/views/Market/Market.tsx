@@ -2,8 +2,8 @@ import * as React from 'react';
 import { AppState, Stock } from '../../state/AppState';
 import { connect } from 'react-redux';
 import { Col, Grid, Row } from 'react-bootstrap';
-import StockCard from './Cards/StockCard';
 import { buyOrSellStock } from '../../state/stockMarket/stockMarketActions';
+import StockCard from './StockCard';
 
 interface MarketProps {
     stocks: Stock[];
