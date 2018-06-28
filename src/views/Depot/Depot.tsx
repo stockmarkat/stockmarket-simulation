@@ -17,7 +17,6 @@ class Depot extends React.Component<DepotProps> {
 
     render() {
         const {stockCategoryValues, accountValue, stockValue, stockValueDevelopment} = this.props;
-        const length = stockValueDevelopment.length;
 
         return (
             <div className="content">
@@ -29,11 +28,9 @@ class Depot extends React.Component<DepotProps> {
                         <Col lg={4} sm={6} xs={12}>
                             <StockBalanceCard value={stockValue}/>
                         </Col>
-                        {stockValueDevelopment[length - 1].value !== undefined &&
-                            <Col lg={8} sm={6} xs={12}>
-                                <CapitalDevelopment values={stockValueDevelopment} />
-                            </Col>
-                        }
+                        <Col lg={8} sm={6} xs={12}>
+                            <CapitalDevelopment values={stockValueDevelopment} />
+                        </Col>
                         {stockCategoryValues.length > 0 &&
                         <Col lg={4} sm={6}>
                             <StockShareCard stockCategoryValues={this.props.stockCategoryValues}/>
