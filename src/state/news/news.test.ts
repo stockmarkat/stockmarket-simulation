@@ -1,6 +1,6 @@
 import { StockNews } from '../AppState';
 
-const newsJson = require( './stocks.json' );
+const newsJson = require( './news.json' );
 
 describe( 'news', () => {
     it( 'news should be valid', () => {
