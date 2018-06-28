@@ -33,11 +33,11 @@ class Market extends React.Component<MarketProps, MarketState> {
                                 <Col key={stock.name} xs={12}>
                                     <StockCard
                                         stock={stock}
-                                        onBuy={() => {
-                                            buy(stock.name, 1);
+                                        onBuy={(amount: number) => {
+                                            buy(stock.name, amount);
                                         }}
-                                        onSell={() => {
-                                            sell(stock.name, 1);
+                                        onSell={(amount: number) => {
+                                            sell(stock.name, amount);
                                         }}
                                     />
                                 </Col>

@@ -122,6 +122,9 @@ h1 .subtitle {
 .text-danger, .text-danger:hover {
   color: #FF4A55 !important; }
 
+.text-underline {
+  text-decoration: underline; }
+
 /*     General overwrite     */
 body,
 .wrapper {
@@ -881,6 +884,9 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .input-group-focus .input-group-addon {
   border-color: #9A9A9A; }
+
+.input-small {
+  width: 4em; }
 
 .alert {
   border: 0;
