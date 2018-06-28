@@ -50,8 +50,7 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
 
     renderItemPrices() {
         const { value, count } = this.props;
-        const valueAsString = count.toString();
-        const formattedValue = valueAsString.replace( /\B(?=(\d{3})+(?!\d))/g, ',' );
+        
         return (
             <Col xs={2}>
 
@@ -62,7 +61,7 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
                     <span className="item-card-price-tag stockTileCountText">
                         Anzahl:
                     </span>
-                    {formattedValue}
+                    {count}
                     </div>
                 </div>
             </Col>
