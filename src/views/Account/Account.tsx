@@ -32,8 +32,8 @@ class Account extends React.Component<AccountProps, AccountState> {
                         <Col lg={4} sm={6}>
                             <FortuneCard value={fortune}/>
                         </Col>
-                        <Col lg={4} sm={6}>
-                           <StockTile title={'ZKB'} total={4134} value={22.4} count={4} type={'Finance'}/>
+                        <Col lg={6} sm={6}>
+                           <StockTile title={'Microsoft'} total={4134} value={22.4} count={4} type={'Technology'}/>
                         </Col>
                         <Col lg={4} sm={6}>
                             <TotalExpensesCard value={totalExpenses}/>

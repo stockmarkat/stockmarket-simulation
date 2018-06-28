@@ -24,10 +24,16 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
     }
 
     renderItemIcon() {
+
+        const { type } = this.props;
+        const icon = (type === 'Finance' ? 'cash' :
+            (type === 'FireArms' ? 'gleam' :
+                (type === 'Energy' ? 'plug' : type === 'RawMaterials' ? 'tools' : 'rocket')));
+
         return (
-            <Col xs={2}>
+            <Col xs={1}>
                 <div className="icon-big text-center icon-warning">
-                    d
+                    <i className={'pe-7s-' + icon + ' text-success'} />
                 </div>
             </Col>
         );
@@ -35,8 +41,8 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
 
     renderTitle() {
         return(
-            <Col xs={2}>
-                <div className="text-center">
+            <Col xs={5}>
+                <div className="stockTile-text title text-center">
                     {this.props.title}
                 </div>
             </Col>
@@ -48,7 +54,7 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
         const valueAsString = count.toString();
         const formattedValue = valueAsString.replace( /\B(?=(\d{3})+(?!\d))/g, ',' );
         return (
-            <Col xs={4}>
+            <Col xs={3}>
                 <div className="numbers stockTileDetailBox text-left">
 
                     <ItemCardPriceTag type={'price'} price={value}/>
@@ -63,7 +69,7 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
 
     renderPriceTag() {
         return(
-            <Col xs={4} className="numbers text-center stockTilePriceTag">
+            <Col xs={3} className="numbers text-center stockTilePriceTag">
                 <PriceTag value={this.props.total}/>
             </Col>
         );

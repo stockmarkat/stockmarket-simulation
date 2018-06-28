@@ -3035,3 +3035,6 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .text-left {
   text-align: left !important; }
+
+.stockTile-text {
+  font-size: 3em; }
