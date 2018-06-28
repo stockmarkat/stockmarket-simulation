@@ -32,8 +32,8 @@ export interface Stock {
 }
 
 export interface FinancialSnapshot {
-    value: number;
-    date: Date;
+    value?: number;
+    date: string;
 }
 
 interface NewsEffect {
@@ -53,9 +53,7 @@ export interface StockCategoryValue {
 
 export interface DepotState {
     accountValue: number;
-    stockValue: number;
     stockValueDevelopment: FinancialSnapshot[];
-    stockCategoryValues: StockCategoryValue[];
 }
 
 export interface StockMarketState {
@@ -81,4 +79,8 @@ export interface GenericAction {
     type: string;
 // tslint:disable-next-line: no-any
     payload?: any;
+}
+
+export function cloneState<T>( state: T ): T {
+    return JSON.parse( JSON.stringify( state ) );
 }

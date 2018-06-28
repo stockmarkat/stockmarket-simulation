@@ -1,42 +1,41 @@
-export const INCREASE_ACCOUNT_VALUE = 'depotReducer/increase-account-value';
-export const DECREASE_ACCOUNT_VALUE = 'depotReducer/decrease-account-value';
-export const SET_ACCOUNT_VALUE = 'depotReducer/set-account-value';
+import { FinancialSnapshot, GenericAction } from '../AppState';
 
-export const INCREASE_STOCK_VALUE = 'depotReducer/increase-stock-value';
-export const DECREASE_STOCK_VALUE = 'depotReducer/decrease-stock-value';
-export const SET_STOCK_VALUE = 'depotReducer/set-stock-value';
+export const CHANGE_ACCOUNT_VALUE = 'depotReducer/change-account-value';
+export const SET_ACCOUNT_VALUE = 'depotReducer/set-account-value';
+export const INIT_SNAPSHOT_CAPITAL = 'depotReducer/inti-snapshot-capital';
+export const SNAPSHOT_CAPITAL = 'depotReducer/snapshot-capital';
+
+export const SET_STOCK_VALUE_DEVELOPMENT = 'depotReducer/set-stock-value-development';
 
 export interface SetValueAction {
     type: string;
     value: number;
 }
 
-export const increaseAccountValue = (value: number): SetValueAction => ({
-    type: INCREASE_ACCOUNT_VALUE,
-    value
+export const initSnapshotCapital = (): GenericAction => ({
+    type: INIT_SNAPSHOT_CAPITAL,
 });
 
-export const decreaseAccountValue = (value: number): SetValueAction => ({
-    type: DECREASE_ACCOUNT_VALUE,
-    value
+export const snapshotCapital = (): GenericAction => ({
+    type: SNAPSHOT_CAPITAL,
 });
 
-export const setAccountValue = (value: number): SetValueAction => ({
+export const changeAccountValue = ( changeAmount: number ): SetValueAction => ({
+    type: CHANGE_ACCOUNT_VALUE,
+    value: changeAmount
+});
+
+export const setAccountValue = ( value: number ): SetValueAction => ({
     type: SET_ACCOUNT_VALUE,
     value
 });
 
-export const increaseStockValue = (value: number): SetValueAction => ({
-    type: INCREASE_STOCK_VALUE,
-    value
-});
+export interface SetFinancialSnapshotValuesAction {
+    type: string;
+    values: FinancialSnapshot[];
+}
 
-export const decreaseStockValue = (value: number): SetValueAction => ({
-    type: DECREASE_STOCK_VALUE,
-    value
-});
-
-export const setStockValue = (value: number): SetValueAction => ({
-    type: SET_STOCK_VALUE,
-    value
+export const setStockValueDevelopment = ( values: FinancialSnapshot[] ): SetFinancialSnapshotValuesAction => ({
+    type: SET_STOCK_VALUE_DEVELOPMENT,
+    values
 });

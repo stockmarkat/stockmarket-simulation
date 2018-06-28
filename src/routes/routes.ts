@@ -1,5 +1,5 @@
-import Account from '../views/Account/Account';
-import { Depot } from '../views/Depot/Depot';
+import Depot from '../views/Depot';
+import Market from '../views/Market';
 
 export interface AppRoute {
     path: string;
@@ -13,8 +13,9 @@ export interface AppRoute {
 }
 
 const appRoutes: AppRoute[] = [
-    {path: '/depot', name: 'Depot', icon: 'pe-7s-graph', component: Depot},
-    {path: '/account', name: 'Account', icon: 'pe-7s-info', component: Account},
+    { path: '/depot', name: 'Depot', icon: 'pe-7s-wallet', component: Depot },
+    { path: '/market', name: 'Market', icon: 'pe-7s-graph1', component: Market },
+    { path: '/', name: 'Depot', redirect: true, to: '/depot'},
 ];
 
 export default appRoutes;

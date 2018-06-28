@@ -1,3 +1,3 @@
-import { Depot } from './Depot';
+import Depot from './Depot';
 
 export default Depot;

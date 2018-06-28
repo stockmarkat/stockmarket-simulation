@@ -1,11 +1,11 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { Footer } from '../../components/Footer/Footer';
 import { Header } from '../../components/Header/Header';
-import { Sidebar } from '../../components/Sidebar/Sidebar';
-import { Route, Switch } from 'react-router-dom';
-import appRoutes from '../../routes/routes';
-import { connect } from 'react-redux';
 import { NotificationSystemFrame } from '../../components/NotificationSystem';
+import { Sidebar } from '../../components/Sidebar/Sidebar';
+import appRoutes from '../../routes/routes';
 import { loadState } from '../../state/initialLoad/initialLoadActions';
 
 interface AppProps {
@@ -21,7 +21,7 @@ class App extends React.Component<AppProps, AppRootState> {
         super(props);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.loadState();
     }
 
@@ -35,11 +35,14 @@ class App extends React.Component<AppProps, AppRootState> {
                     <Header {...this.props}/>
                     <Switch>
                         {
-                            appRoutes.map( ( prop, key ) => {
+                            appRoutes.map((prop, key) => {
+                                if (prop.redirect) {
+                                    return (<Redirect path={prop.path} to={prop.to!} key={key}/>);
+                                }
                                 return (
                                     <Route path={prop.path} component={prop.component} key={key}/>
                                 );
-                            } )
+                            })
                         }
                     </Switch>
                     <Footer/>
