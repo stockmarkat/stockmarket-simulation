@@ -17,6 +17,6 @@ export const StockConfig: StockMarketConfiguration = {
 
 export const CapitalConfig: StockMarketConfiguration = {
     interval: 2,
-    lastMinutes: 30,
+    lastMinutes: 10,
     points: () => CapitalConfig.lastMinutes * 60 / CapitalConfig.interval
 };
