@@ -3,6 +3,7 @@ import * as Col from 'react-bootstrap/lib/Col';
 import { ItemCardPriceTag } from '../ItemCard/ItemCardPriceTag';
 import * as Row from 'react-bootstrap/lib/Row';
 import { PriceTag } from '../PriceTag';
+import { getCorrectIconForType } from '../../util/GetCorrectIcon';
 
 interface StockTileProps {
 
@@ -26,14 +27,12 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
     renderItemIcon() {
 
         const { type } = this.props;
-        const icon = (type === 'Finance' ? 'cash' :
-            (type === 'FireArms' ? 'gleam' :
-                (type === 'Energy' ? 'plug' : type === 'RawMaterials' ? 'tools' : 'rocket')));
+        const icon = getCorrectIconForType(type);
 
         return (
             <Col xs={1}>
                 <div className="icon-big text-center icon-warning">
-                    <i className={'pe-7s-' + icon + ' text-success'} />
+                    <i className={'pe-7s-' + icon} />
                 </div>
             </Col>
         );
@@ -41,7 +40,7 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
 
     renderTitle() {
         return(
-            <Col xs={5}>
+            <Col xs={7}>
                 <div className="stockTile-text title text-center">
                     {this.props.title}
                 </div>
@@ -54,14 +53,17 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
         const valueAsString = count.toString();
         const formattedValue = valueAsString.replace( /\B(?=(\d{3})+(?!\d))/g, ',' );
         return (
-            <Col xs={3}>
+            <Col xs={2}>
+
                 <div className="numbers stockTileDetailBox text-left">
 
                     <ItemCardPriceTag type={'price'} price={value}/>
-                    <span className="item-card-price-tag">
+                    <div className={'stockTileCountBox'}>
+                    <span className="item-card-price-tag stockTileCountText">
                         Anzahl:
                     </span>
                     {formattedValue}
+                    </div>
                 </div>
             </Col>
         );
@@ -69,7 +71,7 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
 
     renderPriceTag() {
         return(
-            <Col xs={3} className="numbers text-center stockTilePriceTag">
+            <Col xs={2} className="numbers text-center stockTilePriceTag">
                 <PriceTag value={this.props.total}/>
             </Col>
         );
