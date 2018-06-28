@@ -2,6 +2,7 @@
   {
     "name": "MySuperFancyQuest1",
     "iconName": "myIcon",
+    "isUnlocked": true,
     "goodies": [
       {
         "type": "money",

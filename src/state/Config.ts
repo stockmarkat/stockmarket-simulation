@@ -9,6 +9,15 @@ interface StockMarketConfiguration {
     points: () => number;
 }
 
+interface QuestConfig {
+    // the interval in seconds of when to recalculate the quest state
+    updateInterval: number;
+}
+
+export const QuestConfig: QuestConfig = {
+    updateInterval: 2
+};
+
 export const StockConfig: StockMarketConfiguration = {
     interval: 2,
     lastMinutes: 10,

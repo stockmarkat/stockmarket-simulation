@@ -6,7 +6,7 @@ export interface Quest {
     progress: number; // 0 - 100%
     isUnlocked: boolean; // is this quest unlocked
     isCompleted: boolean; // is this quest completed
-    completed?: Date; // when was this quest finished
+    completed?: string; // when was this quest finished
 }
 
 export interface QuestTask {
