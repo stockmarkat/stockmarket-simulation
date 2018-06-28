@@ -6,6 +6,8 @@ import { BuyButton } from './BuyButton';
 import { SellButton } from './SellButton';
 import { Grid, Row, Col } from 'react-bootstrap';
 import StockAreaChart from './StockAreaChart';
+import { PriceTag } from '../../../components/PriceTag';
+import { getCorrectIconForType } from '../../../util/GetCorrectIcon';
 
 interface StockCardProps {
     stock: Stock;
@@ -40,26 +42,53 @@ export default class StockCard extends React.Component<StockCardProps, StockCard
         }
     }
 
+    getColor(valueChange: number) {
+        if (valueChange > 0) {
+            return 'green';
+        } else if (valueChange < 0) {
+            return 'red';
+        } else {
+            return '';
+        }
+    }
+
     render() {
         const {stock, onBuy, onSell} = this.props;
         const {buyOrSellAmount} = this.state;
 
-        // TODO: left side (labels and all that + text field)
         // TODO: improve performance
+        // TODO: make 2-3 new components
 
         return (
-            <Card noHeader={true} noFooter={true} noBottomPadding={true}>
+            <Card noHeader={true} noFooter={true}>
                 <Grid fluid={true}>
                     <Row>
                         <Col xs={4}>
                             <h4 className="title text-underline">{stock.name}</h4>
-                            <p>
-                                Value: {stock.value}<br/>
-                                Value Change: {stock.valueChange}%
-                                <i className={this.getArrowIcon(stock.valueChange)} />
-                                <br/>
-                                Category: {stock.type}
-                            </p>
+                            <br/>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td className="bold">Value:</td>
+                                    <td className="small-padding-left"><PriceTag value={stock.value}/></td>
+                                </tr>
+                                <tr>
+                                    <td className="bold">Category:</td>
+                                    <td className="small-padding-left small-padding-top">
+                                        <i className={getCorrectIconForType(stock.type) + ' category-icon'} />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td className="bold">Change:</td>
+                                    <td className={'small-padding-left ' + this.getColor(stock.valueChange)}>
+                                        {stock.valueChange.toFixed(2)}%
+                                        &nbsp;
+                                        <i className={this.getArrowIcon( stock.valueChange )}/>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <br/>
                             <BuyButton
                                 onClick={() => {
                                     onBuy( buyOrSellAmount );

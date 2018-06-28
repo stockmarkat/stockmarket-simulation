@@ -91,3 +91,19 @@ h1 .subtitle{
 .text-underline {
     text-decoration: underline;
 }
+
+.red {
+    color: $danger-states-color;
+}
+
+.green {
+    color: $success-states-color;
+}
+
+.bold {
+    font-weight: $font-weight-bold;
+}
+
+.category-icon {
+    font-size: 1.4em;
+}

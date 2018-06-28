@@ -20,7 +20,7 @@ export default class StockAreaChart extends React.PureComponent<StockAreaChartPr
         const { valueHistory } = this.props;
 
         return (
-            <ResponsiveContainer height={150} width="100%">
+            <ResponsiveContainer height={170} width="100%">
                 <AreaChart data={valueHistory}>
                     <defs>
                         <linearGradient id="colorStock" x1="0" y1="0" x2="0" y2="1">
