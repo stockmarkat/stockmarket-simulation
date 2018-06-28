@@ -45,7 +45,7 @@ export default class StockCard extends React.Component<StockCardProps, StockCard
                             <h4 className="title text-underline">{stock.name}</h4>
                             <p>
                                 Value: {stock.value}<br/>
-                                Value Change: {stock.valueChange}%<br/> { /* TODO: Add arrow */ }
+                                Value Change: {stock.valueChange}%<br/> {/* TODO: Add arrow */}
                                 Category: {stock.type}
                             </p>
                             <BuyButton
