@@ -12,8 +12,11 @@ function* distributeGoodie(goodie: Goodie) {
     switch (goodie.type) {
         case 'money':
             yield call(distributeMoneyGoodie, goodie);
+            return;
         case 'stock':
             break;
+        default:
+            return;
     }
 }
 
