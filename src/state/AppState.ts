@@ -13,15 +13,19 @@ export interface QuestTask {
     name: string; // describe the task
     progress: number; // 0 - 100% (set automatically)
     isCompleted: boolean; // is this Task Completed?
-    questType: 'moneyPossession' | 'StockTotalPossession';
+    questType: QuestType;
     amount: number; // the amount you should have for this task
 }
 
+export type QuestType = 'moneyPossession' | 'StockTotalPossession';
+
 export interface Goodie {
-    type: 'money' | 'stock'; // the type of goodie
+    type: GoodieType; // the type of goodie
     stockName?: string; // only set if the Goodie is a Stock
     amount: number; // the amount you will earn
 }
+
+export type GoodieType = 'money' | 'stock';
 
 export interface Stock {
     name: string;
@@ -85,6 +89,6 @@ export interface GenericAction {
     payload?: any;
 }
 
-export function cloneState<T>( state: T ): T {
-    return JSON.parse( JSON.stringify( state ) );
+export function cloneState<T>(state: T): T {
+    return JSON.parse(JSON.stringify(state));
 }
