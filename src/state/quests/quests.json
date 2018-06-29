@@ -7,6 +7,11 @@
       {
         "type": "money",
         "amount": 10500
+      },
+      {
+        "type": "stock",
+        "amount": 10,
+        "stockName": "Troubleshooters"
       }
     ],
     "tasks": [
