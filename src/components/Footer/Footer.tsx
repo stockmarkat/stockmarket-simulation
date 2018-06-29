@@ -28,7 +28,7 @@ export class Footer extends React.Component<FooterProps, FooterState> {
         return (
             <footer className="footer">
                 <Grid bsClass={''}>
-                    <nav className="pull-left">
+                    <nav className="pull-left small-padding-left">
                         {this.getFooterLinks()}
                     </nav>
                 </Grid>

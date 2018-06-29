@@ -138,7 +138,7 @@ function* calculateAllNextStockValues() {
                 ...s,
                 valueHistory: valueHistory,
                 value: newValue,
-                valueChange: valueChange
+                valueChange: Number(valueChange.toFixed(2))
             }
         } );
     }

@@ -122,6 +122,21 @@ h1 .subtitle {
 .text-danger, .text-danger:hover {
   color: #FF4A55 !important; }
 
+.text-underline {
+  text-decoration: underline; }
+
+.red {
+  color: #EE2D20; }
+
+.green {
+  color: #049F0C; }
+
+.bold {
+  font-weight: 600; }
+
+.category-icon {
+  font-size: 1.4em; }
+
 /*     General overwrite     */
 body,
 .wrapper {
@@ -882,6 +897,9 @@ body > .navbar-collapse[data-color="purple"]:after {
 .input-group-focus .input-group-addon {
   border-color: #9A9A9A; }
 
+.input-small {
+  width: 4em; }
+
 .alert {
   border: 0;
   border-radius: 0;
@@ -999,6 +1017,15 @@ body > .navbar-collapse[data-color="purple"]:after {
   .table > tbody > tr:hover .td-actions .btn {
     opacity: 1;
     filter: alpha(opacity=100); }
+
+.stockDetails {
+  padding-left: 3em; }
+
+.small-padding-top {
+  padding-top: 0.5em; }
+
+.small-padding-left {
+  padding-left: 1em; }
 
 /*      Checkbox and radio         */
 .checkbox,
@@ -1879,7 +1906,8 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .icon-button-add {
   color: #049F0C;
-  background-color: white; }
+  background-color: white;
+  padding-left: 0; }
 
 .icon-button-remove {
   color: #EE2D20;
