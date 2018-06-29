@@ -2,13 +2,13 @@ import * as React from 'react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import { FinancialSnapshot } from '../../state/AppState';
 
-interface OurAreaChartProps {
+interface FinancialDevelopmentProps {
     valueHistory: FinancialSnapshot[];
     interval: number;
     yAxisDomain?: [string, string] | [number, number] | [number, string];
 }
 
-export default class OurAreaChart extends React.PureComponent<OurAreaChartProps> {
+export default class FinancialDevelopmentChart extends React.PureComponent<FinancialDevelopmentProps> {
 
     render() {
         const { valueHistory, yAxisDomain } = this.props;

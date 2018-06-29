@@ -5,7 +5,7 @@ import { StockConfig } from '../../../state/Config';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { StockDetails } from './StockDetails';
 import { BuyOrSellView } from './BuyOrSellView';
-import OurAreaChart from '../../../components/Charts/OurAreaChart';
+import FinancialDevelopmentChart from '../../../components/Charts/FinancialDevelopmentChart';
 
 interface StockCardProps {
     stock: Stock;
@@ -32,7 +32,7 @@ export default class StockCard extends React.Component<StockCardProps> {
                             <BuyOrSellView onBuy={onBuy} onSell={onSell} />
                         </Col>
                         <Col xs={8}>
-                            <OurAreaChart valueHistory={stock.valueHistory} interval={StockConfig.points() / 6}/>
+                            <FinancialDevelopmentChart valueHistory={stock.valueHistory} interval={StockConfig.points() / 6}/>
                         </Col>
                     </Row>
                 </Grid>
