@@ -18,7 +18,7 @@ export interface QuestTask {
 }
 
 export type QuestType =
-    'moneyPossession' // the total capital the user should have
+    'MoneyPossession' // the total capital the user should have
     | 'StockTotalPossession' // the total amount of stocks the user should have
     ;
 

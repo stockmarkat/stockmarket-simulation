@@ -16,9 +16,32 @@
     ],
     "tasks": [
       {
-        "name": "Have $10'500 in total",
-        "questType": "moneyPossession",
+        "name": "Have $9000 in total",
+        "questType": "MoneyPossession",
         "amount": 9000
+      }
+    ]
+  },
+  {
+    "name": "MySuperFancyQuest3",
+    "iconName": "myIcon",
+    "isUnlocked": true,
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 10500
+      },
+      {
+        "type": "stock",
+        "amount": 10,
+        "stockName": "Troubleshooters"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Have $100'000 in total",
+        "questType": "MoneyPossession",
+        "amount": 100000
       }
     ]
   },
@@ -35,7 +58,7 @@
     "tasks": [
       {
         "name": "Have $100 in total",
-        "questType": "moneyPossession",
+        "questType": "MoneyPossession",
         "amount": 10500
       }
     ]
@@ -54,8 +77,51 @@
     "tasks": [
       {
         "name": "Buy 1 stock",
-        "questType": "stockPossession",
+        "questType": "StockTotalPossession",
         "amount": 1
+      }
+    ]
+  },
+  {
+    "name": "Buy 2 Stock",
+    "iconName": "myIcon",
+    "isUnlocked": true,
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "Troubleshooters"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Buy 2 stock",
+        "questType": "StockTotalPossession",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "name": "Buy 3 Stock",
+    "iconName": "myIcon",
+    "isUnlocked": true,
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "Troubleshooters"
+      },
+      {
+        "type": "stock",
+        "amount": 10,
+        "stockName": "Troubleshooters"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Buy 3 stock",
+        "questType": "StockTotalPossession",
+        "amount": 3
       }
     ]
   }

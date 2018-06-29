@@ -15,19 +15,18 @@ class Quests extends React.Component<QuestsProps> {
 
     getActiveQuestsView( activeQuests: Quest[] ) {
         return (
-            <div>
-                <Col xs={12} key={1}>
+            <Row>
+                <Col key={1} xs={12}>
                     <h3>Active Quests</h3>
-                    {activeQuests.map( quest => {
-                        return (
-                            <QuestCard
-                                key={quest.name}
-                                quest={quest}
-                            />
-                        );
-                    } )}
                 </Col>
-            </div>
+                {activeQuests.map( quest => {
+                    return (
+                        <Col key={quest.name} xs={12}>
+                            <QuestCard quest={quest}/>
+                        </Col>
+                    );
+                } )}
+            </Row>
         );
     }
 
@@ -56,13 +55,10 @@ class Quests extends React.Component<QuestsProps> {
         return (
             <div className="content">
                 <Grid fluid={true}>
-                    <Row>
-                        {
-                            activeQuests.length > 0 &&
-                            this.getActiveQuestsView( activeQuests )
-                        }
-                    </Row>
-                    {activeQuests.length > 0 && completedQuests.length > 0 && <hr/>}
+                    {
+                        activeQuests.length > 0 &&
+                        this.getActiveQuestsView( activeQuests )
+                    }
                     <Row>
                         {
                             completedQuests.length > 0 &&

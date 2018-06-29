@@ -6,7 +6,7 @@ import { getOwnedStocksAmount } from '../stockMarket/stockSelector';
 export function* getTaskProgress(task: QuestTask) {
     let progress = 0;
     switch (task.questType) {
-        case 'moneyPossession':
+        case 'MoneyPossession':
             progress = yield call(getMoneyPossessionTaskProgress, task);
             break;
         case 'StockTotalPossession':

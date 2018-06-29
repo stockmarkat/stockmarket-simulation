@@ -13,15 +13,18 @@ export class QuestCard extends React.Component<QuestCardProps> {
 
     render() {
         const {quest} = this.props;
+        const label = quest.progress > 0 ? `${quest.progress.toFixed( 0 )}%` : '';
 
         return (
             <Card noFooter={true} noHeader={true}>
-                <i className={quest.iconName} />
+                <i className={quest.iconName}/>
                 <h4 className="title">{quest.name}</h4>
                 <GoodieList goodies={quest.goodies}/>
                 <TaskList tasks={quest.tasks}/>
-                <h5 className="small-margin">Progress</h5>
-                <ProgressBar bsStyle="success" now={quest.progress} label={`${quest.progress.toFixed(0)}%`}/>
+                {!quest.isCompleted &&
+                <h5 className="small-margin">Progress</h5> &&
+                <ProgressBar striped={true} bsStyle="success" now={quest.progress} label={label}/>
+                }
             </Card>
         );
     }
