@@ -17,7 +17,10 @@ export interface QuestTask {
     amount: number; // the amount you should have for this task
 }
 
-export type QuestType = 'moneyPossession' | 'StockTotalPossession';
+export type QuestType =
+    'moneyPossession' // the total capital the user should have
+    | 'StockTotalPossession' // the total amount of stocks the user should have
+    ;
 
 export interface Goodie {
     type: GoodieType; // the type of goodie

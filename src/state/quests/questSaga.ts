@@ -5,6 +5,7 @@ import { Quest, QuestTask } from '../AppState';
 import { QuestConfig as Config } from '../Config';
 import { getCapital } from '../depot/depotSelector';
 import { calculateNextStockValues } from '../stockMarket/stockMarketActions';
+import { getOwnedStocksAmount } from '../stockMarket/stockSelector';
 import { addQuests, LOAD_QUESTS, RECALCULATE_QUESTS, recalculateQuests, updateQuest } from './questActions';
 import { getActiveQuests } from './questSelectors';
 
@@ -34,7 +35,7 @@ function* getTaskProgress(task: QuestTask) {
         case 'moneyPossession':
             return yield call(getMoneyPossessionTaskProgress, task);
         case 'StockTotalPossession':
-            break;
+            return yield call(getStockTotalPossessionTaskProgress, task);
         default:
             return 0;
     }
@@ -43,6 +44,11 @@ function* getTaskProgress(task: QuestTask) {
 function* getMoneyPossessionTaskProgress(task: QuestTask) {
     const money = yield select(getCapital);
     return money * 100 / task.amount;
+}
+
+function* getStockTotalPossessionTaskProgress(task: QuestTask) {
+    const ownedStockAmount = yield select(getOwnedStocksAmount);
+    return ownedStockAmount * 100 / task.amount;
 }
 
 function* recalculateAllQuests() {
