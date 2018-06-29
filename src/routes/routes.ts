@@ -1,5 +1,6 @@
 import Depot from '../views/Depot';
 import Market from '../views/Market';
+import Quests from '../views/Quests';
 
 export interface AppRoute {
     path: string;
@@ -15,6 +16,7 @@ export interface AppRoute {
 const appRoutes: AppRoute[] = [
     { path: '/depot', name: 'Depot', icon: 'pe-7s-wallet', component: Depot },
     { path: '/market', name: 'Market', icon: 'pe-7s-graph1', component: Market },
+    { path: '/quests', name: 'Quests', icon: 'pe-7s-wallet', component: Quests },
     { path: '/', name: 'Depot', redirect: true, to: '/depot'},
 ];
 

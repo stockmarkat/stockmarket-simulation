@@ -1,7 +1,7 @@
 import { StockNews } from '../AppState';
 
-export const LOAD_NEWS = 'questsReducer/load-quests';
-export const ADD_NEWS = 'questsReducer/add-quests';
+export const LOAD_NEWS = 'newsreducer/load-news';
+export const ADD_NEWS = 'newsreducer/add-news';
 
 export const loadNews = () => ({
     type: LOAD_NEWS
