@@ -16,7 +16,7 @@
     ],
     "tasks": [
       {
-        "name": "Have 10500 of money in total",
+        "name": "Have $10'500 in total",
         "questType": "moneyPossession",
         "amount": 10500
       }
