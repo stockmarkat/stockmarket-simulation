@@ -4,14 +4,23 @@ import { getCapital } from '../depot/depotSelector';
 import { getOwnedStocksAmount } from '../stockMarket/stockSelector';
 
 export function* getTaskProgress(task: QuestTask) {
+    let progress = 0;
     switch (task.questType) {
         case 'moneyPossession':
-            return yield call(getMoneyPossessionTaskProgress, task);
+            progress = yield call(getMoneyPossessionTaskProgress, task);
+            break;
         case 'StockTotalPossession':
-            return yield call(getStockTotalPossessionTaskProgress, task);
+            progress = yield call(getStockTotalPossessionTaskProgress, task);
+            break;
         default:
             return 0;
     }
+
+    if (progress > 100) {
+        progress = 100;
+    }
+
+    return progress;
 }
 
 function* getMoneyPossessionTaskProgress(task: QuestTask) {
