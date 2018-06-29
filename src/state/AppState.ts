@@ -26,10 +26,12 @@ export interface Stock {
     value: number;
     volatility: number;
     valueChange: number; // for the last x Hours/days in %
-    type: 'FireArms' | 'Energy' | 'Finance' | 'RawMaterials' | 'Technology';
+    type: StockType;
     valueHistory: FinancialSnapshot[];
     quantity: number; // count of owned stocks
 }
+
+export type StockType = 'FireArms' | 'Energy' | 'Finance' | 'RawMaterials' | 'Technology';
 
 export interface FinancialSnapshot {
     value?: number;
@@ -47,7 +49,7 @@ export interface StockNews {
 }
 
 export interface StockCategoryValue {
-    categoryName: string;
+    categoryName: StockType;
     ratio: number;
 }
 

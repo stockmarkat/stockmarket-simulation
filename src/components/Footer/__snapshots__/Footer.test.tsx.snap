@@ -23,7 +23,7 @@ ShallowWrapper {
         fluid={false}
       >
         <nav
-          className="pull-left"
+          className="pull-left small-padding-left"
         >
           <ul>
             <FooterLink
@@ -44,7 +44,7 @@ ShallowWrapper {
       "props": Object {
         "bsClass": "",
         "children": <nav
-          className="pull-left"
+          className="pull-left small-padding-left"
         >
           <ul>
             <FooterLink
@@ -70,7 +70,7 @@ ShallowWrapper {
               Github
             </FooterLink>
           </ul>,
-          "className": "pull-left",
+          "className": "pull-left small-padding-left",
         },
         "ref": null,
         "rendered": Object {
@@ -117,7 +117,7 @@ ShallowWrapper {
           fluid={false}
         >
           <nav
-            className="pull-left"
+            className="pull-left small-padding-left"
           >
             <ul>
               <FooterLink
@@ -138,7 +138,7 @@ ShallowWrapper {
         "props": Object {
           "bsClass": "",
           "children": <nav
-            className="pull-left"
+            className="pull-left small-padding-left"
           >
             <ul>
               <FooterLink
@@ -164,7 +164,7 @@ ShallowWrapper {
                 Github
               </FooterLink>
             </ul>,
-            "className": "pull-left",
+            "className": "pull-left small-padding-left",
           },
           "ref": null,
           "rendered": Object {

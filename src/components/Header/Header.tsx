@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Navbar } from 'react-bootstrap';
-import { HeaderLinks } from './HeaderLinks';
 import appRoutes from '../../routes/routes';
 
 interface HeaderProps {
@@ -58,9 +57,7 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
                     </Navbar.Brand>
                     <Navbar.Toggle onClick={this.mobileSidebarToggle}/>
                 </Navbar.Header>
-                <Navbar.Collapse>
-                    <HeaderLinks/>
-                </Navbar.Collapse>
+                <Navbar.Collapse /> {/*TODO: maybe insert values here */}
             </Navbar>
         );
     }

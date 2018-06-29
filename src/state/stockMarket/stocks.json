@@ -18,7 +18,7 @@
     "type": "Technology"
   },
   {
-    "name": "VISA Card Services AG",
+    "name": "Card Services AG",
     "value": 2736.23,
     "volatility": 2,
     "type": "Finance"
@@ -66,7 +66,7 @@
     "type": "RawMaterials"
   },
   {
-    "name": "TroubleShooter HOLDING",
+    "name": "TroubleShooters",
     "value": 4.50,
     "volatility": 2,
     "type": "FireArms"
