@@ -3,6 +3,7 @@ import { delay } from 'redux-saga';
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 import { Quest, QuestTask } from '../AppState';
 import { QuestConfig as Config } from '../Config';
+import { getCapital } from '../depot/depotSelector';
 import { calculateNextStockValues } from '../stockMarket/stockMarketActions';
 import { addQuests, LOAD_QUESTS, RECALCULATE_QUESTS, recalculateQuests, updateQuest } from './questActions';
 import { getActiveQuests } from './questSelectors';
@@ -29,8 +30,19 @@ function* loadInitialQuests() {
 }
 
 function* getTaskProgress(task: QuestTask) {
-    yield delay(0);
-    return 50;
+    switch (task.questType) {
+        case 'moneyPossession':
+            return yield call(getMoneyPossessionTaskProgress, task);
+        case 'StockTotalPossession':
+            break;
+        default:
+            return 0;
+    }
+}
+
+function* getMoneyPossessionTaskProgress(task: QuestTask) {
+    const money = yield select(getCapital);
+    return money * 100 / task.amount;
 }
 
 function* recalculateAllQuests() {
