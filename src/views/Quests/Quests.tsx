@@ -3,40 +3,70 @@ import { Col, Grid, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { AppState, Quest } from '../../state/AppState';
 import { QuestCard } from './Cards/QuestCard';
+import { getActiveQuests, getCompletedQuests } from '../../state/quests/questSelectors';
+import { dateSortDescending } from './SortsQuests';
 
 interface QuestsProps {
-    quests: Quest[];
+    activeQuests: Quest[];
+    completedQuests: Quest[];
 }
 
-interface QuestsState {
-}
+class Quests extends React.Component<QuestsProps> {
 
-class Quests extends React.Component<QuestsProps, QuestsState> {
+    getActiveQuestsView( activeQuests: Quest[] ) {
+        return (
+            <div>
+                <Col xs={12} key={1}>
+                    <h3>Active Quests</h3>
+                    {activeQuests.map( quest => {
+                        return (
+                            <QuestCard
+                                key={quest.name}
+                                quest={quest}
+                            />
+                        );
+                    } )}
+                </Col>
+            </div>
+        );
+    }
 
-    constructor(props: QuestsProps) {
-        super(props);
+    getCompletedQuestsView( completedQuests: Quest[] ) {
+        return (
+            <div>
+                <Col xs={12} key={1}>
+                    <h3>Completed Quests</h3>
+                    {completedQuests.map( quest => {
+                        return (
+                            <QuestCard
+                                key={quest.name}
+                                quest={quest}
+                            />
+                        );
+                    } )}
+                </Col>
+            </div>
+        );
     }
 
     render() {
 
-        const { quests } = this.props;
+        const {activeQuests, completedQuests} = this.props;
 
         return (
             <div className="content">
                 <Grid fluid={true}>
                     <Row>
                         {
-                            // TODO split quest list
-                            quests.map(quest => {
-                                return (
-                                    <Col key={quest.name} xs={12}>
-                                        <QuestCard
-                                            quest={quest}
-                                        />
-                                    </Col>
-                                );
-                            })
-
+                            activeQuests.length > 0 &&
+                            this.getActiveQuestsView( activeQuests )
+                        }
+                    </Row>
+                    {activeQuests.length > 0 && completedQuests.length > 0 && <hr/>}
+                    <Row>
+                        {
+                            completedQuests.length > 0 &&
+                            this.getCompletedQuestsView( completedQuests )
                         }
                     </Row>
                 </Grid>
@@ -45,11 +75,12 @@ class Quests extends React.Component<QuestsProps, QuestsState> {
     }
 }
 
-const mapStateToProps = (state: AppState) => ({
-    quests: state.quests.quests
+const mapStateToProps = ( state: AppState ) => ({
+    activeQuests: getActiveQuests( state ),
+    completedQuests: getCompletedQuests( state ).sort( dateSortDescending ),
 });
 
 // tslint:disable-next-line: no-any
-const mapDispatchToProps = (dispatch: any) => ({});
+const mapDispatchToProps = ( dispatch: any ) => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Quests);
+export default connect( mapStateToProps, mapDispatchToProps )( Quests );
