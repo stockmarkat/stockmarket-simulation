@@ -32,7 +32,10 @@ export default class StockCard extends React.Component<StockCardProps> {
                             <BuyOrSellView onBuy={onBuy} onSell={onSell} />
                         </Col>
                         <Col xs={8}>
-                            <FinancialDevelopmentChart valueHistory={stock.valueHistory} interval={StockConfig.points() / 6}/>
+                            <FinancialDevelopmentChart
+                                valueHistory={stock.valueHistory}
+                                interval={StockConfig.points() / 6}
+                            />
                         </Col>
                     </Row>
                 </Grid>
