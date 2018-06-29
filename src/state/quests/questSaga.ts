@@ -1,8 +1,10 @@
 import { delay } from 'redux-saga';
 import { call, put, select, takeEvery } from 'redux-saga/effects';
+import { addNotification } from '../../components/NotificationSystem';
 import { Quest } from '../AppState';
 import { QuestConfig as Config } from '../Config';
 import { calculateNextStockValues } from '../stockMarket/stockMarketActions';
+import { distributeGoodies } from './goodieDistibution';
 import { addQuests, LOAD_QUESTS, RECALCULATE_QUESTS, recalculateQuests, updateQuest } from './questActions';
 import { getActiveQuests } from './questSelectors';
 import { getTaskProgress } from './taskProgressEvaluation';
@@ -25,6 +27,7 @@ function* loadInitialQuests() {
     });
 
     yield put(addQuests(quests));
+    yield delay(3 * 1000); // initially wait to start processing
     yield put(recalculateQuests());
 }
 
@@ -50,12 +53,22 @@ function* recalculateAllQuests() {
         if (q.progress === 100) {
             q.isCompleted = true;
             q.completed = new Date();
+            notifyUserQuestComplete(q);
+            yield call(distributeGoodies, q);
         }
 
         yield put(updateQuest(q));
     }
     yield delay(Config.updateInterval * 1000);
     yield put(calculateNextStockValues());
+}
+
+function notifyUserQuestComplete(q: Quest) {
+    addNotification({
+        level: 'success',
+        message: q.name,
+        title: 'Quest completed'
+    });
 }
 
 function* questSaga() {
