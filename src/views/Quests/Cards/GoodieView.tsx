@@ -16,7 +16,7 @@ export class GoodieView extends React.Component<GoodieViewProps> {
 
         return (
             <>
-                {isStockType && goodie.amount}&nbsp;
+                {isStockType && goodie.amount + ' '}
                 {isMoneyType && <PriceTag value={goodie.amount}/>}&nbsp;
                 {isStockType && 'stocks from'} {isStockType && goodie.stockName}
             </>

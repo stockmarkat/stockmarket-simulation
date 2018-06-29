@@ -21,7 +21,7 @@ export class QuestCard extends React.Component<QuestCardProps> {
                 <GoodieList goodies={quest.goodies}/>
                 <TaskList tasks={quest.tasks}/>
                 <h5 className="small-margin">Progress</h5>
-                <ProgressBar bsStyle="success" now={quest.progress} label={`${quest.progress}%`}/>
+                <ProgressBar bsStyle="success" now={quest.progress} label={`${quest.progress.toFixed(0)}%`}/>
             </Card>
         );
     }
