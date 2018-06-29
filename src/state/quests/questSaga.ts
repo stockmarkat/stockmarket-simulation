@@ -1,11 +1,12 @@
 import * as moment from 'moment';
 import { delay } from 'redux-saga';
 import { call, put, select, takeEvery } from 'redux-saga/effects';
-import { Quest, QuestTask } from '../AppState';
+import { Quest } from '../AppState';
 import { QuestConfig as Config } from '../Config';
 import { calculateNextStockValues } from '../stockMarket/stockMarketActions';
 import { addQuests, LOAD_QUESTS, RECALCULATE_QUESTS, recalculateQuests, updateQuest } from './questActions';
 import { getActiveQuests } from './questSelectors';
+import { getTaskProgress } from './taskProgressEvaluation';
 
 const questJson = require('./quests.json');
 
@@ -26,11 +27,6 @@ function* loadInitialQuests() {
 
     yield put(addQuests(quests));
     yield put(recalculateQuests());
-}
-
-function* getTaskProgress(task: QuestTask) {
-    yield delay(0);
-    return 50;
 }
 
 function* recalculateAllQuests() {
