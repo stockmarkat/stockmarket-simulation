@@ -1,4 +1,3 @@
-import * as moment from 'moment';
 import { delay } from 'redux-saga';
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 import { Quest } from '../AppState';
@@ -50,7 +49,7 @@ function* recalculateAllQuests() {
         q.progress = totalProgress / q.tasks.length;
         if (q.progress === 100) {
             q.isCompleted = true;
-            q.completed = moment().format('hh:mm');
+            q.completed = new Date();
         }
 
         yield put(updateQuest(q));
