@@ -14,7 +14,7 @@
   {
     "name": "Alphabet",
     "value": 751.07,
-    "volatility": 2,
+    "volatility": 3,
     "type": "Technology"
   },
   {
@@ -32,7 +32,7 @@
   {
     "name": "SAMSUNG",
     "value": 497.06,
-    "volatility": 2,
+    "volatility": 3,
     "type": "Technology"
   },
   {
@@ -43,12 +43,12 @@
   },
   {
     "name": "TESLA",
-    "value": 555.69,
+    "value": 348.66,
     "volatility": 2,
     "type": "Technology"
   },
   {
-    "name": "MurphyOIL",
+    "name": "Murphy OIL",
     "value": 1806.07,
     "volatility": 2,
     "type": "RawMaterials"
@@ -61,14 +61,14 @@
   },
   {
     "name": "SHELL",
-    "value": 46.32,
+    "value": 69.38,
     "volatility": 2,
     "type": "RawMaterials"
   },
   {
     "name": "TroubleShooters",
     "value": 4.50,
-    "volatility": 2,
+    "volatility": 5,
     "type": "FireArms"
   },
   {
@@ -79,14 +79,14 @@
   },
   {
     "name": "Spotify",
-    "value": 2490.93,
+    "value": 168.90,
     "volatility": 2,
     "type": "Technology"
   },
   {
-    "name": "KKKiosk",
+    "name": "Ruag",
     "value": 413.25,
-    "volatility": 2,
+    "volatility": 5,
     "type": "FireArms"
   },
   {
@@ -94,6 +94,12 @@
     "value": 115.2,
     "volatility": 2,
     "type": "Energy"
+  },
+  {
+    "name": "Swiss RE",
+    "value": 85.7,
+    "volatility": 1,
+    "type": "Finance"
   },
   {
     "name": "Mike Shiva",
