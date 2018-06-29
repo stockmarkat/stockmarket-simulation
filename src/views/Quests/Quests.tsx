@@ -26,6 +26,7 @@ class Quests extends React.Component<QuestsProps, QuestsState> {
                 <Grid fluid={true}>
                     <Row>
                         {
+                            // TODO split quest list
                             quests.map(quest => {
                                 return (
                                     <Col key={quest.name} xs={12}>

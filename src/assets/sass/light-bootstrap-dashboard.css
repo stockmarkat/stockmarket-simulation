@@ -137,6 +137,12 @@ h1 .subtitle {
 .category-icon {
   font-size: 1.4em; }
 
+.line-trough {
+  text-decoration: line-through; }
+
+.small-margin {
+  margin-bottom: 5px; }
+
 /*     General overwrite     */
 body,
 .wrapper {
