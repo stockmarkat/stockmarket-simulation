@@ -18,8 +18,8 @@ interface AppProps {
 
 class App extends React.Component<AppProps> {
 
-    constructor(props: AppProps) {
-        super(props);
+    constructor( props: AppProps ) {
+        super( props );
     }
 
     componentWillMount() {
@@ -31,19 +31,22 @@ class App extends React.Component<AppProps> {
 
             <div className="wrapper">
                 <NotificationSystemFrame/>
-                <Sidebar currentBalance={this.props.currentMoney} {...this.props} />
+                <Sidebar
+                    currentBalance={this.props.currentMoney}
+                    currentStockBalance={this.props.currentStockBalance}
+                />
                 <div id="main-panel" className="main-panel">
                     <Header {...this.props} />
                     <Switch>
                         {
-                            appRoutes.map((prop, key) => {
+                            appRoutes.map( ( prop, key ) => {
                                 if (prop.redirect) {
                                     return (<Redirect path={prop.path} to={prop.to!} key={key}/>);
                                 }
                                 return (
                                     <Route path={prop.path} component={prop.component} key={key}/>
                                 );
-                            })
+                            } )
                         }
                     </Switch>
                     <Footer/>
@@ -55,13 +58,13 @@ class App extends React.Component<AppProps> {
 
 const mapStateToProps = ( state: AppState ) => ({
     currentMoney: state.depot.accountValue,
-    currentStockBalance: getStockValue(state)
+    currentStockBalance: getStockValue( state )
 });
 
-// tslint:disable-next-line: no-any
-const mapDispatchToProps = (dispatch: any) => ({
+// tslint:disable-next-line:no-any
+const mapDispatchToProps = ( dispatch: any ) => ({
     loadState: () =>
-        dispatch(loadState())
+        dispatch( loadState() )
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect( mapStateToProps, mapDispatchToProps )( App );
