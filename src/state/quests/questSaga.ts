@@ -40,30 +40,24 @@ function* recalculateAllQuests() {
     const activeQuests: Quest[] = yield select(getActiveQuests);
 
     for (let q of activeQuests) {
-        if (q.isUnlocked && !q.isCompleted) {
-            let allTaskComplete = false;
-            let totalProgress = 0;
-            for (let t of q.tasks) {
-                const progress: number = yield call(getTaskProgress, t);
-                t.progress = progress;
-                totalProgress += progress;
-                if (progress === 100) {
-                    t.isCompleted = true;
-                } else {
-                    allTaskComplete = false;
-                }
+        let totalProgress = 0;
+        for (let t of q.tasks) {
+            const progress: number = yield call(getTaskProgress, t);
+            t.progress = progress;
+            totalProgress += progress;
+            if (progress === 100) {
+                t.isCompleted = true;
             }
-            q.isCompleted = allTaskComplete;
-            q.progress = totalProgress / q.tasks.length;
-            if (q.progress === 100) {
-                q.isCompleted = true;
-                q.completed = new Date();
-                notifyUserQuestComplete(q);
-                yield call(distributeGoodies, q);
-            }
-
-            yield put(updateQuest(q));
         }
+        q.progress = totalProgress / q.tasks.length;
+        if (q.progress === 100) {
+            q.isCompleted = true;
+            q.completed = new Date();
+            notifyUserQuestComplete(q);
+            yield call(distributeGoodies, q);
+        }
+
+        yield put(updateQuest(q));
     }
     yield call(unlockQuests);
     yield delay(Config.updateInterval * 1000);
