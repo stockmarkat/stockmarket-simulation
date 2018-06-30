@@ -2,7 +2,6 @@
   {
     "name": "MySuperFancyQuest1",
     "iconName": "myIcon",
-    "isUnlocked": true,
     "goodies": [
       {
         "type": "money",
@@ -25,7 +24,6 @@
   {
     "name": "MySuperFancyQuest3",
     "iconName": "myIcon",
-    "isUnlocked": true,
     "goodies": [
       {
         "type": "money",
@@ -48,7 +46,6 @@
   {
     "name": "MySuperFancyQuest2",
     "iconName": "myIcon",
-    "isUnlocked": true,
     "goodies": [
       {
         "type": "money",
@@ -66,7 +63,6 @@
   {
     "name": "Buy 1 Stock",
     "iconName": "myIcon",
-    "isUnlocked": true,
     "goodies": [
       {
         "type": "stock",
@@ -85,7 +81,6 @@
   {
     "name": "Buy 2 Stock",
     "iconName": "myIcon",
-    "isUnlocked": true,
     "goodies": [
       {
         "type": "stock",
@@ -104,7 +99,6 @@
   {
     "name": "Buy 3 Stock",
     "iconName": "myIcon",
-    "isUnlocked": true,
     "goodies": [
       {
         "type": "stock",
