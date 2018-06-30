@@ -15,7 +15,7 @@ export default class FinancialDevelopmentChart extends React.PureComponent<Finan
         const domain = yAxisDomain ? yAxisDomain : ['auto, auto'];
 
         return (
-            <ResponsiveContainer height={170} width="100%">
+            <ResponsiveContainer height={200} width="100%">
                 <AreaChart data={valueHistory}>
                     <defs>
                         <linearGradient id="colorStock" x1="0" y1="0" x2="0" y2="1">

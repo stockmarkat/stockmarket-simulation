@@ -53,6 +53,10 @@ export class StockDetails extends React.Component<StockDetailsProps> {
                         <i className={this.getArrowIcon( stock.valueChange )}/>
                     </td>
                 </tr>
+                <tr className="small-padding-top">
+                    <td className="bold">Owning:</td>
+                    <td className="stockDetails">{stock.quantity}</td>
+                </tr>
                 </tbody>
             </table>
         );

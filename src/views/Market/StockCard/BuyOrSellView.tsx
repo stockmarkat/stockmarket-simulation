@@ -33,7 +33,6 @@ export class BuyOrSellView extends React.Component<BuyOrSellViewProps, BuyOrSell
                 <BuyButton
                     onClick={() => {
                         onBuy( buyOrSellAmount );
-                        this.updateInputValue( 1 );
                     }}
                 />
                 <input
@@ -46,7 +45,6 @@ export class BuyOrSellView extends React.Component<BuyOrSellViewProps, BuyOrSell
                 <SellButton
                     onClick={() => {
                         onSell( buyOrSellAmount );
-                        this.updateInputValue( 1 );
                     }}
                 />
             </>
