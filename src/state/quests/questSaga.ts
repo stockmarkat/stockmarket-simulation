@@ -3,7 +3,6 @@ import { call, put, select, takeEvery } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
 import { Quest } from '../AppState';
 import { QuestConfig as Config } from '../Config';
-import { calculateNextStockValues } from '../stockMarket/stockMarketActions';
 import { distributeGoodies } from './goodieDistibution';
 import { addQuests, LOAD_QUESTS, RECALCULATE_QUESTS, recalculateQuests, updateQuest } from './questActions';
 import { getActiveQuests } from './questSelectors';
@@ -60,7 +59,7 @@ function* recalculateAllQuests() {
         yield put(updateQuest(q));
     }
     yield delay(Config.updateInterval * 1000);
-    yield put(calculateNextStockValues());
+    yield put(recalculateQuests());
 }
 
 function notifyUserQuestComplete(q: Quest) {

@@ -14,6 +14,7 @@ function* distributeGoodie(goodie: Goodie) {
             yield call(distributeMoneyGoodie, goodie);
             return;
         case 'stock':
+            // TODO: implement
             break;
         default:
             return;
