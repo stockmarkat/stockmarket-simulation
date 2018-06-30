@@ -1,6 +1,13 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
+import { call, put, select, takeEvery } from 'redux-saga/effects';
+import { addNotification } from '../../components/NotificationSystem';
 import { Quest } from '../AppState';
-import { addQuests, LOAD_QUESTS } from './questActions';
+import { QuestConfig as Config } from '../Config';
+import { calculateNextStockValues } from '../stockMarket/stockMarketActions';
+import { distributeGoodies } from './goodieDistibution';
+import { addQuests, LOAD_QUESTS, RECALCULATE_QUESTS, recalculateQuests, updateQuest } from './questActions';
+import { getActiveQuests } from './questSelectors';
+import { getTaskProgress } from './taskProgressEvaluation';
 
 const questJson = require('./quests.json');
 
@@ -20,10 +27,53 @@ function* loadInitialQuests() {
     });
 
     yield put(addQuests(quests));
+    yield delay(3 * 1000); // initially wait to start processing
+    yield put(recalculateQuests());
+}
+
+function* recalculateAllQuests() {
+
+    const activeQuests: Quest[] = yield select(getActiveQuests);
+
+    for (let q of activeQuests) {
+        let allTaskComplete = false;
+        let totalProgress = 0;
+        for (let t of q.tasks) {
+            const progress: number = yield call(getTaskProgress, t);
+            t.progress = progress;
+            totalProgress += progress;
+            if (progress === 100) {
+                t.isCompleted = true;
+            } else {
+                allTaskComplete = false;
+            }
+        }
+        q.isCompleted = allTaskComplete;
+        q.progress = totalProgress / q.tasks.length;
+        if (q.progress === 100) {
+            q.isCompleted = true;
+            q.completed = new Date();
+            notifyUserQuestComplete(q);
+            yield call(distributeGoodies, q);
+        }
+
+        yield put(updateQuest(q));
+    }
+    yield delay(Config.updateInterval * 1000);
+    yield put(calculateNextStockValues());
+}
+
+function notifyUserQuestComplete(q: Quest) {
+    addNotification({
+        level: 'success',
+        message: q.name,
+        title: 'Quest completed'
+    });
 }
 
 function* questSaga() {
     yield takeEvery(LOAD_QUESTS, loadInitialQuests);
+    yield takeEvery(RECALCULATE_QUESTS, recalculateAllQuests);
 }
 
 export default questSaga;
