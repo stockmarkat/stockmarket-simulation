@@ -7,15 +7,16 @@ import { NotificationSystemFrame } from '../../components/NotificationSystem';
 import { Sidebar } from '../../components/Sidebar/Sidebar';
 import appRoutes from '../../routes/routes';
 import { loadState } from '../../state/initialLoad/initialLoadActions';
+import { AppState } from '../../state/AppState';
+import { getStockValue } from '../../state/depot/depotSelector';
 
 interface AppProps {
+    currentMoney: number;
+    currentStockBalance: number;
     loadState: () => void;
 }
 
-interface AppRootState {
-}
-
-class App extends React.Component<AppProps, AppRootState> {
+class App extends React.Component<AppProps> {
 
     constructor(props: AppProps) {
         super(props);
@@ -30,9 +31,9 @@ class App extends React.Component<AppProps, AppRootState> {
 
             <div className="wrapper">
                 <NotificationSystemFrame/>
-                <Sidebar {...this.props} />
+                <Sidebar currentBalance={this.props.currentMoney} {...this.props} />
                 <div id="main-panel" className="main-panel">
-                    <Header {...this.props}/>
+                    <Header {...this.props} />
                     <Switch>
                         {
                             appRoutes.map((prop, key) => {
@@ -52,10 +53,15 @@ class App extends React.Component<AppProps, AppRootState> {
     }
 }
 
+const mapStateToProps = ( state: AppState ) => ({
+    currentMoney: state.depot.accountValue,
+    currentStockBalance: getStockValue(state)
+});
+
 // tslint:disable-next-line: no-any
 const mapDispatchToProps = (dispatch: any) => ({
     loadState: () =>
         dispatch(loadState())
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
