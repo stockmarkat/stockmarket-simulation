@@ -1,13 +1,11 @@
 import { AppState, StockCategoryValue } from '../AppState';
+import { createSelector } from 'reselect';
+import { getStocks } from '../stockMarket/stockSelector';
 
 export const getAccountValue = ( state: AppState ) => state.depot.accountValue;
-export const getStockValue = ( state: AppState ) => {
-    let value = 0;
-    state.stockMarket.stocks.forEach( s => {
-        value += s.value * s.quantity;
-    } );
-    return value;
-};
+export const getStockValue = createSelector(getStocks, (stocks) => {
+    return stocks.reduce( (acc, item) => acc + item.value * item.quantity, 0);
+});
 
 export const getCapital = ( state: AppState ) => getAccountValue( state ) + getStockValue( state );
 
