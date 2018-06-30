@@ -36,7 +36,7 @@ export class StockDetails extends React.Component<StockDetailsProps> {
             <table>
                 <tbody>
                 <tr>
-                    <td className="bold">Value:</td>
+                    <td className="bold">Price:</td>
                     <td className="stockDetails"><PriceTag value={stock.value}/></td>
                 </tr>
                 <tr>
