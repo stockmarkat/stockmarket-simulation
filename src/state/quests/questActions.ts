@@ -2,9 +2,15 @@ import { Quest } from '../AppState';
 
 export const LOAD_QUESTS = 'questsReducer/load-quests';
 export const ADD_QUESTS = 'questsReducer/add-quests';
+export const UPDATE_QUEST = 'questsReducer/update-quest';
+export const RECALCULATE_QUESTS = 'questsReducer/recalculate-quests';
 
 export const loadQuests = () => ({
     type: LOAD_QUESTS
+});
+
+export const recalculateQuests = () => ({
+    type: RECALCULATE_QUESTS
 });
 
 export const addQuests = (quests: Quest[]): AddQuestAction => ({
@@ -12,9 +18,9 @@ export const addQuests = (quests: Quest[]): AddQuestAction => ({
     quests
 });
 
-export const unlockQuest = (questName: string): UnlockQuestAction => ({
-    type: ADD_QUESTS,
-    questName
+export const updateQuest = (quest: Quest): UpdateQuestAction => ({
+    type: UPDATE_QUEST,
+    quest
 });
 
 export interface AddQuestAction {
@@ -22,7 +28,7 @@ export interface AddQuestAction {
     quests: Quest[];
 }
 
-export interface UnlockQuestAction {
+export interface UpdateQuestAction {
     type: string;
-    questName: string;
+    quest: Quest;
 }
