@@ -7,12 +7,12 @@ configure( { adapter: new ReactSixteenAdapter() } );
 
 describe( '<Header />', () => {
     it( 'shallow Snapshot matches', () => {
-        const component = shallow( <Header/> );
+        const component = shallow( <Header /> );
         expect( component ).toMatchSnapshot();
     } );
 
     it( 'Header should not explode', () => {
-        const component = mount( <Header/> );
+        const component = mount( <Header /> );
         expect( component ).not.toBeNull();
     } );
 } );
