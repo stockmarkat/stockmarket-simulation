@@ -1,21 +1,33 @@
 [
   {
+    "name": "Swiss Life AG",
+    "value": 345.44,
+    "volatility": 1,
+    "type": "Finance"
+  },
+  {
+    "name": "Spotify",
+    "value": 168.90,
+    "volatility": 2,
+    "type": "Technology"
+  },
+  {
+    "name": "SolarCity",
+    "value": 20.76,
+    "volatility": 3,
+    "type": "Energy"
+  },
+  {
     "name": "UBS AG",
     "value": 327.44,
     "volatility": 2,
     "type": "Finance"
   },
   {
-    "name": "CREDIT SUISSE AG",
-    "value": 178.32,
-    "volatility": 2,
-    "type": "Finance"
-  },
-  {
-    "name": "Alphabet",
-    "value": 751.07,
-    "volatility": 3,
-    "type": "Technology"
+    "name": "SHELL",
+    "value": 69.38,
+    "volatility": 5,
+    "type": "RawMaterials"
   },
   {
     "name": "Card Services AG",
@@ -25,13 +37,13 @@
   },
   {
     "name": "Apple",
-    "value": 430.20,
-    "volatility": 2,
+    "value": 185.11,
+    "volatility": 3,
     "type": "Technology"
   },
   {
     "name": "SAMSUNG",
-    "value": 497.06,
+    "value": 2210.03,
     "volatility": 3,
     "type": "Technology"
   },
@@ -44,13 +56,13 @@
   {
     "name": "TESLA",
     "value": 348.66,
-    "volatility": 2,
+    "volatility": 3,
     "type": "Technology"
   },
   {
     "name": "Murphy OIL",
-    "value": 1806.07,
-    "volatility": 2,
+    "value": 200.07,
+    "volatility": 5,
     "type": "RawMaterials"
   },
   {
@@ -60,9 +72,15 @@
     "type": "Energy"
   },
   {
-    "name": "SHELL",
-    "value": 69.38,
+    "name": "CREDIT SUISSE AG",
+    "value": 178.32,
     "volatility": 2,
+    "type": "Finance"
+  },
+  {
+    "name": "Glencore",
+    "value": 3.64,
+    "volatility": 9,
     "type": "RawMaterials"
   },
   {
@@ -74,13 +92,13 @@
   {
     "name": "AT&T",
     "value": 658.01,
-    "volatility": 2,
+    "volatility": 3,
     "type": "Technology"
   },
   {
-    "name": "Spotify",
-    "value": 168.90,
-    "volatility": 2,
+    "name": "Alphabet",
+    "value": 1115.65,
+    "volatility": 3,
     "type": "Technology"
   },
   {
@@ -102,20 +120,20 @@
     "type": "Finance"
   },
   {
-    "name": "Mike Shiva",
+    "name": "Wind Power AG",
     "value": 333.333,
-    "volatility": 2,
+    "volatility": 5,
     "type": "Energy"
   },
   {
-    "name": "DRE-K",
+    "name": "Wood Holding AG",
     "value": 124.32,
-    "volatility": 2,
+    "volatility": 1,
     "type": "RawMaterials"
   },
   {
     "name": "FuchsGroup AG",
-    "value": 0.93,
+    "value": 1.01,
     "volatility": 2,
     "type": "Technology"
   },
