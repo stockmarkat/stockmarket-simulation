@@ -1,4 +1,3 @@
-import * as moment from 'moment';
 import { delay } from 'redux-saga';
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
@@ -53,7 +52,7 @@ function* recalculateAllQuests() {
         q.progress = totalProgress / q.tasks.length;
         if (q.progress === 100) {
             q.isCompleted = true;
-            q.completed = moment().format('hh:mm');
+            q.completed = new Date();
             notifyUserQuestComplete(q);
             yield call(distributeGoodies, q);
         }

@@ -6,7 +6,7 @@ export interface Quest {
     progress: number; // 0 - 100%
     isUnlocked: boolean; // is this quest unlocked
     isCompleted: boolean; // is this quest completed
-    completed?: string; // when was this quest finished
+    completed?: Date; // when was this quest finished
 }
 
 export interface QuestTask {
@@ -18,7 +18,7 @@ export interface QuestTask {
 }
 
 export type QuestType =
-    'moneyPossession' // the total capital the user should have
+    'MoneyPossession' // the total capital the user should have
     | 'StockTotalPossession' // the total amount of stocks the user should have
     ;
 
