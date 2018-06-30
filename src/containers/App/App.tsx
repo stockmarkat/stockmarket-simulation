@@ -7,18 +7,19 @@ import { NotificationSystemFrame } from '../../components/NotificationSystem';
 import { Sidebar } from '../../components/Sidebar/Sidebar';
 import appRoutes from '../../routes/routes';
 import { loadState } from '../../state/initialLoad/initialLoadActions';
+import { AppState } from '../../state/AppState';
+import { getStockValue } from '../../state/depot/depotSelector';
 
 interface AppProps {
+    currentMoney: number;
+    currentStockBalance: number;
     loadState: () => void;
 }
 
-interface AppRootState {
-}
+class App extends React.Component<AppProps> {
 
-class App extends React.Component<AppProps, AppRootState> {
-
-    constructor(props: AppProps) {
-        super(props);
+    constructor( props: AppProps ) {
+        super( props );
     }
 
     componentWillMount() {
@@ -30,19 +31,22 @@ class App extends React.Component<AppProps, AppRootState> {
 
             <div className="wrapper">
                 <NotificationSystemFrame/>
-                <Sidebar {...this.props} />
+                <Sidebar
+                    currentBalance={this.props.currentMoney}
+                    currentStockBalance={this.props.currentStockBalance}
+                />
                 <div id="main-panel" className="main-panel">
-                    <Header {...this.props}/>
+                    <Header {...this.props} />
                     <Switch>
                         {
-                            appRoutes.map((prop, key) => {
+                            appRoutes.map( ( prop, key ) => {
                                 if (prop.redirect) {
                                     return (<Redirect path={prop.path} to={prop.to!} key={key}/>);
                                 }
                                 return (
                                     <Route path={prop.path} component={prop.component} key={key}/>
                                 );
-                            })
+                            } )
                         }
                     </Switch>
                     <Footer/>
@@ -52,10 +56,15 @@ class App extends React.Component<AppProps, AppRootState> {
     }
 }
 
-// tslint:disable-next-line: no-any
-const mapDispatchToProps = (dispatch: any) => ({
-    loadState: () =>
-        dispatch(loadState())
+const mapStateToProps = ( state: AppState ) => ({
+    currentMoney: state.depot.accountValue,
+    currentStockBalance: getStockValue( state )
 });
 
-export default connect(null, mapDispatchToProps)(App);
+// tslint:disable-next-line:no-any
+const mapDispatchToProps = ( dispatch: any ) => ({
+    loadState: () =>
+        dispatch( loadState() )
+});
+
+export default connect( mapStateToProps, mapDispatchToProps )( App );
