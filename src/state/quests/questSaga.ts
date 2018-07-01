@@ -3,10 +3,9 @@ import { call, put, select, takeEvery } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
 import { Quest } from '../AppState';
 import { QuestConfig as Config } from '../Config';
-import { calculateNextStockValues } from '../stockMarket/stockMarketActions';
 import { distributeGoodies } from './goodieDistibution';
 import { addQuests, LOAD_QUESTS, RECALCULATE_QUESTS, recalculateQuests, updateQuest } from './questActions';
-import { getActiveQuests } from './questSelectors';
+import { getActiveQuests, getLockedQuests } from './questSelectors';
 import { getTaskProgress } from './taskProgressEvaluation';
 
 const questJson = require('./quests.json');
@@ -21,13 +20,18 @@ function* loadInitialQuests() {
         quest.isCompleted = false;
         quest.isUnlocked = quest.isUnlocked ? quest.isUnlocked : false;
         quest.goodies = quest.goodies ? quest.goodies : [];
+
+        quest.tasks.forEach(t => {
+            t.progress = 0;
+            t.isCompleted = false;
+        });
+
         quest.tasks = quest.tasks ? quest.tasks : [];
         quest.completed = undefined;
         quest.iconName = quest.iconName ? quest.iconName : 'defaultIcon';
     });
 
     yield put(addQuests(quests));
-    yield delay(3 * 1000); // initially wait to start processing
     yield put(recalculateQuests());
 }
 
@@ -36,7 +40,6 @@ function* recalculateAllQuests() {
     const activeQuests: Quest[] = yield select(getActiveQuests);
 
     for (let q of activeQuests) {
-        let allTaskComplete = false;
         let totalProgress = 0;
         for (let t of q.tasks) {
             const progress: number = yield call(getTaskProgress, t);
@@ -44,11 +47,8 @@ function* recalculateAllQuests() {
             totalProgress += progress;
             if (progress === 100) {
                 t.isCompleted = true;
-            } else {
-                allTaskComplete = false;
             }
         }
-        q.isCompleted = allTaskComplete;
         q.progress = totalProgress / q.tasks.length;
         if (q.progress === 100) {
             q.isCompleted = true;
@@ -59,8 +59,27 @@ function* recalculateAllQuests() {
 
         yield put(updateQuest(q));
     }
+    yield call(unlockQuests);
     yield delay(Config.updateInterval * 1000);
-    yield put(calculateNextStockValues());
+    yield put(recalculateQuests());
+}
+
+function* unlockQuests() {
+    const activeQuests: Quest[] = yield select(getActiveQuests);
+    if (activeQuests.length < Config.activeQuests) {
+        const lockedQuests: Quest[] = yield select(getLockedQuests);
+        let amountOfQuestToUnlock = Config.activeQuests - activeQuests.length;
+        for (let lockedQuest of lockedQuests) {
+            lockedQuest.isUnlocked = true;
+            yield put(updateQuest(lockedQuest));
+            amountOfQuestToUnlock--;
+            if (amountOfQuestToUnlock === 0) {
+                return;
+            }
+
+        }
+    }
+
 }
 
 function notifyUserQuestComplete(q: Quest) {
