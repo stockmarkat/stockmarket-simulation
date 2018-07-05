@@ -7,8 +7,8 @@ import StockCard from './StockCard';
 
 interface MarketProps {
     stocks: Stock[];
-    buy: (stock: string, amount: number) => void;
-    sell: (stock: string, amount: number) => void;
+    buy: ( stock: string, amount: number ) => void;
+    sell: ( stock: string, amount: number ) => void;
 }
 
 interface MarketState {
@@ -28,21 +28,21 @@ class Market extends React.Component<MarketProps, MarketState> {
                 <Grid fluid={true}>
                     <Row>
                         {
-                            stocks.map(stock => {
-                            return (
-                                <Col key={stock.name} xs={12}>
-                                    <StockCard
-                                        stock={stock}
-                                        onBuy={(amount: number) => {
-                                            buy(stock.name, amount);
-                                        }}
-                                        onSell={(amount: number) => {
-                                            sell(stock.name, amount);
-                                        }}
-                                    />
-                                </Col>
-                            );
-                        })
+                            stocks.map( stock => {
+                                return (
+                                    <Col key={stock.name} xs={12}>
+                                        <StockCard
+                                            stock={stock}
+                                            onBuy={( amount: number ) => {
+                                                buy( stock.name, amount );
+                                            }}
+                                            onSell={( amount: number ) => {
+                                                sell( stock.name, amount );
+                                            }}
+                                        />
+                                    </Col>
+                                );
+                            } )
 
                         }
                     </Row>
@@ -58,10 +58,16 @@ const mapStateToProps = ( state: AppState ) => ({
 
 // tslint:disable-next-line: no-any
 const mapDispatchToProps = ( dispatch: any ) => ({
-    buy: ( stock: string, amount: number ) =>
-        dispatch( buyOrSellStock( stock, amount ) ),
-    sell: ( stock: string, amount: number ) =>
-        dispatch( buyOrSellStock( stock, -amount ) ),
+    buy: ( stock: string, amount: number ) => {
+        if (Number.isInteger( amount )) {
+            dispatch( buyOrSellStock( stock, amount ) );
+        }
+    },
+    sell: ( stock: string, amount: number ) => {
+        if (Number.isInteger( amount )) {
+            dispatch( buyOrSellStock( stock, -amount ) );
+        }
+    },
 });
 
 export default connect( mapStateToProps, mapDispatchToProps )( Market );
