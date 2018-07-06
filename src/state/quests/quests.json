@@ -1,68 +1,12 @@
 [
   {
-    "name": "Expand your capital to 20 000",
-    "iconName": "myIcon",
-    "goodies": [
-      {
-        "type": "money",
-        "amount": 1000
-      }
-    ],
-    "tasks": [
-      {
-        "name": "Possess a capital of $ 20'000",
-        "questType": "MoneyPossession",
-        "amount": 9000
-      }
-    ]
-  },
-  {
-    "name": "MySuperFancyQuest3",
-    "iconName": "myIcon",
-    "goodies": [
-      {
-        "type": "money",
-        "amount": 10500
-      },
-      {
-        "type": "stock",
-        "amount": 10,
-        "stockName": "Troubleshooters"
-      }
-    ],
-    "tasks": [
-      {
-        "name": "Have $100'000 in total",
-        "questType": "MoneyPossession",
-        "amount": 100000
-      }
-    ]
-  },
-  {
-    "name": "MySuperFancyQuest2",
-    "iconName": "myIcon",
-    "goodies": [
-      {
-        "type": "money",
-        "amount": 100
-      }
-    ],
-    "tasks": [
-      {
-        "name": "Have $100 in total",
-        "questType": "MoneyPossession",
-        "amount": 10500
-      }
-    ]
-  },
-  {
-    "name": "Buy 1 Stock",
-    "iconName": "myIcon",
+    "name": "Make your first purchase",
+    "iconName": "pe-7s-magic-wand",
     "goodies": [
       {
         "type": "stock",
         "amount": 1,
-        "stockName": "Troubleshooters"
+        "stockName": "Swiss Life AG"
       }
     ],
     "tasks": [
@@ -74,43 +18,107 @@
     ]
   },
   {
-    "name": "Buy 2 Stock",
-    "iconName": "myIcon",
+    "name": "Be a regular stock buyer",
+    "iconName": "pe-7s-wallet",
     "goodies": [
       {
         "type": "stock",
         "amount": 1,
-        "stockName": "Troubleshooters"
+        "stockName": "Wind Power AG"
       }
     ],
     "tasks": [
       {
-        "name": "Buy 2 stock",
+        "name": "Possess 10 stocks",
         "questType": "StockTotalPossession",
-        "amount": 2
+        "amount": 10
       }
     ]
   },
   {
-    "name": "Buy 3 Stock",
-    "iconName": "myIcon",
+    "name": "Expand your capital to $ 20 000",
+    "iconName": "pe-7s-wallet",
     "goodies": [
       {
-        "type": "stock",
-        "amount": 1,
-        "stockName": "Troubleshooters"
-      },
-      {
-        "type": "stock",
-        "amount": 10,
-        "stockName": "Troubleshooters"
+        "type": "money",
+        "amount": 1000
       }
     ],
     "tasks": [
       {
-        "name": "Buy 3 stock",
+        "name": "Possess a capital of $ 20'000",
+        "questType": "MoneyPossession",
+        "amount": 20000
+      }
+    ]
+  },
+  {
+    "name": "Get addicted to buying stocks",
+    "iconName": "pe-7s-eyedropper",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 2,
+        "stockName": "Alphabet"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess 100 stocks",
         "questType": "StockTotalPossession",
-        "amount": 3
+        "amount": 100
+      }
+    ]
+  },
+  {
+    "name": "Have a diversified portfolio",
+    "iconName": "pe-7s-portfolio",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "Swiss Life AG"
+      },
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "Spotify"
+      },
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "SolarCity"
+      },
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "Holcim AG"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "25% of your stocks should have the category Finance",
+        "questType": "CategoryPercentPossession",
+        "amount": 25,
+        "typeName": "Finance"
+      },
+      {
+        "name": "25% of your stocks should have the category Technology",
+        "questType": "CategoryPercentPossession",
+        "amount": 25,
+        "typeName": "Technology"
+      },
+      {
+        "name": "25% of your stocks should have the category Energy",
+        "questType": "CategoryPercentPossession",
+        "amount": 25,
+        "typeName": "Energy"
+      },
+      {
+        "name": "25% of your stocks should have the category Raw Materials",
+        "questType": "CategoryPercentPossession",
+        "amount": 25,
+        "typeName": "RawMaterials"
       }
     ]
   }
