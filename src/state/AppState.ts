@@ -20,6 +20,8 @@ export interface QuestTask {
 export type QuestType =
     'MoneyPossession' // the total capital the user should have
     | 'StockTotalPossession' // the total amount of stocks the user should have
+    | 'CategoryPercentPossession' // the per cent of stocks that the user should possess in a single category
+    | 'StockInvestmentPercent' // the percent of the capital that should be invested into stocks
     ;
 
 export interface Goodie {
