@@ -39,6 +39,7 @@ export class BuyOrSellView extends React.Component<BuyOrSellViewProps, BuyOrSell
                     type="number"
                     min="1"
                     value={buyOrSellAmount}
+                    pattern={'\\d*'}
                     className="input-small"
                     onChange={evt => this.updateInputValue( evt.target.valueAsNumber )}
                 />
