@@ -1,7 +1,7 @@
 [
   {
     "name": "Make your first purchase",
-    "iconName": "pe-7s-magic-wand",
+    "iconName": "pe-7s-cart",
     "goodies": [
       {
         "type": "stock",
@@ -19,7 +19,7 @@
   },
   {
     "name": "Be a regular stock buyer",
-    "iconName": "pe-7s-wallet",
+    "iconName": "pe-7s-cash",
     "goodies": [
       {
         "type": "stock",
@@ -37,7 +37,7 @@
   },
   {
     "name": "Expand your capital to $ 20 000",
-    "iconName": "pe-7s-wallet",
+    "iconName": "pe-7s-piggy",
     "goodies": [
       {
         "type": "money",
@@ -72,7 +72,7 @@
   },
   {
     "name": "Have a diversified portfolio",
-    "iconName": "pe-7s-portfolio",
+    "iconName": "pe-7s-calculator",
     "goodies": [
       {
         "type": "stock",
@@ -141,21 +141,40 @@
     ]
   },
   {
-    "name": "Be a hard war supporter",
-    "iconName": "pe-7s-global",
+    "name": "Technology Believer",
+    "iconName": "pe-7s-magic-wand",
     "goodies": [
       {
         "type": "stock",
-        "amount": 5,
-        "stockName": "TroubleShooters"
+        "amount": 8,
+        "stockName": "FuchsGroup AG"
       }
     ],
     "tasks": [
       {
-        "name": "90% of your stocks should be in the Fire Arms category",
+        "name": "50% of your stock capital should be invested into technology",
         "questType": "CategoryPercentPossession",
-        "amount": 90,
-        "typeName": "FireArms"
+        "amount": 50,
+        "typeName": "Technology"
+      }
+    ]
+  },
+  {
+    "name": "Apple Fanboy",
+    "iconName": "pe-7s-phone",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 3,
+        "stockName": "Apple"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "10% of your stock capital should be invested into Apple",
+        "questType": "StockPercentPossesion",
+        "amount": 10,
+        "typeName": "Apple"
       }
     ]
   },
@@ -173,6 +192,47 @@
         "name": "Possess a capital of $ 30 000",
         "questType": "MoneyPossession",
         "amount": 30000
+      }
+    ]
+  },
+  {
+    "name": "Global Warming Supporter",
+    "iconName": "pe-7s-global",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 3000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "10% of your stocks should be Murphy OIL stocks",
+        "questType": "StockPercentPossesion",
+        "amount": 10,
+        "typeName": "Murphy OIL"
+      },
+      {
+        "name": "10% of your stocks should be Shell stocks",
+        "questType": "StockPercentPossesion",
+        "amount": 10,
+        "typeName": "SHELL"
+      }
+    ]
+  },
+  {
+    "name": "Expand your capital to $ 40 000",
+    "iconName": "pe-7s-safe",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 4000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 40 000",
+        "questType": "MoneyPossession",
+        "amount": 40000
       }
     ]
   },
@@ -196,19 +256,38 @@
     ]
   },
   {
-    "name": "Expand your capital to $ 40 000",
-    "iconName": "pe-7s-wallet",
+    "name": "Expand your capital to $ 50 000",
+    "iconName": "pe-7s-safe",
     "goodies": [
       {
         "type": "money",
-        "amount": 4000
+        "amount": 5000
       }
     ],
     "tasks": [
       {
-        "name": "Possess a capital of $ 40 000",
+        "name": "Possess a capital of $ 50 000",
         "questType": "MoneyPossession",
-        "amount": 40000
+        "amount": 50000
+      }
+    ]
+  },
+  {
+    "name": "Be a hard war supporter",
+    "iconName": "pe-7s-global",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 5,
+        "stockName": "TroubleShooters"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "90% of your stocks should be in the Fire Arms category",
+        "questType": "CategoryPercentPossession",
+        "amount": 90,
+        "typeName": "FireArms"
       }
     ]
   },
@@ -226,6 +305,23 @@
         "name": "Possess a capital of $ 100 000",
         "questType": "MoneyPossession",
         "amount": 100000
+      }
+    ]
+  },
+  {
+    "name": "Become a bit like Uncle Scrooge",
+    "iconName": "pe-7s-diamond",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 100000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 1 000 000",
+        "questType": "MoneyPossession",
+        "amount": 1000000
       }
     ]
   }
