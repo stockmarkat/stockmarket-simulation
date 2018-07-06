@@ -1,6 +1,6 @@
 import { call, select } from 'redux-saga/effects';
 import { QuestTask } from '../AppState';
-import { getCapital } from '../depot/depotSelector';
+import { getCapital, getStockValue } from '../depot/depotSelector';
 import { getOwnedStocksAmount } from '../stockMarket/stockSelector';
 
 export function* getTaskProgress(task: QuestTask) {
@@ -30,9 +30,13 @@ export function* getTaskProgress(task: QuestTask) {
 }
 
 function* getStockInvestmentPercentTaskProgress(task: QuestTask) {
-    const money = yield select(getCapital);
-    return money * 100 / task.amount;
+    const totalCapital = yield select(getCapital);
+    const stocks = yield select(getStockValue);
+
+    const investPercent = stocks * 100 / totalCapital;
+    return investPercent * 100 / task.amount;
 }
+
 function* getCategoryPercentPossessionTaskProgress(task: QuestTask) {
     const money = yield select(getCapital);
     return money * 100 / task.amount;
