@@ -141,6 +141,23 @@
     ]
   },
   {
+    "name": "Expand your capital to $ 30 000",
+    "iconName": "pe-7s-wallet",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 3000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 30 000",
+        "questType": "MoneyPossession",
+        "amount": 30000
+      }
+    ]
+  },
+  {
     "name": "Technology Believer",
     "iconName": "pe-7s-magic-wand",
     "goodies": [
@@ -179,19 +196,19 @@
     ]
   },
   {
-    "name": "Expand your capital to $ 30 000",
+    "name": "Expand your capital to $ 40 000",
     "iconName": "pe-7s-wallet",
     "goodies": [
       {
         "type": "money",
-        "amount": 3000
+        "amount": 4000
       }
     ],
     "tasks": [
       {
-        "name": "Possess a capital of $ 30 000",
+        "name": "Possess a capital of $ 40 000",
         "questType": "MoneyPossession",
-        "amount": 30000
+        "amount": 40000
       }
     ]
   },
@@ -220,19 +237,19 @@
     ]
   },
   {
-    "name": "Expand your capital to $ 40 000",
+    "name": "Expand your capital to $ 50 000",
     "iconName": "pe-7s-safe",
     "goodies": [
       {
         "type": "money",
-        "amount": 4000
+        "amount": 5000
       }
     ],
     "tasks": [
       {
-        "name": "Possess a capital of $ 40 000",
+        "name": "Possess a capital of $ 50 000",
         "questType": "MoneyPossession",
-        "amount": 40000
+        "amount": 50000
       }
     ]
   },
@@ -256,19 +273,19 @@
     ]
   },
   {
-    "name": "Expand your capital to $ 50 000",
+    "name": "Expand your capital to $ 60 000",
     "iconName": "pe-7s-safe",
     "goodies": [
       {
         "type": "money",
-        "amount": 5000
+        "amount": 6000
       }
     ],
     "tasks": [
       {
-        "name": "Possess a capital of $ 50 000",
+        "name": "Possess a capital of $ 60 000",
         "questType": "MoneyPossession",
-        "amount": 50000
+        "amount": 60000
       }
     ]
   },
