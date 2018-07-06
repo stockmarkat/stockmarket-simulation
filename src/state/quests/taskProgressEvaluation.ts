@@ -12,6 +12,12 @@ export function* getTaskProgress(task: QuestTask) {
         case 'StockTotalPossession':
             progress = yield call(getStockTotalPossessionTaskProgress, task);
             break;
+        case 'StockInvestmentPercent':
+            progress = yield call(getStockInvestmentPercentTaskProgress, task);
+            break;
+        case 'CategoryPercentPossession':
+            progress = yield call(getCategoryPercentPossessionTaskProgress, task);
+            break;
         default:
             return 0;
     }
@@ -21,6 +27,15 @@ export function* getTaskProgress(task: QuestTask) {
     }
 
     return progress;
+}
+
+function* getStockInvestmentPercentTaskProgress(task: QuestTask) {
+    const money = yield select(getCapital);
+    return money * 100 / task.amount;
+}
+function* getCategoryPercentPossessionTaskProgress(task: QuestTask) {
+    const money = yield select(getCapital);
+    return money * 100 / task.amount;
 }
 
 function* getMoneyPossessionTaskProgress(task: QuestTask) {
