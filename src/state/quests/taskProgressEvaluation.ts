@@ -1,6 +1,6 @@
 import { call, select } from 'redux-saga/effects';
-import { QuestTask } from '../AppState';
-import { getCapital, getStockValue } from '../depot/depotSelector';
+import { QuestTask, StockCategoryValue } from '../AppState';
+import { getCapital, getStockCategoryValues, getStockValue } from '../depot/depotSelector';
 import { getOwnedStocksAmount } from '../stockMarket/stockSelector';
 
 export function* getTaskProgress(task: QuestTask) {
@@ -38,8 +38,19 @@ function* getStockInvestmentPercentTaskProgress(task: QuestTask) {
 }
 
 function* getCategoryPercentPossessionTaskProgress(task: QuestTask) {
-    const money = yield select(getCapital);
-    return money * 100 / task.amount;
+    // getAll categories
+    const categories: StockCategoryValue[] = yield select(getStockCategoryValues);
+
+    //search category
+    const category = categories.find(c => c.categoryName === task.typeName);
+
+    // no stocks of this category
+    if (!category) {
+        return 0;
+    }
+
+    // total per cent calculation
+    return category.ratio * 100 / task.amount;
 }
 
 function* getMoneyPossessionTaskProgress(task: QuestTask) {
