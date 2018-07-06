@@ -15,7 +15,7 @@ export class GoodieView extends React.Component<GoodieViewProps> {
         const isMoneyType = goodie.type === 'money';
 
         let stockWord = 'stocks';
-        if(goodie.amount === 1) {
+        if (goodie.amount === 1) {
             stockWord = 'stock';
         }
 
@@ -23,7 +23,7 @@ export class GoodieView extends React.Component<GoodieViewProps> {
             <>
                 {isStockType && goodie.amount + ' '}
                 {isMoneyType && <PriceTag value={goodie.amount}/>}&nbsp;
-                {isStockType && stockWord && ' from'} {isStockType && goodie.stockName}
+                {isStockType && stockWord + ' from'} {isStockType && goodie.stockName}
             </>
         );
     }

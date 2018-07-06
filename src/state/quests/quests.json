@@ -41,12 +41,12 @@
     "goodies": [
       {
         "type": "money",
-        "amount": 1000
+        "amount": 2000
       }
     ],
     "tasks": [
       {
-        "name": "Possess a capital of $ 20'000",
+        "name": "Possess a capital of $ 20 000",
         "questType": "MoneyPossession",
         "amount": 20000
       }
@@ -58,8 +58,8 @@
     "goodies": [
       {
         "type": "stock",
-        "amount": 2,
-        "stockName": "Alphabet"
+        "amount": 1,
+        "stockName": "AT&T"
       }
     ],
     "tasks": [
@@ -119,6 +119,113 @@
         "questType": "CategoryPercentPossession",
         "amount": 25,
         "typeName": "RawMaterials"
+      }
+    ]
+  },
+  {
+    "name": "Get really addicted to buying stocks",
+    "iconName": "pe-7s-eyedropper",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 2,
+        "stockName": "Alphabet"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Invest 99% of your capital into stocks",
+        "questType": "StockInvestmentPercent",
+        "amount": 99
+      }
+    ]
+  },
+  {
+    "name": "Be a hard war supporter",
+    "iconName": "pe-7s-global",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 5,
+        "stockName": "TroubleShooters"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "90% of your stocks should be in the Fire Arms category",
+        "questType": "CategoryPercentPossession",
+        "amount": 90,
+        "typeName": "FireArms"
+      }
+    ]
+  },
+  {
+    "name": "Expand your capital to $ 30 000",
+    "iconName": "pe-7s-wallet",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 3000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 30 000",
+        "questType": "MoneyPossession",
+        "amount": 30000
+      }
+    ]
+  },
+  {
+    "name": "Be a supporter of child exploitation",
+    "iconName": "pe-7s-ball",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 10,
+        "stockName": "Glencore"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "50% of your stocks should be Glencore stocks",
+        "questType": "StockPercentPossesion",
+        "amount": 50,
+        "typeName": "Glencore"
+      }
+    ]
+  },
+  {
+    "name": "Expand your capital to $ 40 000",
+    "iconName": "pe-7s-wallet",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 4000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 40 000",
+        "questType": "MoneyPossession",
+        "amount": 40000
+      }
+    ]
+  },
+  {
+    "name": "Become rich!",
+    "iconName": "pe-7s-diamond",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 10000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 100 000",
+        "questType": "MoneyPossession",
+        "amount": 100000
       }
     ]
   }

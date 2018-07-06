@@ -23,6 +23,7 @@ export type QuestType =
     | 'StockTotalPossession' // the total amount of stocks the user should have
     | 'CategoryPercentPossession' // the per cent of stocks that the user should possess in a single category
     | 'StockInvestmentPercent' // the percent of the capital that should be invested into stocks
+    | 'StockPercentPossesion' // the percent of stocks that the user should possess of a single stock
     ;
 
 export interface Goodie {
