@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import { AppState, FinancialSnapshot, Stock, StockCategoryValue } from '../../state/AppState';
 import { getStockCategoryValues, getStocksForDepot, getStockValue } from '../../state/depot/depotSelector';
 import { BalanceCard, StockBalanceCard, StockShareCard } from './Cards';
-import { CapitalDevelopement } from './Cards/CapitalDevelopement';
+
 import { StockTile } from '../../components/StockTile/StockTile';
+import { CapitalDevelopment } from './Cards/CapitalDevelopment';
 
 interface DepotProps {
     accountValue: number;
@@ -15,36 +16,30 @@ interface DepotProps {
     stocks: Stock[];
 }
 
-interface DepotState {
-}
-
-class Depot extends React.Component<DepotProps, DepotState> {
-
-    constructor( props: DepotProps ) {
-        super( props );
-    }
+class Depot extends React.Component<DepotProps> {
 
     render() {
-        const { stockCategoryValues, stocks } = this.props;
+
+        const {stockCategoryValues, accountValue, stockValue, stockValueDevelopment, stocks} = this.props;
 
         return (
             <div className="content">
                 <Grid fluid={true}>
                     <Row>
-                        <Col lg={4} sm={6}>
-                            <BalanceCard value={this.props.accountValue}/>
+                        <Col lg={4} sm={6} xs={12}>
+                            <BalanceCard value={accountValue}/>
                         </Col>
-                        <Col lg={4} sm={6}>
-                            <StockBalanceCard value={this.props.stockValue}/>
+                        <Col lg={4} sm={6} xs={12}>
+                            <StockBalanceCard value={stockValue}/>
+                        </Col>
+                        <Col lg={8} sm={6} xs={12}>
+                            <CapitalDevelopment values={stockValueDevelopment} />
                         </Col>
                         {stockCategoryValues.length > 0 &&
                         <Col lg={4} sm={6}>
-                            <StockShareCard stockCategoryValues={stockCategoryValues}/>
+                            <StockShareCard stockCategoryValues={this.props.stockCategoryValues}/>
                         </Col>
                         }
-                        <Col xs={8}>
-                            <CapitalDevelopement values={this.props.stockValueDevelopment}/>
-                        </Col>
                     </Row>
                     <Row>
                     {

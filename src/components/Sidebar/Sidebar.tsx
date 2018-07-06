@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { HeaderLinks } from '../Header/HeaderLinks';
 import { SidebarLinks } from './SidebarLinks';
+import { PriceTag } from '../PriceTag';
 
 const logo = require( '../../assets/img/logo.png' );
 
 interface SidebarProps {
+    currentBalance: number;
+    currentStockBalance: number;
 }
 
 interface SidebarState {
@@ -21,7 +23,7 @@ export class Sidebar extends React.Component<SidebarProps, SidebarState> {
     }
 
     updateDimensions() {
-        this.setState( { width: window.innerWidth } );
+        this.setState( {width: window.innerWidth} );
     }
 
     componentDidMount() {
@@ -32,13 +34,13 @@ export class Sidebar extends React.Component<SidebarProps, SidebarState> {
     renderLogo() {
         return (
             <div className="logo">
-                <a href="#" className="simple-text logo-mini">
+                <a href="/" className="simple-text logo-mini">
                     <div className="logo-img">
                         <img src={logo} alt="logo_image"/>
                     </div>
 
                 </a>
-                <a href="#" className="simple-text logo-normal">
+                <a href="/" className="simple-text logo-normal">
                     Stockmarket
                 </a>
             </div>
@@ -53,8 +55,14 @@ export class Sidebar extends React.Component<SidebarProps, SidebarState> {
 
                 <div className="sidebar-wrapper">
                     <ul className="nav">
-                        {this.state.width <= 991 ? ( <HeaderLinks/> ) : null}
                         <SidebarLinks/>
+                        <li>
+                            <hr className="currentBalance-hr"/>
+                            <p className="currentBalance-p">
+                                Account Balance: <PriceTag value={this.props.currentBalance}/><br/>
+                                Stock Balance: <PriceTag value={this.props.currentStockBalance}/>
+                            </p>
+                        </li>
                     </ul>
                 </div>
             </div>

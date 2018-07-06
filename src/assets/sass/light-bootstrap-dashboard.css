@@ -122,6 +122,27 @@ h1 .subtitle {
 .text-danger, .text-danger:hover {
   color: #FF4A55 !important; }
 
+.text-underline {
+  text-decoration: underline; }
+
+.red {
+  color: #EE2D20; }
+
+.green {
+  color: #049F0C; }
+
+.bold {
+  font-weight: 600; }
+
+.category-icon {
+  font-size: 1.4em; }
+
+.line-trough {
+  text-decoration: line-through; }
+
+.small-margin {
+  margin-bottom: 5px; }
+
 /*     General overwrite     */
 body,
 .wrapper {
@@ -449,13 +470,21 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .sidebar,
 .main-panel {
-  -webkit-transition-property: top,bottom;
-  transition-property: top,bottom;
-  -webkit-transition-duration: .2s,.2s;
-  transition-duration: .2s,.2s;
-  -webkit-transition-timing-function: linear,linear;
-  transition-timing-function: linear,linear;
+  -webkit-transition-property: top, bottom;
+  transition-property: top, bottom;
+  -webkit-transition-duration: .2s, .2s;
+  transition-duration: .2s, .2s;
+  -webkit-transition-timing-function: linear, linear;
+  transition-timing-function: linear, linear;
   -webkit-overflow-scrolling: touch; }
+
+.currentBalance-hr {
+  margin-bottom: 10px; }
+
+.currentBalance-p {
+  margin: 0 15px;
+  padding: 5px 15px;
+  font-weight: 600; }
 
 .btn {
   border-width: 2px;
@@ -882,6 +911,9 @@ body > .navbar-collapse[data-color="purple"]:after {
 .input-group-focus .input-group-addon {
   border-color: #9A9A9A; }
 
+.input-small {
+  width: 4em; }
+
 .alert {
   border: 0;
   border-radius: 0;
@@ -999,6 +1031,15 @@ body > .navbar-collapse[data-color="purple"]:after {
   .table > tbody > tr:hover .td-actions .btn {
     opacity: 1;
     filter: alpha(opacity=100); }
+
+.stockDetails {
+  padding-left: 3em; }
+
+.small-padding-top {
+  padding-top: 0.5em; }
+
+.small-padding-left {
+  padding-left: 1em; }
 
 /*      Checkbox and radio         */
 .checkbox,
@@ -1879,7 +1920,8 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .icon-button-add {
   color: #049F0C;
-  background-color: white; }
+  background-color: white;
+  padding-left: 0; }
 
 .icon-button-remove {
   color: #EE2D20;

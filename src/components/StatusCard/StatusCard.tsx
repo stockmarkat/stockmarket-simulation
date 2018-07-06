@@ -24,12 +24,12 @@ export class StatusCard extends React.Component<StatusCardProps, StatusCardState
             <div className="card card-stats">
                 <div className="content">
                     <Row>
-                        <Col xs={5}>
+                        <Col xs={4}>
                             <div className="icon-big text-center icon-warning">
                                 {this.props.icon}
                             </div>
                         </Col>
-                        <Col xs={7}>
+                        <Col xs={8}>
                             <div className="numbers">
                                 <p>{this.props.title}</p>
                                 {this.props.value}

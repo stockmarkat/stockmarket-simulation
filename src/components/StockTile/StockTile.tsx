@@ -31,7 +31,7 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
         return (
             <Col xs={1}>
                 <div className="icon-big text-center icon-warning">
-                    <i className={'pe-7s-' + icon} />
+                    <i className={icon} />
                 </div>
             </Col>
         );

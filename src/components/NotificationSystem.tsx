@@ -10,15 +10,17 @@ interface NotificationSystemState {
 
 export let notificationSystem: any = null;
 
-export function addNotification( notification: NotificationSystem.Notification ) {
-    notification.position = 'tc';
-    notificationSystem.addNotification( notification );
+export function addNotification(notification: NotificationSystem.Notification) {
+    if (notificationSystem) {
+        notification.position = 'tr';
+        notificationSystem.addNotification(notification);
+    }
 }
 
 export class NotificationSystemFrame extends React.Component<NotificationSystemProps, NotificationSystemState> {
 
-    constructor( props: NotificationSystemProps ) {
-        super( props );
+    constructor(props: NotificationSystemProps) {
+        super(props);
     }
 
     componentDidMount(): void {
