@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer } from 'recharts';
 import { Card } from '../../../components/Card/Card';
 import { StockCategoryValue } from '../../../state/AppState';
+import { getColor } from '../../../util/colorNormalize';
 
 interface StockShareCardProps {
     stockCategoryValues: StockCategoryValue[];
@@ -12,22 +13,20 @@ interface StockShareCardState {
 
 export default class StockShareCard extends React.Component<StockShareCardProps, StockShareCardState> {
 
-    constructor( props: StockShareCardProps ) {
-        super( props );
+    constructor(props: StockShareCardProps) {
+        super(props);
     }
 
     render() {
-        const {stockCategoryValues} = this.props;
+        const { stockCategoryValues } = this.props;
 
         const data = stockCategoryValues;
-        const pieData = data.map( ( value ) => {
+        const pieData = data.map((value) => {
             return {
                 name: value.categoryName,
                 value: value.ratio
             };
-        } );
-        // colors are taken from the variables.
-        const colors = ['#3472F7', '#87CB16', '#943bea', '#FF9500', '#EE2D20'];
+        });
 
         return (
             <div className="content">
@@ -47,13 +46,13 @@ export default class StockShareCard extends React.Component<StockShareCardProps,
                                 legendType="square"
                             >
                                 {
-                                    data.map( ( entry, index, array ) => (
+                                    data.map((entry, index, array) => (
                                         <Cell
                                             key={`cell-${index}`}
-                                            fill={colors[index]}
+                                            fill={getColor(entry.categoryName)}
                                             strokeWidth={array.length === 1 ? 0 : 1}
                                         />
-                                    ) )
+                                    ))
                                 }
                             </Pie>
                         </PieChart>
