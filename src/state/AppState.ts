@@ -14,6 +14,7 @@ export interface QuestTask {
     progress: number; // 0 - 100% (set automatically)
     isCompleted: boolean; // is this Task Completed?
     questType: QuestType;
+    typeName?: string; // the name used for the type evaluation
     amount: number; // the amount you should have for this task
 }
 

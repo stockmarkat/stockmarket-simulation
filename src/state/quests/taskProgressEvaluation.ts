@@ -1,6 +1,6 @@
 import { call, select } from 'redux-saga/effects';
-import { QuestTask } from '../AppState';
-import { getCapital } from '../depot/depotSelector';
+import { QuestTask, StockCategoryValue } from '../AppState';
+import { getCapital, getStockCategoryValues, getStockValue } from '../depot/depotSelector';
 import { getOwnedStocksAmount } from '../stockMarket/stockSelector';
 
 export function* getTaskProgress(task: QuestTask) {
@@ -12,6 +12,12 @@ export function* getTaskProgress(task: QuestTask) {
         case 'StockTotalPossession':
             progress = yield call(getStockTotalPossessionTaskProgress, task);
             break;
+        case 'StockInvestmentPercent':
+            progress = yield call(getStockInvestmentPercentTaskProgress, task);
+            break;
+        case 'CategoryPercentPossession':
+            progress = yield call(getCategoryPercentPossessionTaskProgress, task);
+            break;
         default:
             return 0;
     }
@@ -21,6 +27,30 @@ export function* getTaskProgress(task: QuestTask) {
     }
 
     return progress;
+}
+
+function* getStockInvestmentPercentTaskProgress(task: QuestTask) {
+    const totalCapital = yield select(getCapital);
+    const stocks = yield select(getStockValue);
+
+    const investPercent = stocks * 100 / totalCapital;
+    return investPercent * 100 / task.amount;
+}
+
+function* getCategoryPercentPossessionTaskProgress(task: QuestTask) {
+    // getAll categories
+    const categories: StockCategoryValue[] = yield select(getStockCategoryValues);
+
+    // search category
+    const category = categories.find(c => c.categoryName === task.typeName);
+
+    // no stocks of this category
+    if (!category) {
+        return 0;
+    }
+
+    // total per cent calculation
+    return category.ratio * 100 / task.amount;
 }
 
 function* getMoneyPossessionTaskProgress(task: QuestTask) {
