@@ -1,21 +1,16 @@
 [
   {
-    "name": "MySuperFancyQuest1",
+    "name": "Expand your capital to 20 000",
     "iconName": "myIcon",
     "goodies": [
       {
         "type": "money",
-        "amount": 10500
-      },
-      {
-        "type": "stock",
-        "amount": 10,
-        "stockName": "Troubleshooters"
+        "amount": 1000
       }
     ],
     "tasks": [
       {
-        "name": "Have $9000 in total",
+        "name": "Possess a capital of $ 20'000",
         "questType": "MoneyPossession",
         "amount": 9000
       }
