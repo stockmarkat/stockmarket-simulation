@@ -45,9 +45,7 @@ function* recalculateAllQuests() {
             const progress: number = yield call(getTaskProgress, t);
             t.progress = progress;
             totalProgress += progress;
-            if (progress === 100) {
-                t.isCompleted = true;
-            }
+            t.isCompleted = progress === 100;
         }
         q.progress = totalProgress / q.tasks.length;
         if (q.progress === 100) {
