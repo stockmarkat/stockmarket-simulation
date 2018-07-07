@@ -74,7 +74,7 @@
   {
     "name": "Credit Suisse AG",
     "value": 178.32,
-    "volatility": 1,
+    "volatility": 1.5,
     "type": "Finance"
   },
   {
