@@ -48,10 +48,9 @@ class Depot extends React.Component<DepotProps> {
                             return (
                                     <Col key={stock.name} >
                                         <StockTile
-                                            title={stock.name}
-                                            total={stock.quantity * stock.value}
+                                            name={stock.name}
                                             value={stock.value}
-                                            count={stock.quantity}
+                                            amount={stock.quantity}
                                             type={stock.type}
                                         />
                                     </Col>

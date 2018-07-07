@@ -7,11 +7,10 @@ import { Card } from '../Card/Card';
 import { PriceTag } from '../PriceTag';
 
 interface StockTileProps {
-    title: string;
-    total: number;
-    value: number;
-    count: number;
-    type: StockType;
+    name: string; // the name of the stock
+    value: number; // the value of one stock
+    amount: number; // the amount of Stocks owned
+    type: StockType; // the Type of stock
 }
 
 export class StockTile extends React.Component<StockTileProps> {
@@ -37,14 +36,14 @@ export class StockTile extends React.Component<StockTileProps> {
         return (
             <Col xs={6}>
                 <div className="stockTile-text title text-center">
-                    {this.props.title}
+                    {this.props.name}
                 </div>
             </Col>
         );
     }
 
     renderQuantity() {
-        const { count } = this.props;
+        const { amount } = this.props;
 
         return (
 
@@ -55,7 +54,7 @@ export class StockTile extends React.Component<StockTileProps> {
                         Quantity:
                     </div>
                     <div className={'stockTileCountNumber'}>
-                        {count}
+                        {amount}
                     </div>
                 </div>
 
@@ -87,9 +86,10 @@ export class StockTile extends React.Component<StockTileProps> {
     }
 
     renderPriceTag() {
+        const { value, amount} = this.props;
         return (
             <Col xs={2} className="numbers text-center stockTilePriceTag">
-                <PriceTag value={this.props.total}/>
+                <PriceTag value={value * amount}/>
             </Col>
         );
     }
