@@ -1,44 +1,39 @@
 import * as React from 'react';
 import * as Col from 'react-bootstrap/lib/Col';
 import * as Row from 'react-bootstrap/lib/Row';
-import { PriceTag } from '../PriceTag';
+import { StockType } from '../../state/AppState';
 import { getCorrectIconForType } from '../../util/GetCorrectIcon';
+import { PriceTag } from '../PriceTag';
 
 interface StockTileProps {
-
     title: string;
     total: number;
     value: number;
     count: number;
-    type: 'FireArms' | 'Energy' | 'Finance' | 'RawMaterials' | 'Technology';
-
+    type: StockType;
 }
 
-interface StockTileState {
-}
+export class StockTile extends React.Component<StockTileProps> {
 
-export class StockTile extends React.Component<StockTileProps, StockTileState> {
-
-    constructor( props: StockTileProps ) {
-        super( props );
+    constructor(props: StockTileProps) {
+        super(props);
     }
 
     renderItemIcon() {
-
         const { type } = this.props;
         const icon = getCorrectIconForType(type);
 
         return (
             <Col xs={1}>
                 <div className="icon-big text-center icon-warning">
-                    <i className={icon} />
+                    <i className={icon}/>
                 </div>
             </Col>
         );
     }
 
     renderTitle() {
-        return(
+        return (
             <Col xs={6}>
                 <div className="stockTile-text title text-center">
                     {this.props.title}
@@ -54,14 +49,14 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
 
             <Col xs={1}>
 
-                    <div className={'stockTileCountBox stockTileDetailBox text-left'}>
-                        <div className={'stockTileCountText'} >
+                <div className={'stockTileCountBox stockTileDetailBox text-left'}>
+                    <div className={'stockTileCountText'}>
                         Quantity:
-                        </div>
-                        <div className={'stockTileCountNumber'}>
-                        {count}
-                        </div>
                     </div>
+                    <div className={'stockTileCountNumber'}>
+                        {count}
+                    </div>
+                </div>
 
             </Col>
 
@@ -91,7 +86,7 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
     }
 
     renderPriceTag() {
-        return(
+        return (
             <Col xs={2} className="numbers text-center stockTilePriceTag">
                 <PriceTag value={this.props.total}/>
             </Col>
@@ -108,7 +103,6 @@ export class StockTile extends React.Component<StockTileProps, StockTileState> {
                         {this.renderQuantity()}
                         {this.renderSinglePrice()}
                         {this.renderPriceTag()}
-
                     </Row>
                 </div>
             </div>
