@@ -177,25 +177,6 @@
     ]
   },
   {
-    "name": "Apple Fanboy",
-    "iconName": "pe-7s-phone",
-    "goodies": [
-      {
-        "type": "stock",
-        "amount": 3,
-        "stockName": "Apple"
-      }
-    ],
-    "tasks": [
-      {
-        "name": "10% of your stock capital should be invested into Apple",
-        "questType": "StockPercentPossesion",
-        "amount": 10,
-        "typeName": "Apple"
-      }
-    ]
-  },
-  {
     "name": "Expand your capital to $ 40 000",
     "iconName": "pe-7s-wallet",
     "goodies": [
@@ -209,6 +190,53 @@
         "name": "Possess a capital of $ 40 000",
         "questType": "MoneyPossession",
         "amount": 40000
+      }
+    ]
+  },
+  {
+    "name": "Support the Green revolution",
+    "iconName": "pe-7s-gleam",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 5,
+        "stockName": "SolarCity"
+      },
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "Wind Power AG"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "5% of your stock capital should be invested into SolarCity",
+        "questType": "StockPercentPossesion",
+        "amount": 5,
+        "typeName": "SolarCity"
+      },
+      {
+        "name": "5% of your stock capital should be invested into Wind Power AG",
+        "questType": "StockPercentPossesion",
+        "amount": 5,
+        "typeName": "Wind Power AG"
+      }
+    ]
+  },
+  {
+    "name": "Expand your capital to $ 50 000",
+    "iconName": "pe-7s-safe",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 5000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 50 000",
+        "questType": "MoneyPossession",
+        "amount": 50000
       }
     ]
   },
@@ -237,19 +265,55 @@
     ]
   },
   {
-    "name": "Expand your capital to $ 50 000",
+    "name": "Expand your capital to $ 60 000",
     "iconName": "pe-7s-safe",
     "goodies": [
       {
         "type": "money",
-        "amount": 5000
+        "amount": 6000
       }
     ],
     "tasks": [
       {
-        "name": "Possess a capital of $ 50 000",
+        "name": "Possess a capital of $ 60 000",
         "questType": "MoneyPossession",
-        "amount": 50000
+        "amount": 60000
+      }
+    ]
+  },
+  {
+    "name": "Support the Dakota Access oil pipeline and destroy the lives of indigenous people",
+    "iconName": "pe-7s-hammer",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 2,
+        "stockName": "Credit Suisse AG"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "10% of your stock capital should be invested into Credit Suisse",
+        "questType": "StockPercentPossesion",
+        "amount": 10,
+        "typeName": "Credit Suisse AG"
+      }
+    ]
+  },
+  {
+    "name": "Expand your capital to $ 80 000",
+    "iconName": "pe-7s-cash",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 8000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 80 000",
+        "questType": "MoneyPossession",
+        "amount": 80000
       }
     ]
   },
@@ -273,19 +337,19 @@
     ]
   },
   {
-    "name": "Expand your capital to $ 60 000",
-    "iconName": "pe-7s-safe",
+    "name": "Become rich!",
+    "iconName": "pe-7s-diamond",
     "goodies": [
       {
         "type": "money",
-        "amount": 6000
+        "amount": 10000
       }
     ],
     "tasks": [
       {
-        "name": "Possess a capital of $ 60 000",
+        "name": "Possess a capital of $ 100 000",
         "questType": "MoneyPossession",
-        "amount": 60000
+        "amount": 100000
       }
     ]
   },
@@ -309,24 +373,24 @@
     ]
   },
   {
-    "name": "Become rich!",
-    "iconName": "pe-7s-diamond",
+    "name": "Possess $ 500 000",
+    "iconName": "pe-7s-safe",
     "goodies": [
       {
         "type": "money",
-        "amount": 10000
+        "amount": 50000
       }
     ],
     "tasks": [
       {
-        "name": "Possess a capital of $ 100 000",
+        "name": "Possess a capital of $ 500 000",
         "questType": "MoneyPossession",
-        "amount": 100000
+        "amount": 500000
       }
     ]
   },
   {
-    "name": "Become a bit like Uncle Scrooge",
+    "name": "Be a millionaire",
     "iconName": "pe-7s-diamond",
     "goodies": [
       {
