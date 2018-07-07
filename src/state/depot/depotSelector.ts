@@ -34,3 +34,9 @@ export const getStockCategoryValues = (state: AppState) => {
 
     return categoryValues;
 };
+
+export const getStocksForDepot = ( state: AppState ) => {
+
+    return state.stockMarket.stocks.filter(stock => stock.quantity > 0);
+
+};

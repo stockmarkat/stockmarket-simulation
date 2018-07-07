@@ -1,3 +1,4 @@
+
 import { StockType } from '../state/AppState';
 
 export const getCorrectIconForType = (type: StockType) => {

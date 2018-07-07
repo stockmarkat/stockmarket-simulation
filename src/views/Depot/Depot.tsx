@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { AppState, FinancialSnapshot, StockCategoryValue } from '../../state/AppState';
-import { getStockCategoryValues, getStockValue } from '../../state/depot/depotSelector';
+import { AppState, FinancialSnapshot, Stock, StockCategoryValue } from '../../state/AppState';
+import { getStockCategoryValues, getStocksForDepot, getStockValue } from '../../state/depot/depotSelector';
 import { BalanceCard, StockBalanceCard, StockShareCard } from './Cards';
+
+import { StockTile } from '../../components/StockTile/StockTile';
 import { CapitalDevelopment } from './Cards/CapitalDevelopment';
 
 interface DepotProps {
@@ -11,12 +13,14 @@ interface DepotProps {
     stockValue: number;
     stockValueDevelopment: FinancialSnapshot[];
     stockCategoryValues: StockCategoryValue[];
+    stocks: Stock[];
 }
 
 class Depot extends React.Component<DepotProps> {
 
     render() {
-        const {stockCategoryValues, accountValue, stockValue, stockValueDevelopment} = this.props;
+
+        const {stockCategoryValues, accountValue, stockValue, stockValueDevelopment, stocks} = this.props;
 
         return (
             <div className="content">
@@ -37,6 +41,24 @@ class Depot extends React.Component<DepotProps> {
                         </Col>
                         }
                     </Row>
+                    <Row>
+                    {
+
+                        stocks.map(stock => {
+                            return (
+                                    <Col key={stock.name} >
+                                        <StockTile
+                                            name={stock.name}
+                                            value={stock.value}
+                                            amount={stock.quantity}
+                                            type={stock.type}
+                                        />
+                                    </Col>
+                            );
+                        })
+                    }
+                    </Row>
+
                 </Grid>
             </div>
         );
@@ -47,7 +69,8 @@ const mapStateToProps = ( state: AppState ) => ({
     accountValue: state.depot.accountValue,
     stockValue: getStockValue( state ),
     stockValueDevelopment: state.depot.stockValueDevelopment,
-    stockCategoryValues: getStockCategoryValues( state )
+    stockCategoryValues: getStockCategoryValues( state ),
+    stocks: getStocksForDepot( state )
 });
 
 // tslint:disable-next-line: no-any
