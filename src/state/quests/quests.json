@@ -1,73 +1,12 @@
 [
   {
-    "name": "MySuperFancyQuest1",
-    "iconName": "myIcon",
-    "goodies": [
-      {
-        "type": "money",
-        "amount": 10500
-      },
-      {
-        "type": "stock",
-        "amount": 10,
-        "stockName": "Troubleshooters"
-      }
-    ],
-    "tasks": [
-      {
-        "name": "Have $9000 in total",
-        "questType": "MoneyPossession",
-        "amount": 9000
-      }
-    ]
-  },
-  {
-    "name": "MySuperFancyQuest3",
-    "iconName": "myIcon",
-    "goodies": [
-      {
-        "type": "money",
-        "amount": 10500
-      },
-      {
-        "type": "stock",
-        "amount": 10,
-        "stockName": "Troubleshooters"
-      }
-    ],
-    "tasks": [
-      {
-        "name": "Have $100'000 in total",
-        "questType": "MoneyPossession",
-        "amount": 100000
-      }
-    ]
-  },
-  {
-    "name": "MySuperFancyQuest2",
-    "iconName": "myIcon",
-    "goodies": [
-      {
-        "type": "money",
-        "amount": 100
-      }
-    ],
-    "tasks": [
-      {
-        "name": "Have $100 in total",
-        "questType": "MoneyPossession",
-        "amount": 10500
-      }
-    ]
-  },
-  {
-    "name": "Buy 1 Stock",
-    "iconName": "myIcon",
+    "name": "Make your first purchase",
+    "iconName": "pe-7s-cart",
     "goodies": [
       {
         "type": "stock",
         "amount": 1,
-        "stockName": "Troubleshooters"
+        "stockName": "Swiss Life AG"
       }
     ],
     "tasks": [
@@ -79,43 +18,391 @@
     ]
   },
   {
-    "name": "Buy 2 Stock",
-    "iconName": "myIcon",
+    "name": "Be a regular stock buyer",
+    "iconName": "pe-7s-cash",
     "goodies": [
       {
         "type": "stock",
         "amount": 1,
-        "stockName": "Troubleshooters"
+        "stockName": "Wind Power AG"
       }
     ],
     "tasks": [
       {
-        "name": "Buy 2 stock",
+        "name": "Possess 10 stocks",
         "questType": "StockTotalPossession",
-        "amount": 2
+        "amount": 10
       }
     ]
   },
   {
-    "name": "Buy 3 Stock",
-    "iconName": "myIcon",
+    "name": "Expand your capital to $ 20 000",
+    "iconName": "pe-7s-piggy",
     "goodies": [
       {
-        "type": "stock",
-        "amount": 1,
-        "stockName": "Troubleshooters"
-      },
-      {
-        "type": "stock",
-        "amount": 10,
-        "stockName": "Troubleshooters"
+        "type": "money",
+        "amount": 2000
       }
     ],
     "tasks": [
       {
-        "name": "Buy 3 stock",
+        "name": "Possess a capital of $ 20 000",
+        "questType": "MoneyPossession",
+        "amount": 20000
+      }
+    ]
+  },
+  {
+    "name": "Get addicted to buying stocks",
+    "iconName": "pe-7s-eyedropper",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "AT&T"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess 100 stocks",
         "questType": "StockTotalPossession",
-        "amount": 3
+        "amount": 100
+      }
+    ]
+  },
+  {
+    "name": "Have a diversified portfolio",
+    "iconName": "pe-7s-calculator",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "Swiss Life AG"
+      },
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "Spotify"
+      },
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "SolarCity"
+      },
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "Holcim AG"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "25% of your stocks should have the category Finance",
+        "questType": "CategoryPercentPossession",
+        "amount": 25,
+        "typeName": "Finance"
+      },
+      {
+        "name": "25% of your stocks should have the category Technology",
+        "questType": "CategoryPercentPossession",
+        "amount": 25,
+        "typeName": "Technology"
+      },
+      {
+        "name": "25% of your stocks should have the category Energy",
+        "questType": "CategoryPercentPossession",
+        "amount": 25,
+        "typeName": "Energy"
+      },
+      {
+        "name": "25% of your stocks should have the category Raw Materials",
+        "questType": "CategoryPercentPossession",
+        "amount": 25,
+        "typeName": "RawMaterials"
+      }
+    ]
+  },
+  {
+    "name": "Get really addicted to buying stocks",
+    "iconName": "pe-7s-eyedropper",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 2,
+        "stockName": "Alphabet"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Invest 99% of your capital into stocks",
+        "questType": "StockInvestmentPercent",
+        "amount": 99
+      }
+    ]
+  },
+  {
+    "name": "Expand your capital to $ 30 000",
+    "iconName": "pe-7s-wallet",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 3000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 30 000",
+        "questType": "MoneyPossession",
+        "amount": 30000
+      }
+    ]
+  },
+  {
+    "name": "Technology Believer",
+    "iconName": "pe-7s-magic-wand",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 8,
+        "stockName": "FuchsGroup AG"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "50% of your stock capital should be invested into technology",
+        "questType": "CategoryPercentPossession",
+        "amount": 50,
+        "typeName": "Technology"
+      }
+    ]
+  },
+  {
+    "name": "Expand your capital to $ 40 000",
+    "iconName": "pe-7s-wallet",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 4000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 40 000",
+        "questType": "MoneyPossession",
+        "amount": 40000
+      }
+    ]
+  },
+  {
+    "name": "Support the Green revolution",
+    "iconName": "pe-7s-gleam",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 5,
+        "stockName": "SolarCity"
+      },
+      {
+        "type": "stock",
+        "amount": 1,
+        "stockName": "Wind Power AG"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "5% of your stock capital should be invested into SolarCity",
+        "questType": "StockPercentPossesion",
+        "amount": 5,
+        "typeName": "SolarCity"
+      },
+      {
+        "name": "5% of your stock capital should be invested into Wind Power AG",
+        "questType": "StockPercentPossesion",
+        "amount": 5,
+        "typeName": "Wind Power AG"
+      }
+    ]
+  },
+  {
+    "name": "Expand your capital to $ 50 000",
+    "iconName": "pe-7s-safe",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 5000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 50 000",
+        "questType": "MoneyPossession",
+        "amount": 50000
+      }
+    ]
+  },
+  {
+    "name": "Global Warming Supporter",
+    "iconName": "pe-7s-global",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 3000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "10% of your stocks should be Murphy OIL stocks",
+        "questType": "StockPercentPossesion",
+        "amount": 10,
+        "typeName": "Murphy OIL"
+      },
+      {
+        "name": "10% of your stocks should be Shell stocks",
+        "questType": "StockPercentPossesion",
+        "amount": 10,
+        "typeName": "SHELL"
+      }
+    ]
+  },
+  {
+    "name": "Expand your capital to $ 60 000",
+    "iconName": "pe-7s-safe",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 6000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 60 000",
+        "questType": "MoneyPossession",
+        "amount": 60000
+      }
+    ]
+  },
+  {
+    "name": "Support the Dakota Access oil pipeline and destroy the lives of indigenous people",
+    "iconName": "pe-7s-hammer",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 2,
+        "stockName": "Credit Suisse AG"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "10% of your stock capital should be invested into Credit Suisse",
+        "questType": "StockPercentPossesion",
+        "amount": 10,
+        "typeName": "Credit Suisse AG"
+      }
+    ]
+  },
+  {
+    "name": "Expand your capital to $ 80 000",
+    "iconName": "pe-7s-cash",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 8000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 80 000",
+        "questType": "MoneyPossession",
+        "amount": 80000
+      }
+    ]
+  },
+  {
+    "name": "Be a supporter of child exploitation",
+    "iconName": "pe-7s-ball",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 10,
+        "stockName": "Glencore"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "50% of your stocks should be Glencore stocks",
+        "questType": "StockPercentPossesion",
+        "amount": 50,
+        "typeName": "Glencore"
+      }
+    ]
+  },
+  {
+    "name": "Become rich!",
+    "iconName": "pe-7s-diamond",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 10000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 100 000",
+        "questType": "MoneyPossession",
+        "amount": 100000
+      }
+    ]
+  },
+  {
+    "name": "Be a hard war supporter",
+    "iconName": "pe-7s-global",
+    "goodies": [
+      {
+        "type": "stock",
+        "amount": 5,
+        "stockName": "TroubleShooters"
+      }
+    ],
+    "tasks": [
+      {
+        "name": "90% of your stocks should be in the Fire Arms category",
+        "questType": "CategoryPercentPossession",
+        "amount": 90,
+        "typeName": "FireArms"
+      }
+    ]
+  },
+  {
+    "name": "Possess $ 500 000",
+    "iconName": "pe-7s-safe",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 50000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 500 000",
+        "questType": "MoneyPossession",
+        "amount": 500000
+      }
+    ]
+  },
+  {
+    "name": "Be a millionaire",
+    "iconName": "pe-7s-diamond",
+    "goodies": [
+      {
+        "type": "money",
+        "amount": 100000
+      }
+    ],
+    "tasks": [
+      {
+        "name": "Possess a capital of $ 1 000 000",
+        "questType": "MoneyPossession",
+        "amount": 1000000
       }
     ]
   }
