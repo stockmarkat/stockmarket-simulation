@@ -27,7 +27,7 @@
     "name": "SHELL",
     "value": 69.38,
     "volatility": 3,
-    "type": "RawMaterials"
+    "type": "Raw Materials"
   },
   {
     "name": "Card Services AG",
@@ -51,7 +51,7 @@
     "name": "Holcim AG",
     "value": 898.98,
     "volatility": 1,
-    "type": "RawMaterials"
+    "type": "Raw Materials"
   },
   {
     "name": "TESLA",
@@ -63,7 +63,7 @@
     "name": "Murphy OIL",
     "value": 200.07,
     "volatility": 2,
-    "type": "RawMaterials"
+    "type": "Raw Materials"
   },
   {
     "name": "EWZ",
@@ -81,13 +81,13 @@
     "name": "Glencore",
     "value": 30.64,
     "volatility": 3,
-    "type": "RawMaterials"
+    "type": "Raw Materials"
   },
   {
     "name": "TroubleShooters",
     "value": 40.50,
     "volatility": 3,
-    "type": "FireArms"
+    "type": "Fire Arms"
   },
   {
     "name": "AT&T",
@@ -105,7 +105,7 @@
     "name": "Ruag",
     "value": 413.25,
     "volatility": 3,
-    "type": "FireArms"
+    "type": "Fire Arms"
   },
   {
     "name": "Axpo",
@@ -129,7 +129,7 @@
     "name": "Wood Holding AG",
     "value": 124.32,
     "volatility": 0.5,
-    "type": "RawMaterials"
+    "type": "Raw Materials"
   },
   {
     "name": "FuchsGroup AG",

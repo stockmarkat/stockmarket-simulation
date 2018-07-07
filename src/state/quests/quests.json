@@ -118,7 +118,7 @@
         "name": "25% of your stocks should have the category Raw Materials",
         "questType": "CategoryPercentPossession",
         "amount": 25,
-        "typeName": "RawMaterials"
+        "typeName": "Raw Materials"
       }
     ]
   },
@@ -368,7 +368,7 @@
         "name": "90% of your stocks should be in the Fire Arms category",
         "questType": "CategoryPercentPossession",
         "amount": 90,
-        "typeName": "FireArms"
+        "typeName": "Fire Arms"
       }
     ]
   },

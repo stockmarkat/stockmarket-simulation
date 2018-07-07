@@ -44,7 +44,7 @@ export interface Stock {
     quantity: number; // count of owned stocks
 }
 
-export type StockType = 'FireArms' | 'Energy' | 'Finance' | 'RawMaterials' | 'Technology';
+export type StockType = 'Fire Arms' | 'Energy' | 'Finance' | 'Raw Materials' | 'Technology';
 
 export interface FinancialSnapshot {
     value?: number;
