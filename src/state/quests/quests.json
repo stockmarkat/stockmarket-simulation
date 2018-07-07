@@ -72,6 +72,7 @@
   },
   {
     "name": "Have a diversified portfolio",
+    "isUnlocked": true,
     "iconName": "pe-7s-calculator",
     "goodies": [
       {
