@@ -233,15 +233,17 @@
   }
 }
 
-.card-stats {
-  .icon-big {
-    font-size: 3em;
-    min-height: 64px;
-    i {
-      font-weight: bold;
-      line-height: 59px;
-    }
+.icon-big {
+  font-size: 3em;
+  min-height: 64px;
+  i {
+    font-weight: bold;
+    line-height: 59px;
   }
+}
+
+.card-stats {
+
   .numbers {
     font-size: 2em;
     text-align: right;

@@ -1942,10 +1942,10 @@ body > .navbar-collapse[data-color="purple"]:after {
   .card-plain .image {
     border-radius: 4px; }
 
-.card-stats .icon-big {
+.icon-big {
   font-size: 3em;
   min-height: 64px; }
-  .card-stats .icon-big i {
+  .icon-big i {
     font-weight: bold;
     line-height: 59px; }
 

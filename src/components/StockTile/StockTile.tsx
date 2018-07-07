@@ -3,6 +3,7 @@ import * as Col from 'react-bootstrap/lib/Col';
 import * as Row from 'react-bootstrap/lib/Row';
 import { StockType } from '../../state/AppState';
 import { getCorrectIconForType } from '../../util/GetCorrectIcon';
+import { Card } from '../Card/Card';
 import { PriceTag } from '../PriceTag';
 
 interface StockTileProps {
@@ -95,17 +96,15 @@ export class StockTile extends React.Component<StockTileProps> {
 
     render() {
         return (
-            <div className="card card-stats">
-                <div className="content">
-                    <Row>
-                        {this.renderItemIcon()}
-                        {this.renderTitle()}
-                        {this.renderQuantity()}
-                        {this.renderSinglePrice()}
-                        {this.renderPriceTag()}
-                    </Row>
-                </div>
-            </div>
+            <Card noHeader={true} noFooter={true}>
+                <Row>
+                    {this.renderItemIcon()}
+                    {this.renderTitle()}
+                    {this.renderQuantity()}
+                    {this.renderSinglePrice()}
+                    {this.renderPriceTag()}
+                </Row>
+            </Card>
         );
     }
 }
