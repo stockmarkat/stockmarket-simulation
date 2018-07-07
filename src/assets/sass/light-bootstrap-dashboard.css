@@ -3072,11 +3072,11 @@ body > .navbar-collapse[data-color="purple"]:after {
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch; } }
 
-.stockTilePriceTag {
+.stock-tile-price-tag {
   font-size: 2em !important;
   margin-top: .4em; }
 
-.stockTileDetailBox {
+.stock-tile-detail-box {
   font-size: 1.2em !important;
   margin-top: .25em;
   text-align: right !important; }

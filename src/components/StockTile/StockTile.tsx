@@ -34,7 +34,7 @@ export class StockTile extends React.Component<StockTileProps> {
 
     renderTitle() {
         return (
-            <Col xs={6}>
+            <Col xs={4}>
                 <div className="stockTile-text title text-center">
                     {this.props.name}
                 </div>
@@ -47,9 +47,9 @@ export class StockTile extends React.Component<StockTileProps> {
 
         return (
 
-            <Col xs={1}>
+            <Col xs={3}>
 
-                <div className={'stockTileCountBox stockTileDetailBox text-left'}>
+                <div className={'stock-tile-detail-box text-left'}>
                     <div className={'stockTileCountText'}>
                         Quantity:
                     </div>
@@ -68,9 +68,9 @@ export class StockTile extends React.Component<StockTileProps> {
 
         return (
 
-            <Col xs={2}>
+            <Col xs={3}>
 
-                <div className="numbers stockTileDetailBox text-left">
+                <div className="numbers stock-tile-detail-box text-left">
                     <div>
                         Price:
                     </div>
@@ -88,7 +88,7 @@ export class StockTile extends React.Component<StockTileProps> {
     renderPriceTag() {
         const { value, amount} = this.props;
         return (
-            <Col xs={2} className="numbers text-center stockTilePriceTag">
+            <Col xs={1} className="numbers text-center stock-tile-price-tag">
                 <PriceTag value={value * amount}/>
             </Col>
         );
