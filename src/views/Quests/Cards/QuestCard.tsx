@@ -17,8 +17,15 @@ export class QuestCard extends React.Component<QuestCardProps> {
 
         return (
             <Card noFooter={true} noHeader={true}>
-                <i className={quest.iconName}/>
-                <h4 className="title">{quest.name}</h4>
+                <h4 className="title" style={{float: 'left'}}>{quest.name}</h4>
+                <i
+                    style={{
+                        marginTop: '0.2em',
+                        marginLeft: '0.5em',
+                        fontSize: '1.5em'
+                    }}
+                    className={quest.iconName}
+                />
                 <TaskList tasks={quest.tasks}/>
                 <GoodieList goodies={quest.goodies}/>
                 {!quest.isCompleted &&

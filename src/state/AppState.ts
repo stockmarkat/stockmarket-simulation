@@ -14,12 +14,16 @@ export interface QuestTask {
     progress: number; // 0 - 100% (set automatically)
     isCompleted: boolean; // is this Task Completed?
     questType: QuestType;
+    typeName?: string; // the name used for the type evaluation
     amount: number; // the amount you should have for this task
 }
 
 export type QuestType =
     'MoneyPossession' // the total capital the user should have
     | 'StockTotalPossession' // the total amount of stocks the user should have
+    | 'CategoryPercentPossession' // the per cent of stocks that the user should possess in a single category
+    | 'StockInvestmentPercent' // the percent of the capital that should be invested into stocks
+    | 'StockPercentPossesion' // the percent of stocks that the user should possess of a single stock
     ;
 
 export interface Goodie {
@@ -40,7 +44,7 @@ export interface Stock {
     quantity: number; // count of owned stocks
 }
 
-export type StockType = 'FireArms' | 'Energy' | 'Finance' | 'RawMaterials' | 'Technology';
+export type StockType = 'Fire Arms' | 'Energy' | 'Finance' | 'Raw Materials' | 'Technology';
 
 export interface FinancialSnapshot {
     value?: number;
