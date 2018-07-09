@@ -19,41 +19,37 @@ export class StockCard extends React.PureComponent<StockCardProps> {
 
         return (
             <Card noHeader={true} noFooter={true}>
-                <Row>
-                    <Col sm={4} xs={6}>
+                <Row className="vertical-center">
+                    <Col xs={4} className="horizontal-center">
                         <i
                             style={{
-                                fontSize: '10vmin',
-                                float: 'left'
+                                fontSize: '11vmin',
                             }}
-                            className={getCorrectIconForType( type ) + ' center-block'}
+                            className={getCorrectIconForType( type )}
                         />
                     </Col>
-                    <Col sm={8} xs={6}>
-                        <h4
-                            style={{
-                                marginBottom: '0.5em'
-                            }}
-                            className="title text-underline"
-                        >
-                            {name}
-                        </h4>
-                        <table>
-                            <tbody>
-                            <tr>
-                                <td className="bold">Price:</td>
-                                <td className="stockDetails"><PriceTag value={price}/></td>
-                            </tr>
-                            <tr>
-                                <td className="bold">Owning:</td>
-                                <td className="stockDetails">{quantity}</td>
-                            </tr>
-                            <tr className="small-padding-top">
-                                <td className="bold">Total:</td>
-                                <td className="stockDetails"><PriceTag value={price * quantity}/></td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <Col xs={8} className="horizontal-center">
+                        <div>
+                            <h4 style={{marginBottom: '0.5em'}} className="title text-underline">
+                                {name}
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td className="bold">Price:</td>
+                                    <td className="stockDetails"><PriceTag value={price}/></td>
+                                </tr>
+                                <tr>
+                                    <td className="bold">Owning:</td>
+                                    <td className="stockDetails">{quantity}</td>
+                                </tr>
+                                <tr>
+                                    <td className="bold text-underline">Total:</td>
+                                    <td className="stockDetails"><PriceTag value={price * quantity}/></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </Col>
                 </Row>
             </Card>

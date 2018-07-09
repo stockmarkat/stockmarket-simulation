@@ -3072,6 +3072,14 @@ body > .navbar-collapse[data-color="purple"]:after {
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch; } }
 
+.horizontal-center {
+  display: flex;
+  justify-content: center; }
+
+.vertical-center {
+  display: flex;
+  align-content: center; }
+
 .stock-tile-price-tag {
   font-size: 2em !important;
   margin-top: .4em; }
