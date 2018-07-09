@@ -4,6 +4,7 @@ import { StockType } from '../../../state/AppState';
 import { getCorrectIconForType } from '../../../util/GetCorrectIcon';
 import { PriceTag } from '../../../components/PriceTag';
 import { Col, Row } from 'react-bootstrap';
+import { getColor } from '../../../util/colorNormalize';
 
 interface StockCardProps {
     name: string;
@@ -24,7 +25,9 @@ export class StockCard extends React.PureComponent<StockCardProps> {
                         <i
                             style={{
                                 fontSize: '11vmin',
+                                color: getColor( type )
                             }}
+                            title={type}
                             className={getCorrectIconForType( type )}
                         />
                     </Col>
