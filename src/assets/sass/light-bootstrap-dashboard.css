@@ -2471,4 +2471,4 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .vertical-center {
   display: flex;
-  align-content: center; }
+  align-items: center; }
