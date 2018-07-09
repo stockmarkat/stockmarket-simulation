@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as Col from 'react-bootstrap/lib/Col';
 import * as Row from 'react-bootstrap/lib/Row';
-import { StockType } from '../../state/AppState';
-import { getCorrectIconForType } from '../../util/GetCorrectIcon';
-import { Card } from '../Card/Card';
-import { PriceTag } from '../PriceTag';
+import { StockType } from '../../../state/AppState';
+import { getCorrectIconForType } from '../../../util/GetCorrectIcon';
+import { Card } from '../../../components/Card/Card';
+import { PriceTag } from '../../../components/PriceTag';
 
 interface StockTileProps {
     name: string; // the name of the stock

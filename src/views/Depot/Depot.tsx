@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import { AppState, FinancialSnapshot, Stock, StockCategoryValue } from '../../state/AppState';
 import { getStockCategoryValues, getStocksForDepot, getStockValue } from '../../state/depot/depotSelector';
 import { BalanceCard, StockBalanceCard, StockShareCard } from './Cards';
-
-import { StockTile } from '../../components/StockTile/StockTile';
 import { CapitalDevelopment } from './Cards/CapitalDevelopment';
+import { StockCard } from './Cards/StockCard';
 
 interface DepotProps {
     accountValue: number;
@@ -36,7 +35,7 @@ class Depot extends React.Component<DepotProps> {
                             <CapitalDevelopment values={stockValueDevelopment} />
                         </Col>
                         {stockCategoryValues.length > 0 &&
-                        <Col lg={4} sm={6}>
+                        <Col lg={4} sm={6} xs={12}>
                             <StockShareCard stockCategoryValues={this.props.stockCategoryValues}/>
                         </Col>
                         }
@@ -46,11 +45,11 @@ class Depot extends React.Component<DepotProps> {
 
                         stocks.map(stock => {
                             return (
-                                    <Col key={stock.name} >
-                                        <StockTile
+                                    <Col key={stock.name} lg={6} sm={6} xs={12}>
+                                        <StockCard
                                             name={stock.name}
-                                            value={stock.value}
-                                            amount={stock.quantity}
+                                            price={stock.value}
+                                            quantity={stock.quantity}
                                             type={stock.type}
                                         />
                                     </Col>
