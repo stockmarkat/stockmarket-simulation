@@ -3079,18 +3079,3 @@ body > .navbar-collapse[data-color="purple"]:after {
 .vertical-center {
   display: flex;
   align-content: center; }
-
-.stock-tile-price-tag {
-  font-size: 2em !important;
-  margin-top: .4em; }
-
-.stock-tile-detail-box {
-  font-size: 1.2em !important;
-  margin-top: .25em;
-  text-align: right !important; }
-
-.text-left {
-  text-align: left !important; }
-
-.stockTile-text {
-  font-size: 3em; }
