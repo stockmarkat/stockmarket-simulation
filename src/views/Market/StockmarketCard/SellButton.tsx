@@ -4,14 +4,7 @@ interface SellButtonProps {
     onClick: () => void;
 }
 
-interface SellButtonState {
-}
-
-export class SellButton extends React.Component<SellButtonProps, SellButtonState> {
-
-    constructor( props: SellButtonProps ) {
-        super( props );
-    }
+export class SellButton extends React.PureComponent<SellButtonProps> {
 
     render() {
         return (
