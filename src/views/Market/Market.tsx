@@ -3,7 +3,7 @@ import { AppState, Stock } from '../../state/AppState';
 import { connect } from 'react-redux';
 import { Col, Grid, Row } from 'react-bootstrap';
 import { buyOrSellStock } from '../../state/stockMarket/stockMarketActions';
-import StockCard from './StockCard';
+import StockmarketCard from './StockmarketCard';
 
 interface MarketProps {
     stocks: Stock[];
@@ -31,7 +31,7 @@ class Market extends React.Component<MarketProps, MarketState> {
                             stocks.map( stock => {
                                 return (
                                     <Col key={stock.name} xs={12}>
-                                        <StockCard
+                                        <StockmarketCard
                                             stock={stock}
                                             onBuy={( amount: number ) => {
                                                 buy( stock.name, amount );

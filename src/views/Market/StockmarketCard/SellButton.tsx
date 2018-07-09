@@ -1,26 +1,19 @@
 import * as React from 'react';
 
-interface RemoveButtonProps {
+interface SellButtonProps {
     onClick: () => void;
 }
 
-interface RemoveButtonState {
-}
-
-export class RemoveButton extends React.Component<RemoveButtonProps, RemoveButtonState> {
-
-    constructor( props: RemoveButtonProps ) {
-        super( props );
-    }
+export class SellButton extends React.PureComponent<SellButtonProps> {
 
     render() {
         return (
-            <i
+            <button
                 className="material-icons icon-button icon-button-remove"
                 onClick={() => this.props.onClick()}
             >
                 remove_circle_outline
-            </i>
+            </button>
         );
     }
 }

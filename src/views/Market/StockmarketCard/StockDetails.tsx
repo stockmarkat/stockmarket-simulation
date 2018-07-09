@@ -42,7 +42,7 @@ export class StockDetails extends React.Component<StockDetailsProps> {
                 <tr>
                     <td className="bold">Category:</td>
                     <td className="stockDetails small-padding-top">
-                        <i className={getCorrectIconForType( stock.type ) + ' category-icon'}/>
+                        <i title={stock.type} className={getCorrectIconForType( stock.type ) + ' category-icon'}/>
                     </td>
                 </tr>
                 <tr>
