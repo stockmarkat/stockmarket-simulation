@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Col, Grid, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { AppState, FinancialSnapshot, Stock, StockCategoryValue } from '../../state/AppState';
-import { getStockCategoryValues, getStocksForDepot, getStockValue } from '../../state/depot/depotSelector';
+import { getPossessedStocks, getStockCategoryValues, getStockValue } from '../../state/depot/depotSelector';
 import { BalanceCard, StockBalanceCard, StockShareCard } from './Cards';
 import { CapitalDevelopment } from './Cards/CapitalDevelopment';
 import { StockCard } from './Cards/StockCard';
@@ -69,7 +69,7 @@ const mapStateToProps = ( state: AppState ) => ({
     stockValue: getStockValue( state ),
     stockValueDevelopment: state.depot.stockValueDevelopment,
     stockCategoryValues: getStockCategoryValues( state ),
-    stocks: getStocksForDepot( state )
+    stocks: getPossessedStocks( state )
 });
 
 // tslint:disable-next-line: no-any
