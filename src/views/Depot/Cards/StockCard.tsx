@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Card } from '../../../components/Card/Card';
 import { StockType } from '../../../state/AppState';
 import { getCorrectIconForType } from '../../../util/GetCorrectIcon';
-import { PriceTag } from '../../../components/PriceTag';
 import { Col, Row } from 'react-bootstrap';
 import { getColor } from '../../../util/colorNormalize';
+import { StockCardDetails } from './StockCardDetails';
 
 interface StockCardProps {
     name: string;
@@ -32,27 +32,7 @@ export class StockCard extends React.PureComponent<StockCardProps> {
                         />
                     </Col>
                     <Col xs={8} className="horizontal-center">
-                        <div>
-                            <h4 style={{marginBottom: '0.5em'}} className="title text-underline">
-                                {name}
-                            </h4>
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td className="bold">Price:</td>
-                                    <td className="stockDetails"><PriceTag value={price}/></td>
-                                </tr>
-                                <tr>
-                                    <td className="bold">Owning:</td>
-                                    <td className="stockDetails">{quantity}</td>
-                                </tr>
-                                <tr>
-                                    <td className="bold text-underline">Total:</td>
-                                    <td className="stockDetails"><PriceTag value={price * quantity}/></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <StockCardDetails name={name} quantity={quantity} price={price} />
                     </Col>
                 </Row>
             </Card>
