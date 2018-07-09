@@ -45,7 +45,7 @@ class Depot extends React.Component<DepotProps> {
 
                         stocks.map(stock => {
                             return (
-                                    <Col key={stock.name} lg={6} sm={6} xs={12}>
+                                    <Col key={stock.name} lg={4} sm={6} xs={12}>
                                         <StockCard
                                             name={stock.name}
                                             price={stock.value}
