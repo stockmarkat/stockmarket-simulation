@@ -21,17 +21,17 @@ export class StockCard extends React.PureComponent<StockCardProps> {
         return (
             <Card noHeader={true} noFooter={true}>
                 <Row className="vertical-center">
-                    <Col xs={4} className="horizontal-center">
+                    <Col xs={3} sm={4} className="horizontal-center">
                         <i
                             style={{
-                                fontSize: '11vmin',
-                                color: getColor( type )
+                                fontSize: '15vmin',
+                                color: getColor( type ),
                             }}
                             title={type}
-                            className={getCorrectIconForType( type )}
+                            className={getCorrectIconForType( type ) + ' vertical-center'}
                         />
                     </Col>
-                    <Col xs={8} className="horizontal-center">
+                    <Col xs={9} sm={8} className="horizontal-center">
                         <StockCardDetails name={name} quantity={quantity} price={price} />
                     </Col>
                 </Row>

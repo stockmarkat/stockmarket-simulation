@@ -481,6 +481,11 @@ body > .navbar-collapse[data-color="purple"]:after {
 .currentBalance-hr {
   margin-bottom: 10px; }
 
+.stocktile-hr {
+  margin-top: 0;
+  margin-bottom: 30px;
+  border-color: #afafaf; }
+
 .currentBalance-p {
   margin: 0 15px;
   padding: 5px 15px;
@@ -2471,4 +2476,4 @@ body > .navbar-collapse[data-color="purple"]:after {
 
 .vertical-center {
   display: flex;
-  align-content: center; }
+  align-items: center; }
