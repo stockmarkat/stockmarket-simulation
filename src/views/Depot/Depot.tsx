@@ -40,6 +40,7 @@ class Depot extends React.Component<DepotProps> {
                         </Col>
                         }
                     </Row>
+                    {stocks.length > 0 && <hr className="stocktile-hr"/>}
                     <Row>
                     {
 
