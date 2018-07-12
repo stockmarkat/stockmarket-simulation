@@ -1,12 +1,6 @@
-/* tslint:disable*/
+/*tslint:disable*/
 import * as React from 'react';
 import * as NotificationSystem from 'react-notification-system';
-
-interface NotificationSystemProps {
-}
-
-interface NotificationSystemState {
-}
 
 export let notificationSystem: any = null;
 
@@ -17,11 +11,7 @@ export function addNotification(notification: NotificationSystem.Notification) {
     }
 }
 
-export class NotificationSystemFrame extends React.Component<NotificationSystemProps, NotificationSystemState> {
-
-    constructor(props: NotificationSystemProps) {
-        super(props);
-    }
+export class NotificationSystemFrame extends React.PureComponent {
 
     componentDidMount(): void {
         notificationSystem = this.refs.notificationSystem;

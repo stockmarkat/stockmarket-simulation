@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { SidebarLinks } from './SidebarLinks';
 import { PriceTag } from '../PriceTag';
+import { SidebarLinks } from './SidebarLinks';
 
-const logo = require( '../../assets/img/logo.svg' );
+const logo = require('../../assets/img/logo.svg');
 
 interface SidebarProps {
     currentBalance: number;
@@ -15,20 +15,20 @@ interface SidebarState {
 
 export class Sidebar extends React.Component<SidebarProps, SidebarState> {
 
-    constructor( props: SidebarProps ) {
-        super( props );
+    constructor(props: SidebarProps) {
+        super(props);
         this.state = {
             width: window.innerWidth
         };
     }
 
-    updateDimensions() {
-        this.setState( {width: window.innerWidth} );
+    updateDimensions = () => {
+        this.setState({ width: window.innerWidth });
     }
 
     componentDidMount() {
         this.updateDimensions();
-        window.addEventListener( 'resize', this.updateDimensions.bind( this ) );
+        window.addEventListener('resize', this.updateDimensions.bind(this));
     }
 
     renderLogo() {

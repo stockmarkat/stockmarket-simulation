@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { configure, mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme';
 import * as ReactSixteenAdapter from 'enzyme-adapter-react-16';
-import { FooterLink, FooterLinkProps, FooterLinkState } from './FooterLink';
+import { FooterLink } from './FooterLink';
 
 configure( { adapter: new ReactSixteenAdapter() } );
 
 describe( '<FooterLink />', () => {
 
-    let mountedComponent: ReactWrapper<FooterLinkProps, FooterLinkState>;
-    let shallowedComponent: ShallowWrapper<FooterLinkProps, FooterLinkState>;
+    let mountedComponent: ReactWrapper;
+    let shallowedComponent: ShallowWrapper;
 
     beforeAll( () => {
         mountedComponent = mount( <FooterLink to="testlink">Test Text</FooterLink> );
