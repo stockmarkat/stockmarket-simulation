@@ -16,6 +16,7 @@ function* loadInitialQuests() {
     const loadedQuest: Quest[] = yield select(getQuests);
 
     if (loadedQuest && loadedQuest.length > 0) {
+        yield put(recalculateQuests());
         return;
     }
     // set Default values
