@@ -2,7 +2,7 @@ import * as React from 'react';
 import { SidebarLinks } from './SidebarLinks';
 import { PriceTag } from '../PriceTag';
 
-const logo = require( '../../assets/img/logo.png' );
+const logo = require( '../../assets/img/logo.svg' );
 
 interface SidebarProps {
     currentBalance: number;
