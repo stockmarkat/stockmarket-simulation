@@ -6,9 +6,9 @@ import { Header } from '../../components/Header/Header';
 import { NotificationSystemFrame } from '../../components/NotificationSystem';
 import { Sidebar } from '../../components/Sidebar/Sidebar';
 import appRoutes from '../../routes/routes';
+import { loadState } from '../../state/initialLoad/initialLoadActions';
 import { AppState } from '../../state/AppState';
 import { getStockValue } from '../../state/depot/depotSelector';
-import { loadState } from '../../state/initialLoad/initialLoadActions';
 
 interface AppProps {
     currentMoney: number;
@@ -18,8 +18,8 @@ interface AppProps {
 
 class App extends React.Component<AppProps> {
 
-    constructor(props: AppProps) {
-        super(props);
+    constructor( props: AppProps ) {
+        super( props );
     }
 
     componentWillMount() {
@@ -39,14 +39,14 @@ class App extends React.Component<AppProps> {
                     <Header {...this.props} />
                     <Switch>
                         {
-                            appRoutes.map((prop, key) => {
+                            appRoutes.map( ( prop, key ) => {
                                 if (prop.redirect) {
                                     return (<Redirect path={prop.path} to={prop.to!} key={key}/>);
                                 }
                                 return (
                                     <Route path={prop.path} component={prop.component} key={key}/>
                                 );
-                            })
+                            } )
                         }
                     </Switch>
                     <Footer/>
@@ -56,15 +56,15 @@ class App extends React.Component<AppProps> {
     }
 }
 
-const mapStateToProps = (state: AppState) => ({
+const mapStateToProps = ( state: AppState ) => ({
     currentMoney: state.depot.accountValue,
-    currentStockBalance: getStockValue(state)
+    currentStockBalance: getStockValue( state )
 });
 
 // tslint:disable-next-line:no-any
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = ( dispatch: any ) => ({
     loadState: () =>
-        dispatch(loadState())
+        dispatch( loadState() )
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect( mapStateToProps, mapDispatchToProps )( App );
