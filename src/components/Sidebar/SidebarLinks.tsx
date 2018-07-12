@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 import appRoutes from '../../routes/routes';
 
-export class SidebarLinks extends React.PureComponent {
+export class SidebarLinks extends React.Component {
 
     activeRoute = (routeName: string) => {
         return window.location.pathname.indexOf(routeName) > -1 ? 'active' : '';

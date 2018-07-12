@@ -13,7 +13,7 @@ interface SidebarState {
     width: number;
 }
 
-export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
+export class Sidebar extends React.Component<SidebarProps, SidebarState> {
 
     constructor(props: SidebarProps) {
         super(props);
