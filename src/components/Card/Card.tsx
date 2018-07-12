@@ -20,15 +20,7 @@ interface CardProps {
     noBottomPadding?: boolean;
 }
 
-interface CardState {
-}
-
-export class Card extends React.Component<CardProps, CardState> {
-
-    constructor( props: CardProps ) {
-        super( props );
-    }
-
+export class Card extends React.PureComponent<CardProps> {
     render() {
         return (
             <div className={'card' + (this.props.plain ? ' card-plain' : '')}>

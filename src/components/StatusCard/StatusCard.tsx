@@ -10,14 +10,7 @@ interface StatusCardProps {
     noFooter?: boolean;
 }
 
-interface StatusCardState {
-}
-
-export class StatusCard extends React.Component<StatusCardProps, StatusCardState> {
-
-    constructor( props: StatusCardProps ) {
-        super( props );
-    }
+export class StatusCard extends React.PureComponent<StatusCardProps> {
 
     render() {
         return (
@@ -36,13 +29,13 @@ export class StatusCard extends React.Component<StatusCardProps, StatusCardState
                             </div>
                         </Col>
                     </Row>
-                    { !this.props.noFooter &&
-                        <div className="footer">
-                            <hr/>
-                            <div className="stats">
-                                {this.props.statusIcon}{this.props.statusText}
-                            </div>
+                    {!this.props.noFooter &&
+                    <div className="footer">
+                        <hr/>
+                        <div className="stats">
+                            {this.props.statusIcon}{this.props.statusText}
                         </div>
+                    </div>
                     }
                 </div>
             </div>

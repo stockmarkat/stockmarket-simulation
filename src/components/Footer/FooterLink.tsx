@@ -4,14 +4,7 @@ export interface FooterLinkProps {
     to: string;
 }
 
-export interface FooterLinkState {
-}
-
-export class FooterLink extends React.Component<FooterLinkProps, FooterLinkState> {
-
-    constructor( props: FooterLinkProps ) {
-        super( props );
-    }
+export class FooterLink extends React.PureComponent<FooterLinkProps> {
 
     render() {
 

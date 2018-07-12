@@ -1,32 +1,22 @@
 import * as React from 'react';
-import appRoutes from '../../routes/routes';
 import { NavLink } from 'react-router-dom';
+import appRoutes from '../../routes/routes';
 
-interface SidebarLinksProps {
-}
+export class SidebarLinks extends React.PureComponent {
 
-interface SidebarLinksState {
-}
-
-export class SidebarLinks extends React.Component<SidebarLinksProps, SidebarLinksState> {
-
-    constructor( props: SidebarLinksProps ) {
-        super( props );
-    }
-
-    activeRoute( routeName: string ) {
-        return window.location.pathname.indexOf( routeName ) > -1 ? 'active' : '';
-    }
+    activeRoute = (routeName: string) => {
+        return window.location.pathname.indexOf(routeName) > -1 ? 'active' : '';
+    };
 
     render() {
         return (
-            appRoutes.map( ( prop, key ) => {
-                if ( !prop.redirect ) {
+            appRoutes.map((prop, key) => {
+                if (!prop.redirect) {
                     return (
                         <li
                             className={
                                 prop.upgrade ?
-                                    'active active-pro' : this.activeRoute( prop.path )
+                                    'active active-pro' : this.activeRoute(prop.path)
                             }
                             key={key}
                         >
@@ -38,7 +28,7 @@ export class SidebarLinks extends React.Component<SidebarLinksProps, SidebarLink
                     );
                 }
                 return null;
-            } )
+            })
         );
     }
 }

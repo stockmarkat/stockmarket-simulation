@@ -2,17 +2,7 @@ import * as React from 'react';
 import { Grid } from 'react-bootstrap';
 import { FooterLink } from './FooterLink';
 
-interface FooterProps {
-}
-
-interface FooterState {
-}
-
-export class Footer extends React.Component<FooterProps, FooterState> {
-
-    constructor( props: FooterProps ) {
-        super( props );
-    }
+export class Footer extends React.PureComponent {
 
     getFooterLinks() {
         return (

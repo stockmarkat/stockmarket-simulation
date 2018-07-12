@@ -9,7 +9,7 @@ interface HeaderState {
     sidebarExists: boolean;
 }
 
-export class Header extends React.Component<HeaderProps, HeaderState> {
+export class Header extends React.PureComponent<HeaderProps, HeaderState> {
 
     constructor( props: HeaderProps ) {
         super( props );
