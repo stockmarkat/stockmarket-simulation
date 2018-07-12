@@ -169,7 +169,7 @@
     ],
     "tasks": [
       {
-        "name": "50% of your stock capital should be invested into technology",
+        "name": "50% of your stocks should be of the technology category",
         "questType": "CategoryPercentPossession",
         "amount": 50,
         "typeName": "Technology"
@@ -210,13 +210,13 @@
     ],
     "tasks": [
       {
-        "name": "5% of your stock capital should be invested into SolarCity",
+        "name": "5% of your stocks should be invested into SolarCity",
         "questType": "StockPercentPossesion",
         "amount": 5,
         "typeName": "SolarCity"
       },
       {
-        "name": "5% of your stock capital should be invested into Wind Power AG",
+        "name": "5% of your stocks should be invested into Wind Power AG",
         "questType": "StockPercentPossesion",
         "amount": 5,
         "typeName": "Wind Power AG"
@@ -293,7 +293,7 @@
     ],
     "tasks": [
       {
-        "name": "10% of your stock capital should be invested into Credit Suisse",
+        "name": "10% of your stocks should be invested into Credit Suisse",
         "questType": "StockPercentPossesion",
         "amount": 10,
         "typeName": "Credit Suisse AG"
