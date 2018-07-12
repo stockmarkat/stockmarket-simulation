@@ -13,7 +13,7 @@ interface StockCardProps {
     onSell: ( amount: number ) => void;
 }
 
-export default class StockCard extends React.Component<StockCardProps> {
+export default class StockmarketCard extends React.Component<StockCardProps> {
 
     render() {
         const {stock, onBuy, onSell} = this.props;

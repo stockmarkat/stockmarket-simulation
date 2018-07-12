@@ -4,11 +4,7 @@ interface BuyButtonProps {
     onClick: () => void;
 }
 
-export class BuyButton extends React.Component<BuyButtonProps> {
-
-    constructor( props: BuyButtonProps ) {
-        super( props );
-    }
+export class BuyButton extends React.PureComponent<BuyButtonProps> {
 
     render() {
         return (

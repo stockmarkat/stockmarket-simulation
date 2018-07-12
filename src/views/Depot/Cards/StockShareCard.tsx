@@ -31,13 +31,13 @@ export default class StockShareCard extends React.Component<StockShareCardProps,
         return (
             <div className="content">
                 <Card title={'Share of Stocks'} noFooter={true}>
-                    <ResponsiveContainer height={170} width="100%">
+                    <ResponsiveContainer height={200} width="100%">
                         <PieChart>
                             <Legend
                                 iconSize={10}
-                                align={'right'}
-                                verticalAlign={'middle'}
-                                layout={'vertical'}
+                                align={'center'}
+                                verticalAlign={'bottom'}
+                                layout={'horizontal'}
                             />
                             <Pie
                                 data={pieData}
