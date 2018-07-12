@@ -5,7 +5,7 @@ import { Quest } from '../AppState';
 import { QuestConfig as Config } from '../Config';
 import { distributeGoodies } from './goodieDistibution';
 import { addQuests, LOAD_QUESTS, RECALCULATE_QUESTS, recalculateQuests, updateQuest } from './questActions';
-import { getActiveQuests, getLockedQuests, getQuests } from './questSelectors';
+import { getActiveQuests, getLockedQuests } from './questSelectors';
 import { getTaskProgress } from './taskProgressEvaluation';
 
 const questJson = require('./quests.json');
@@ -13,11 +13,6 @@ const questJson = require('./quests.json');
 function* loadInitialQuests() {
     let quests: Quest[] = questJson;
 
-    const loadedQuest: Quest[] = yield select(getQuests);
-
-    if (loadedQuest && loadedQuest.length > 0) {
-        return;
-    }
     // set Default values
 
     quests.forEach(quest => {

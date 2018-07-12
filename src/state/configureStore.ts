@@ -1,7 +1,5 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import createSagaMiddleware from 'redux-saga';
 import { all, fork } from 'redux-saga/effects';
 import { AppState } from './AppState';
@@ -18,37 +16,30 @@ import stockMarketSaga from './stockMarket/stockMarketSaga';
 function* rootSaga() {
     yield all(
         [
-            fork(initialLoadSaga),
-            fork(questSaga),
-            fork(depotSaga),
-            fork(stockMarketSaga),
-            fork(newsSaga)
+            fork( initialLoadSaga ),
+            fork( questSaga ),
+            fork( depotSaga ),
+            fork( stockMarketSaga ),
+            fork( newsSaga )
         ]
     );
 }
 
-export const rootreducer = combineReducers<AppState>({
+export const rootreducer = combineReducers<AppState>( {
     depot: depotReducer,
     stockMarket: stockMarketReducer,
     quests: questReducer,
     news: newsReducer,
-});
+} );
 
 export const configureStore = () => {
     const sagaMiddleware = createSagaMiddleware();
     const middleWaresToApply = [
         sagaMiddleware
     ];
-    const middleware = applyMiddleware(...middleWaresToApply);
-    const persistConfig = {
-        key: 'root',
-        storage,
-    };
+    const middleware = applyMiddleware( ...middleWaresToApply );
+    const store = createStore( rootreducer, composeWithDevTools( middleware ) );
 
-    const persistedReducer = persistReducer(persistConfig, rootreducer);
-
-    const store = createStore(persistedReducer, composeWithDevTools(middleware));
-
-    sagaMiddleware.run(rootSaga);
+    sagaMiddleware.run( rootSaga );
     return store;
 };
