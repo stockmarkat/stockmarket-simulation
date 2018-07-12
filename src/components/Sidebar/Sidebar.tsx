@@ -24,7 +24,7 @@ export class Sidebar extends React.PureComponent<SidebarProps, SidebarState> {
 
     updateDimensions = () => {
         this.setState({ width: window.innerWidth });
-    };
+    }
 
     componentDidMount() {
         this.updateDimensions();

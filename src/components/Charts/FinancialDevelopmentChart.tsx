@@ -28,7 +28,7 @@ export default class FinancialDevelopmentChart extends React.PureComponent<Finan
                         interval={this.props.interval}
                     />
                     <YAxis domain={domain}/>
-                    <Area dataKey="value" stroke="#3472F7" fill="url(#colorStock)"/>
+                    <Area isAnimationActive={false} dataKey="value" stroke="#3472F7" fill="url(#colorStock)"/>
                 </AreaChart>
             </ResponsiveContainer>
         );

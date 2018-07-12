@@ -6,7 +6,7 @@ export class SidebarLinks extends React.PureComponent {
 
     activeRoute = (routeName: string) => {
         return window.location.pathname.indexOf(routeName) > -1 ? 'active' : '';
-    };
+    }
 
     render() {
         return (

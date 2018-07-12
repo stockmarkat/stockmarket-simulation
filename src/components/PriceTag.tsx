@@ -4,10 +4,7 @@ interface PriceTagProps {
     value?: number;
 }
 
-interface PriceTagState {
-}
-
-export class PriceTag extends React.PureComponent<PriceTagProps, PriceTagState> {
+export class PriceTag extends React.PureComponent<PriceTagProps> {
     constructor( props: PriceTagProps ) {
         super( props );
     }
