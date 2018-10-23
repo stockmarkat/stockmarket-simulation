@@ -1,18 +1,19 @@
 import * as React from 'react';
-import { Area, AreaChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import { Area, AreaChart, AxisDomain, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 import { FinancialSnapshot } from '../../state/AppState';
 
 interface FinancialDevelopmentProps {
     valueHistory: FinancialSnapshot[];
     interval: number;
-    yAxisDomain?: [string, string] | [number, number] | [number, string];
+    yAxisDomain?: [AxisDomain, AxisDomain];
 }
 
 export default class FinancialDevelopmentChart extends React.PureComponent<FinancialDevelopmentProps> {
 
     render() {
-        const { valueHistory, yAxisDomain } = this.props;
-        const domain = yAxisDomain ? yAxisDomain : ['auto, auto'];
+        const {valueHistory} = this.props;
+        let {yAxisDomain} = this.props;
+        yAxisDomain = yAxisDomain ? yAxisDomain : ['auto', 'auto'];
 
         return (
             <ResponsiveContainer height={200} width="100%">
@@ -27,7 +28,7 @@ export default class FinancialDevelopmentChart extends React.PureComponent<Finan
                         dataKey={'date'}
                         interval={this.props.interval}
                     />
-                    <YAxis domain={domain}/>
+                    <YAxis domain={yAxisDomain}/>
                     <Area dataKey="value" stroke="#3472F7" fill="url(#colorStock)"/>
                 </AreaChart>
             </ResponsiveContainer>

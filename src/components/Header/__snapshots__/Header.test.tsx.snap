@@ -2,13 +2,13 @@
 
 exports[`<Header /> shallow Snapshot matches 1`] = `
 ShallowWrapper {
-  "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Header />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
     "render": [Function],
+    "simulateError": [Function],
     "simulateEvent": [Function],
     "unmount": [Function],
   },
@@ -20,16 +20,16 @@ ShallowWrapper {
       "bsStyle": "default",
       "children": <NavbarHeader>
         <NavbarBrand>
-          <a
-            href="#"
-          >
-            Depot
-          </a>
+                <a
+                        href="#"
+                >
+                        Depot
+                </a>
         </NavbarBrand>
         <NavbarToggle
-          onClick={[Function]}
+                onClick={[Function]}
         />
-      </NavbarHeader>,
+</NavbarHeader>,
       "fluid": true,
     },
     "ref": null,
@@ -41,14 +41,14 @@ ShallowWrapper {
         "children": Array [
           <NavbarBrand>
             <a
-              href="#"
+                        href="#"
             >
-              Depot
+                        Depot
             </a>
-          </NavbarBrand>,
+</NavbarBrand>,
           <NavbarToggle
             onClick={[Function]}
-          />,
+/>,
         ],
       },
       "ref": null,
@@ -60,9 +60,9 @@ ShallowWrapper {
           "props": Object {
             "children": <a
               href="#"
-            >
+>
               Depot
-            </a>,
+</a>,
           },
           "ref": null,
           "rendered": Object {
@@ -104,16 +104,16 @@ ShallowWrapper {
         "bsStyle": "default",
         "children": <NavbarHeader>
           <NavbarBrand>
-            <a
-              href="#"
-            >
-              Depot
-            </a>
+                    <a
+                              href="#"
+                    >
+                              Depot
+                    </a>
           </NavbarBrand>
           <NavbarToggle
-            onClick={[Function]}
+                    onClick={[Function]}
           />
-        </NavbarHeader>,
+</NavbarHeader>,
         "fluid": true,
       },
       "ref": null,
@@ -125,14 +125,14 @@ ShallowWrapper {
           "children": Array [
             <NavbarBrand>
               <a
-                href="#"
+                            href="#"
               >
-                Depot
+                            Depot
               </a>
-            </NavbarBrand>,
+</NavbarBrand>,
             <NavbarToggle
               onClick={[Function]}
-            />,
+/>,
           ],
         },
         "ref": null,
@@ -144,9 +144,9 @@ ShallowWrapper {
             "props": Object {
               "children": <a
                 href="#"
-              >
+>
                 Depot
-              </a>,
+</a>,
             },
             "ref": null,
             "rendered": Object {
@@ -184,6 +184,16 @@ ShallowWrapper {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
       },
     },
   },
