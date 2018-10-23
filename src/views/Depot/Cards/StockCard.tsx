@@ -24,7 +24,7 @@ export class StockCard extends React.PureComponent<StockCardProps> {
                     <Col xs={3} sm={4} className="horizontal-center">
                         <i
                             style={{
-                                fontSize: '15vmin',
+                                fontSize: '6em',
                                 color: getColor( type ),
                             }}
                             title={type}
