@@ -39,7 +39,7 @@
     "redux": "^4.0.0",
     "redux-persist": "^5.10.0",
     "redux-saga": "^0.16.0",
-    "reselect": "^3.0.1"
+    "reselect": "^4.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.8",
