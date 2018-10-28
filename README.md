@@ -1,5 +1,6 @@
 # Stockmarket Simulation
 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/stockmarkat/stockmarket-simulation/issues)
 [![Greenkeeper badge](https://badges.greenkeeper.io/stockmarkat/stockmarket-simulation.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/stockmarkat/stockmarket-simulation.svg?branch=master)](https://travis-ci.org/stockmarkat/stockmarket-simulation)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1b146f1983bf715406e3/maintainability)](https://codeclimate.com/github/stockmarkat/stockmarket-simulation/maintainability)
@@ -12,7 +13,22 @@ At the start of the simulation the user has a capital of $ 10 000 that he can in
 - There are various quests that offer an incentive to buy certain stocks or stock categories.
 - The simulation can be terminated at any time and then restarted with the same status.
 
-[Try it out](https://stockmarket.netlify.com/)
+## Where can I try it out?
+Click [Here](https://stockmarket.netlify.com/)!
+
+## Screenshots
+
+### Depot page
+
+![depot overview](https://user-images.githubusercontent.com/16801528/47589807-938c3400-d96a-11e8-8619-1023d8b3bb9c.jpg)
+
+### Market page
+
+![market overview](https://user-images.githubusercontent.com/16801528/47589730-45773080-d96a-11e8-8f13-04a9f0d930a6.jpg)
+
+### Quest page 
+
+![quest overview](https://user-images.githubusercontent.com/16801528/47589834-a6066d80-d96a-11e8-80f6-50713ea95fb0.jpg)
 
 
 ## Run locally
