@@ -40,12 +40,10 @@
     "reselect": "^4.0.0"
   },
   "devDependencies": {
-    "node-sass-chokidar": "^1.3.4",
-    "npm-run-all": "^4.1.3",
-    "@storybook/addon-actions": "^3.4.11",
-    "@storybook/addon-knobs": "^3.4.11",
-    "@storybook/addons": "^3.4.11",
-    "@storybook/react": "^3.4.11",
+    "@storybook/addon-actions": "^4.0.0",
+    "@storybook/addon-knobs": "^4.0.0",
+    "@storybook/addons": "^4.0.0",
+    "@storybook/react": "^4.0.0",
     "@types/enzyme": "^3.1.13",
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^23.3.3",
@@ -63,6 +61,8 @@
     "cross-env": "^5.2.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "latest",
+    "node-sass-chokidar": "^1.3.4",
+    "npm-run-all": "^4.1.3",
     "redux-devtools-extension": "^2.13.5",
     "typescript": "^2.9.2"
   },
@@ -73,7 +73,6 @@
     "start": "npm-run-all -p watch-css start-ts",
     "build": "npm run build-css && react-scripts-ts build",
     "test-watch": "react-scripts-ts test --env=jsdom",
-    "test": "react-scripts-ts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill --coverage",
-    "storybook": "start-storybook -p 6006"
+    "test": "react-scripts-ts test --env=jsdom --setupTestFrameworkScriptFile=raf/polyfill --coverage"
   }
 }
