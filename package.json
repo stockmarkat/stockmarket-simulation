@@ -57,7 +57,7 @@
     "@types/recharts": "^1.1.0",
     "@types/storybook__addon-actions": "^3.4.1",
     "@types/storybook__addon-knobs": "^3.3.1",
-    "@types/storybook__react": "^3.0.9",
+    "@types/storybook__react": "^4.0.0",
     "cross-env": "^5.2.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "latest",
