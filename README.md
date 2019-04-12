@@ -1,7 +1,6 @@
 # Stockmarket Simulation
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/stockmarkat/stockmarket-simulation/issues)
-[![Greenkeeper badge](https://badges.greenkeeper.io/stockmarkat/stockmarket-simulation.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/stockmarkat/stockmarket-simulation.svg?branch=master)](https://travis-ci.org/stockmarkat/stockmarket-simulation)
 [![Maintainability](https://api.codeclimate.com/v1/badges/1b146f1983bf715406e3/maintainability)](https://codeclimate.com/github/stockmarkat/stockmarket-simulation/maintainability)
 
