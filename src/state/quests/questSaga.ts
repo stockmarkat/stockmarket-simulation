@@ -1,10 +1,9 @@
-import { delay } from 'redux-saga';
-import { call, put, select, takeEvery } from 'redux-saga/effects';
+import { call, delay, put, select, takeEvery } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
 import { Quest } from '../AppState';
 import { QuestConfig as Config } from '../Config';
 import { distributeGoodies } from './goodieDistibution';
-import { addQuests, LOAD_QUESTS, RECALCULATE_QUESTS, recalculateQuests, updateQuest } from './questActions';
+import { LOAD_QUESTS, RECALCULATE_QUESTS, addQuests, recalculateQuests, updateQuest } from './questActions';
 import { getActiveQuests, getLockedQuests, getQuests } from './questSelectors';
 import { getTaskProgress } from './taskProgressEvaluation';
 

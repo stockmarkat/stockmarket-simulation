@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Header />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
     "getNode": [Function],
     "render": [Function],
     "simulateError": [Function],
@@ -15,7 +16,7 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "function",
     "props": Object {
       "bsStyle": "default",
       "children": <NavbarHeader>
@@ -93,13 +94,38 @@ ShallowWrapper {
       ],
       "type": [Function],
     },
-    "type": [Function],
+    "type": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "Brand": [Function],
+      "Collapse": [Function],
+      "ControlledComponent": [Function],
+      "Form": [Function],
+      "Header": [Function],
+      "Link": [Function],
+      "STYLES": Array [
+        "default",
+        "inverse",
+      ],
+      "Text": [Function],
+      "Toggle": [Function],
+      "defaultProps": Object {
+        "bsStyle": "default",
+      },
+      "deferControlTo": [Function],
+      "propTypes": Object {
+        "bsStyle": [Function],
+        "defaultExpanded": [Function],
+        "expanded": [Function],
+        "innerRef": [Function],
+      },
+      "render": [Function],
+    },
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "function",
       "props": Object {
         "bsStyle": "default",
         "children": <NavbarHeader>
@@ -177,18 +203,50 @@ ShallowWrapper {
         ],
         "type": [Function],
       },
-      "type": [Function],
+      "type": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "Brand": [Function],
+        "Collapse": [Function],
+        "ControlledComponent": [Function],
+        "Form": [Function],
+        "Header": [Function],
+        "Link": [Function],
+        "STYLES": Array [
+          "default",
+          "inverse",
+        ],
+        "Text": [Function],
+        "Toggle": [Function],
+        "defaultProps": Object {
+          "bsStyle": "default",
+        },
+        "deferControlTo": [Function],
+        "propTypes": Object {
+          "bsStyle": [Function],
+          "defaultExpanded": [Function],
+          "expanded": [Function],
+          "innerRef": [Function],
+        },
+        "render": [Function],
+      },
     },
   ],
   Symbol(enzyme.__options__): Object {
     "adapter": ReactSixteenAdapter {
       "options": Object {
         "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
         "lifecycles": Object {
           "componentDidUpdate": Object {
             "onSetState": true,
           },
-          "getDerivedStateFromProps": true,
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
           "getSnapshotBeforeUpdate": true,
           "setState": Object {
             "skipsComponentDidUpdateOnNullish": true,
@@ -196,6 +254,9 @@ ShallowWrapper {
         },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
+  Symbol(enzyme.__providerValues__): Map {},
+  Symbol(enzyme.__childContext__): null,
 }
 `;

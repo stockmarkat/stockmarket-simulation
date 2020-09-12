@@ -1,6 +1,5 @@
 import * as moment from 'moment';
-import { delay } from 'redux-saga';
-import { put, select, takeEvery } from 'redux-saga/effects';
+import { delay, put, select, takeEvery } from 'redux-saga/effects';
 import { addNotification } from '../../components/NotificationSystem';
 import { cloneState, FinancialSnapshot, Stock } from '../AppState';
 import { StockConfig as Config } from '../Config';

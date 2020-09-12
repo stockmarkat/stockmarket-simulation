@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Navbar } from 'react-bootstrap';
+import * as ReactDOM from 'react-dom';
 import appRoutes from '../../routes/routes';
 
 interface HeaderProps {
@@ -32,7 +33,8 @@ export class Header extends React.Component<HeaderProps, HeaderState> {
         const node = document.createElement( 'div' );
         node.id = 'bodyClick';
         node.onclick = function () {
-            this.parentElement!.removeChild( this );
+            // tslint:disable-next-line no-any
+            ReactDOM.findDOMNode(this as any)!.parentElement!.removeChild( this as any );
             document.documentElement.classList.toggle( 'nav-open' );
         };
         document.body.appendChild( node );
