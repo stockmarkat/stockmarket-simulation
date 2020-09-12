@@ -1,6 +1,5 @@
 import * as moment from 'moment';
-import { delay } from 'redux-saga';
-import { put, select, takeEvery } from 'redux-saga/effects';
+import { delay, put, select, takeEvery } from 'redux-saga/effects';
 import { FinancialSnapshot } from '../AppState';
 import { CapitalConfig as Config } from '../Config';
 import { INIT_SNAPSHOT_CAPITAL, setStockValueDevelopment, SNAPSHOT_CAPITAL, snapshotCapital } from './depotActions';
